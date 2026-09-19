@@ -1,0 +1,41 @@
+favicon: /img/favicon.ico
+nav:
+  fixed: true
+menu:
+  首页: / || fas fa-home
+  归档: /archives/ || fas fa-archive
+disable_top_img: true
+cover:
+  index_enable: false
+  aside_enable: false
+  archives_enable: false
+index_post_content:
+  method: 3
+  length: 180
+comments:
+  use:
+  text: false
+  count: false
+aside:
+  card_author:
+    enable: true
+    description: 技术、实践与记录
+    button:
+      enable: false
+  card_announcement:
+    enable: true
+    content: '迁移预览 · 仅含 10 篇真实文章。未迁移链接仍指向原站；不含评论与生产部署。'
+  card_webinfo:
+    last_push_date: false
+mermaid:
+  enable: true
+  code_write: true
+  zoom_pan: false
+  open_in_new_tab: false
+darkmode:
+  enable: true
+  button: true
+  autoChangeMode: false
+inject:
+  head:
+    - '<link rel="stylesheet" href="/css/preview.css">'

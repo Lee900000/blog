@@ -1,0 +1,6 @@
+ :root { --theme-color: #15966c; --btn-bg: #15966c; --btn-hover-color: #107252; --text-bg-hover: #15966c; --scrollbar-color: #15966c; }
+#nav { background: #13795b; }
+#recent-posts > .recent-post-item { min-height: 180px; }
+#aside-content .card-announcement .item-headline { color: #15966c; }
+#article-container table { display: block; overflow-x: auto; }
+#article-container .mermaid { overflow-x: auto; }
