@@ -1,0 +1,446 @@
+{
+  "schema_version": 1,
+  "source": "https://www.ikarp.top",
+  "post_count": 10,
+  "posts": [
+    {
+      "title": "我把 Hermes 做成了每小时技术情报员：检索、深挖、信息卡片与飞书资料库闭环",
+      "date": "2026-09-17T02:18:00+09:00",
+      "legacy_id": 883,
+      "permalink": "index.php/archives/883.html",
+      "categories": [
+        [
+          "Ai"
+        ]
+      ],
+      "tags": [],
+      "source_url": "https://www.ikarp.top/index.php/archives/883.html",
+      "state": "migrated",
+      "counts": {
+        "code": 19,
+        "tables": 1,
+        "mermaid": 1,
+        "images": 6
+      },
+      "images": [
+        "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/assets/banner.png",
+        "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/static/img/docs/tui-session-orchestrator/session-orchestrator.png",
+        "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/static/img/dashboard/admin-skills-hub.png",
+        "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/static/img/dashboard/admin-system-top.png",
+        "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/static/img/dashboard/admin-config.png",
+        "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/static/img/dashboard/admin-system-ops.png"
+      ],
+      "code_sha256": [
+        "b5569d69d26c1cf847869437e9ee354eb943bee4bd0ef168140bc153728ecc4d",
+        "42985fb350608fd0c652a6faecf1be4b9e5ca3eb2a7cdd7aa4a5769a122585e3",
+        "2248b83bc8cd7c167819c7168bf062d569903d7f660c4cd3f99cd6a3ce9fb72d",
+        "88d6d112d7b6c3859f8ed6d49042337f59968e77ae8f99ed15f29fe57877364b",
+        "229ec6dbfbde22babfbbe4fea35ad06cef80c96f0d78f5c159b33804d1ee64f4",
+        "f3b3ebdde472f0f88a544d72b39c7e04e4f9d5089e34737da870032d3d1acf45",
+        "6e8d2eb1d522b19bf85c661a36949812fd4b7d2784af8436033722cd88ce7e62",
+        "88d752955cc361d12767aa91bafa314483b7368408c3f30cab25b240fe10643c",
+        "0ef531744118525b542379552f046a3b7215c609af452f241fc94853baac509a",
+        "2f78e1a6ace53fc720a8f0c74288a78b28d163ae87180eb944c53194aee71b60",
+        "682e3e94d6ef629e66f616fd2ada9ecb54ff2d0d75d2aa09694e53fb2f419f7a",
+        "ee97e9252850cc796cffd2f2aece0ca53e04641416414638a7b0448379afd43b",
+        "58df481595c0aff684f890ec6c8dd3bb1e71585dd3deb868db189e242c478561",
+        "a321de20155e1ef4dc61ffb93f3bfeb10dcac0350df11e85c8f85dadf1c28389",
+        "3951d1caf9fab2f9110b9f878d700e4f8774418b7ab55d6f8585bfa8db8e4220",
+        "d4488254bd9245ec65e5a5866288ce89b8d0cf1d47b77e98414e9de25b3dd689",
+        "98913f9446172179ab75586bb01cfc7714bb7dd6331be4eb02e78fcb3fb10f29",
+        "db5629a6b901da1c312abeee94d2838030f89358df98cb6cbce314837b3bda90",
+        "26212c5e36015bd88f1d3d1a58b1c850e0d27068c2f8566d57dfef5dd7b6f529"
+      ],
+      "known_issues": []
+    },
+    {
+      "title": "问题推着我往前走：一次面试带来的启发",
+      "date": "2026-09-10T22:46:00+09:00",
+      "legacy_id": 882,
+      "permalink": "index.php/archives/882.html",
+      "categories": [
+        [
+          "产品"
+        ]
+      ],
+      "tags": [],
+      "source_url": "https://www.ikarp.top/index.php/archives/882.html",
+      "state": "migrated",
+      "counts": {
+        "code": 0,
+        "tables": 0,
+        "mermaid": 0,
+        "images": 0
+      },
+      "images": [],
+      "code_sha256": [],
+      "known_issues": []
+    },
+    {
+      "title": "用本机 Coding Agent 当设计引擎:Open Design 怎么把 Hermes 和 Claude Code 接进产品工作流",
+      "date": "2026-09-01T11:11:00+09:00",
+      "legacy_id": 881,
+      "permalink": "index.php/archives/881.html",
+      "categories": [
+        [
+          "产品"
+        ],
+        [
+          "Ai"
+        ]
+      ],
+      "tags": [],
+      "source_url": "https://www.ikarp.top/index.php/archives/881.html",
+      "state": "migrated",
+      "counts": {
+        "code": 3,
+        "tables": 0,
+        "mermaid": 0,
+        "images": 3
+      },
+      "images": [
+        "https://repo-assets.open-design.ai/resources/images/hero.png",
+        "https://repo-assets.open-design.ai/resources/images/coding-agents.png",
+        "https://raw.githubusercontent.com/nexu-io/open-design/main/docs/screenshots/product-tour/studio-prototype.png"
+      ],
+      "code_sha256": [
+        "e591c7333e70653e725217721ec94106464f2a4c93413518f189e8cd0fdca451",
+        "9ad531920a6166831dd120b5bce5b4ed707e68c2b62c412950b4b2dd30e5062a",
+        "37a96b367331f598d13fa7aea18cf260db5712445217ef2506c3d7345ef39ae4"
+      ],
+      "known_issues": []
+    },
+    {
+      "title": "链上流动性的秘密：去中心化交易所（DEX）是如何维持深度与招揽做市商的？",
+      "date": "2026-08-31T15:12:00+09:00",
+      "legacy_id": 880,
+      "permalink": "index.php/archives/880.html",
+      "categories": [
+        [
+          "产品"
+        ]
+      ],
+      "tags": [
+        "DEX"
+      ],
+      "source_url": "https://www.ikarp.top/index.php/archives/880.html",
+      "state": "migrated",
+      "counts": {
+        "code": 0,
+        "tables": 0,
+        "mermaid": 0,
+        "images": 0
+      },
+      "images": [],
+      "code_sha256": [],
+      "known_issues": []
+    },
+    {
+      "title": "我在 24GB 的 Mac mini 上折腾本地大模型，最后放弃了——一场关于「理想与内存」的和解",
+      "date": "2026-08-23T21:51:00+09:00",
+      "legacy_id": 879,
+      "permalink": "index.php/archives/879.html",
+      "categories": [
+        [
+          "Ai"
+        ]
+      ],
+      "tags": [],
+      "source_url": "https://www.ikarp.top/index.php/archives/879.html",
+      "state": "migrated",
+      "counts": {
+        "code": 4,
+        "tables": 4,
+        "mermaid": 0,
+        "images": 0
+      },
+      "images": [],
+      "code_sha256": [
+        "705df45248194913d9baf6a744a516b5dd8dabd1b7e8ecf9174a3d96b53f5168",
+        "c3bb68ef9a16106afe5ebd273ef5b4c1d398da0a439d3a68a84a4cbe91562214",
+        "0aad8c7d03f6ed463ddd3ea766474158ad6954867861cdbf2455c2a856ab7c0f",
+        "64528dd80240dc7bf77b3dbdfadd3be8abcfd0d267ff4cde0d052080d28afe3d"
+      ],
+      "known_issues": []
+    },
+    {
+      "title": "MySQL 8.4 升级踩坑：列级权限与表级权限混用，导致新增表级权限对长连接不生效",
+      "date": "2026-08-20T16:46:00+09:00",
+      "legacy_id": 878,
+      "permalink": "index.php/archives/878.html",
+      "categories": [
+        [
+          "踩坑教训"
+        ],
+        [
+          "数据库"
+        ]
+      ],
+      "tags": [
+        "mysql"
+      ],
+      "source_url": "https://www.ikarp.top/index.php/archives/878.html",
+      "state": "migrated",
+      "counts": {
+        "code": 1,
+        "tables": 1,
+        "mermaid": 0,
+        "images": 0
+      },
+      "images": [],
+      "code_sha256": [
+        "f960fde711f482b44b1c911488ec36c6b790d58621b6f7ab6992f6ab5d304102"
+      ],
+      "known_issues": []
+    },
+    {
+      "title": "行情风控阈值分析：做市滑点保护机制",
+      "date": "2026-08-20T10:49:00+09:00",
+      "legacy_id": 877,
+      "permalink": "index.php/archives/877.html",
+      "categories": [
+        [
+          "技术"
+        ]
+      ],
+      "tags": [
+        "做市"
+      ],
+      "source_url": "https://www.ikarp.top/index.php/archives/877.html",
+      "state": "migrated",
+      "counts": {
+        "code": 2,
+        "tables": 6,
+        "mermaid": 0,
+        "images": 1
+      },
+      "images": [
+        "https://www.ikarp.top/usr/uploads/2026/08/1730592725.png"
+      ],
+      "code_sha256": [
+        "440772508d88cb3f7af8859907b464666dd7f0b746ff04b18cd50587cbc0bd1f",
+        "995c2dc02ba0cb2132f144771fd1a2a4c98f361565b404a8f2ce4525a07119d2"
+      ],
+      "known_issues": [
+        {
+          "url": "https://www.ikarp.top/index.php/archives/market_wind_tables.md",
+          "state": "preexisting-source-404"
+        }
+      ]
+    },
+    {
+      "title": "需求评审 & 研发交付规范",
+      "date": "2026-08-19T17:40:38+09:00",
+      "legacy_id": 876,
+      "permalink": "index.php/archives/876.html",
+      "categories": [
+        [
+          "产品"
+        ]
+      ],
+      "tags": [],
+      "source_url": "https://www.ikarp.top/index.php/archives/876.html",
+      "state": "migrated",
+      "counts": {
+        "code": 2,
+        "tables": 1,
+        "mermaid": 0,
+        "images": 0
+      },
+      "images": [],
+      "code_sha256": [
+        "e9c87771efdc41393a46d0a9137f5e7105c7dcd29b6c631ed99af464fcf1b30c",
+        "a645efc13e51137f476c4b5371a2073076971d982d0a281709a807f2b7d1dcee"
+      ],
+      "known_issues": []
+    },
+    {
+      "title": "交易策略与高级委托",
+      "date": "2026-08-18T15:26:00+09:00",
+      "legacy_id": 875,
+      "permalink": "index.php/archives/875.html",
+      "categories": [
+        [
+          "产品"
+        ]
+      ],
+      "tags": [],
+      "source_url": "https://www.ikarp.top/index.php/archives/875.html",
+      "state": "migrated",
+      "counts": {
+        "code": 0,
+        "tables": 2,
+        "mermaid": 0,
+        "images": 8
+      },
+      "images": [
+        "https://www.ikarp.top/usr/uploads/2026/08/1917137102.png",
+        "https://www.ikarp.top/usr/uploads/2026/08/588784155.png",
+        "https://www.ikarp.top/usr/uploads/2026/08/4147731038.png",
+        "https://www.ikarp.top/usr/uploads/2026/08/2925933752.png",
+        "https://www.ikarp.top/usr/uploads/2026/08/388439408.png",
+        "https://www.ikarp.top/usr/uploads/2026/08/3308719965.png",
+        "https://www.ikarp.top/usr/uploads/2026/08/1274363612.png",
+        "https://www.ikarp.top/usr/uploads/2026/08/2907619859.png"
+      ],
+      "code_sha256": [],
+      "known_issues": []
+    },
+    {
+      "title": "yum 安装 Redis",
+      "date": "2015-07-01T16:34:00+09:00",
+      "legacy_id": 1,
+      "permalink": "index.php/archives/1.html",
+      "categories": [
+        [
+          "数据库"
+        ]
+      ],
+      "tags": [
+        "redis"
+      ],
+      "source_url": "https://www.ikarp.top/index.php/archives/1.html",
+      "state": "migrated",
+      "counts": {
+        "code": 2,
+        "tables": 0,
+        "mermaid": 0,
+        "images": 0
+      },
+      "images": [],
+      "code_sha256": [
+        "6d6a5cac6ffc5e84fb6ab1f44085a26102aedc4a3e0a9e566f81ef4db8be2f45",
+        "ebf78f409412746c6423e86577342450d4a4b097664fe5cdc74b5d97cccaf654"
+      ],
+      "known_issues": []
+    }
+  ],
+  "assets": [
+    {
+      "source_url": "https://raw.githubusercontent.com/nexu-io/open-design/main/docs/screenshots/product-tour/studio-prototype.png",
+      "state": "localized",
+      "path": "/assets/migrated/d31f5df5bf727207823b.png",
+      "bytes": 804238,
+      "sha256": "b80e63f1a319b592d96a79fb9f25141864692fb64b03d83eb0a022f87814ad58"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/assets/banner.png",
+      "state": "localized",
+      "path": "/assets/migrated/166d1bec3ab944d9627a.png",
+      "bytes": 12333,
+      "sha256": "75e85ef6fecf5a6227985f2082e5b35331fceff4d8db03720c82a7d9ee8b7eea"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/static/img/dashboard/admin-config.png",
+      "state": "localized",
+      "path": "/assets/migrated/d14b769e368f68b550fc.png",
+      "bytes": 514222,
+      "sha256": "41c7c136d9dba87f975dace7f2be9d082d7195a48c3086b5c26a879aa9f9d43e"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/static/img/dashboard/admin-skills-hub.png",
+      "state": "localized",
+      "path": "/assets/migrated/f709f78f181143ed4258.png",
+      "bytes": 484669,
+      "sha256": "a7d7c66228f362d9529e0e703dae19e667ff8a896bbd2b4f895a59d8335d64c7"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/static/img/dashboard/admin-system-ops.png",
+      "state": "localized",
+      "path": "/assets/migrated/00682d5382f5c1161753.png",
+      "bytes": 484316,
+      "sha256": "fde1320f934773d1228c93e8800a80fc3d28dca5a71699465d73bf4a1305c991"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/static/img/dashboard/admin-system-top.png",
+      "state": "localized",
+      "path": "/assets/migrated/4b2c5a643667e066f758.png",
+      "bytes": 519615,
+      "sha256": "3415ff4df03e5a377581affc640d1196ec24ce13cf3fa9cc0c382e1dc4d0082d"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/website/static/img/docs/tui-session-orchestrator/session-orchestrator.png",
+      "state": "localized",
+      "path": "/assets/migrated/50bdf91ed3faeed78190.png",
+      "bytes": 30743,
+      "sha256": "45cfb7f3678002a8a88be6fb409ac8b9c23d49018bc23a092450d6a16b4cb02d"
+    },
+    {
+      "source_url": "https://repo-assets.open-design.ai/resources/images/coding-agents.png",
+      "state": "localized",
+      "path": "/assets/migrated/320e84b51a5b0cf0650b.png",
+      "bytes": 270136,
+      "sha256": "6d725db0698023a33da7836325f83c5f3ca21255f20b12fc2a044ae06a41fd28"
+    },
+    {
+      "source_url": "https://repo-assets.open-design.ai/resources/images/hero.png",
+      "state": "localized",
+      "path": "/assets/migrated/5f3743e18c836306883d.png",
+      "bytes": 3239614,
+      "sha256": "97bdc02f592d9ea6c8b7b3989bc0cf17efefa25ff14be65e8ee382340d17114f"
+    },
+    {
+      "source_url": "https://www.ikarp.top/usr/uploads/2026/08/1274363612.png",
+      "state": "localized",
+      "path": "/assets/migrated/40ddf788e3bac45f11f8.png",
+      "bytes": 44613,
+      "sha256": "f06a1f0b1035a9848a193553db0178edd514675c34ecb8a6f28793a4e49d77a7"
+    },
+    {
+      "source_url": "https://www.ikarp.top/usr/uploads/2026/08/1730592725.png",
+      "state": "localized",
+      "path": "/assets/migrated/9382a9462a5d752b8c81.png",
+      "bytes": 336321,
+      "sha256": "27a6d19635173d195690593efafcd48be5eafa32d5061ed1182e691d7c80e32d"
+    },
+    {
+      "source_url": "https://www.ikarp.top/usr/uploads/2026/08/1917137102.png",
+      "state": "localized",
+      "path": "/assets/migrated/f1107933663955969e09.png",
+      "bytes": 61385,
+      "sha256": "6c1b144ec6ea96c33710ab6d7dca818f4fcab3df88d38e22f9e8a502b15e1d23"
+    },
+    {
+      "source_url": "https://www.ikarp.top/usr/uploads/2026/08/2907619859.png",
+      "state": "localized",
+      "path": "/assets/migrated/e59611d12a69c185edfb.png",
+      "bytes": 35615,
+      "sha256": "97441cd32e48c9c175ffee0d21148c32f2bcc0e805d4ade019a998fc57a4457c"
+    },
+    {
+      "source_url": "https://www.ikarp.top/usr/uploads/2026/08/2925933752.png",
+      "state": "localized",
+      "path": "/assets/migrated/a529dd54285424e28d1c.png",
+      "bytes": 57473,
+      "sha256": "134df15fafa99b24db6beafe41def99064043dc0df64255843c1580477fcc0e4"
+    },
+    {
+      "source_url": "https://www.ikarp.top/usr/uploads/2026/08/3308719965.png",
+      "state": "localized",
+      "path": "/assets/migrated/3159a18479cb2821a2c8.png",
+      "bytes": 39044,
+      "sha256": "0588755f41c522594116664ad82290ad33b99cab6167bcf12791ee60992f60e8"
+    },
+    {
+      "source_url": "https://www.ikarp.top/usr/uploads/2026/08/388439408.png",
+      "state": "localized",
+      "path": "/assets/migrated/94a14f1d5f33454eac02.png",
+      "bytes": 58978,
+      "sha256": "604a1c6b1cff3b81eb2eda8dafcea8a06f890dd2d08dc42831c332908fbf2a61"
+    },
+    {
+      "source_url": "https://www.ikarp.top/usr/uploads/2026/08/4147731038.png",
+      "state": "localized",
+      "path": "/assets/migrated/e1a59996427f6169ee6b.png",
+      "bytes": 54528,
+      "sha256": "59b47b4461f2636586c6a9471d86dd3b94a7c8fc28e548512baa310e8804f2f5"
+    },
+    {
+      "source_url": "https://www.ikarp.top/usr/uploads/2026/08/588784155.png",
+      "state": "localized",
+      "path": "/assets/migrated/e905d1691c2afcbd07c0.png",
+      "bytes": 38916,
+      "sha256": "51497063d4693aa0824537f50e046e4c6b3b38b1206e5eed2f212ff512a6e450"
+    }
+  ]
+}
