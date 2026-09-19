@@ -1,41 +1,35 @@
-favicon: /img/favicon.ico
-nav:
-  fixed: true
+# Keep Butterfly 5.7's native layout and styling; override only local identity.
 menu:
   首页: / || fas fa-home
   归档: /archives/ || fas fa-archive
-disable_top_img: true
+
+disable_top_img: false
+# Official demo's photograph (not the promotional device mockup).
+# https://github.com/jerryc127/butterfly.js.org/blob/main/_config.butterfly.yml
+# https://oss.012700.xyz/butterfly/2024/10/index.jpg
+index_img: /assets/theme/butterfly-teal-smoke.jpg
+default_top_img: /assets/theme/butterfly-teal-smoke.jpg
+
 cover:
-  index_enable: false
-  aside_enable: false
-  archives_enable: false
-index_post_content:
-  method: 3
-  length: 180
-comments:
-  use:
-  text: false
-  count: false
+  index_enable: true
+  aside_enable: true
+  archives_enable: true
+  # Upstream 5.7 supplies no default cover. Image posts use their own frontmatter.
+  default_cover:
+
 aside:
   card_author:
-    enable: true
     description: 技术、实践与记录
     button:
       enable: false
   card_announcement:
-    enable: true
-    content: '迁移预览 · 仅含 10 篇真实文章。未迁移链接仍指向原站；不含评论与生产部署。'
-  card_webinfo:
-    last_push_date: false
+    enable: false
+
+footer:
+  custom_text: 全量迁移本地预览 · 不含评论与生产部署
+
 mermaid:
   enable: true
   code_write: true
   zoom_pan: false
   open_in_new_tab: false
-darkmode:
-  enable: true
-  button: true
-  autoChangeMode: false
-inject:
-  head:
-    - '<link rel="stylesheet" href="/css/preview.css">'
