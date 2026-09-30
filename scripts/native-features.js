@@ -1,0 +1,32 @@
+'use strict';
+
+// Render-time approval only: imported Markdown (including held article 237) stays untouched.
+const { join } = require('node:path');
+const importedIds = new Set(require(join(hexo.base_dir, 'migration/manifest.json')).posts.map(post => post.legacy_id));
+
+hexo.extend.filter.register('before_post_render', data => {
+  if (hexo.config.imported_post_comments === true && data.layout === 'post' && importedIds.has(data.legacy_id)) {
+    data.comments = true;
+  }
+  return data;
+});
+
+// searchdb 1.5 concatenates root + article.path. Imported explicit permalinks
+// already begin with '/', which otherwise produces protocol-relative //index.php URLs.
+// Normalize a generator-only projection; never change Hexo posts or their source.
+const searchGenerator = require('hexo-generator-searchdb/lib/xml_generator');
+hexo.extend.generator.register('xml', function (locals) {
+  const project = articles => articles.map(article => ({
+    title: article.title,
+    path: article.path.replace(/^\/+/, ''),
+    content: article.content,
+    _content: article._content,
+    categories: article.categories,
+    tags: article.tags
+  }));
+  return searchGenerator.call(this, {
+    ...locals,
+    posts: project(locals.posts),
+    pages: project(locals.pages)
+  });
+});

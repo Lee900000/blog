@@ -2,6 +2,39 @@
 menu:
   首页: / || fas fa-home
   归档: /archives/ || fas fa-archive
+  标签: /tags/ || fas fa-tags
+  友链: /link/ || fas fa-link
+  AI 落地介绍: /ai/ || fas fa-robot
+  关于: /about/ || fas fa-user
+
+search:
+  use: local_search
+  placeholder: 搜索文章
+  local_search:
+    preload: false
+    top_n_per_article: 1
+    unescape: false
+    pagination:
+      enable: true
+      hitsPerPage: 8
+
+avatar:
+  img: /assets/profile/leon-avatar.png
+  effect: false
+favicon: /assets/profile/leon-avatar.png
+
+subtitle:
+  enable: true
+  effect: true
+  source: false
+  typed_option:
+    typeSpeed: 65
+    startDelay: 400
+    loop: false
+    showCursor: true
+    contentType: html
+  sub:
+    - '如果说我看得比别人更远些，那是因为我站在巨人的肩膀上。<br>而这个博客，就是我的巨人！'
 
 disable_top_img: false
 # Official demo's photograph (not the promotional device mockup).
@@ -23,10 +56,61 @@ aside:
     button:
       enable: false
   card_announcement:
-    enable: false
+    enable: true
+    content: 记录技术实践，分享学习与思考。
+  card_newest_comments:
+    enable: true
+    limit: 6
+    storage: 0
+    avatar: true
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+    # Earliest migrated publication: 2015-07-01 (manifest metadata).
+    runtime_date: '2015/07/01 00:00:00'
 
 footer:
-  custom_text: 全量迁移本地预览 · 不含评论与生产部署
+  owner:
+    enable: true
+    since: 2015
+  custom_text: 本地预览 · 访问量统计未接入
+
+busuanzi:
+  site_uv: false
+  site_pv: false
+  page_pv: false
+
+canvas_ribbon:
+  enable: true
+  size: 150
+  alpha: 0.6
+  zIndex: -1
+  click_to_change: false
+  mobile: false
+
+# LOCAL PREVIEW ONLY. Replace the backend before any production build/deploy.
+comments:
+  use: Twikoo
+  text: true
+  lazyload: false
+  count: true
+  card_post_count: false
+
+twikoo:
+  envId: http://127.0.0.1:8089/
+  region:
+  visitor: false
+  option:
+    lang: zh-CN
+
+CDN:
+  option:
+    twikoo: /assets/vendor/twikoo-1.7.24.all.min.js
+
+inject:
+  head:
+    - '<link rel="stylesheet" href="/css/leon.css?v=2">'
 
 mermaid:
   enable: true

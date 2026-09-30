@@ -1,0 +1,25 @@
+# Source: https://www.ikarp.top/index.php/links.html (article content only).
+# Old page uses letter avatars; native theme fallback is not a claimed site logo.
+- class_name: 友情链接
+  class_desc: 连接未知的孤岛。
+  link_list:
+    - name: 张戈
+      link: https://zhangge.net/about.html
+      avatar: /img/friend_404.gif
+      descr: zhangge.net
+    - name: 运维派
+      link: http://www.yunweipai.com/category/tiku
+      avatar: /img/friend_404.gif
+      descr: yunweipai.com
+    - name: KoMiles
+      link: http://www.cnblogs.com/wangkongming/
+      avatar: /img/friend_404.gif
+      descr: cnblogs.com
+    - name: 苏洋博客
+      link: https://soulteary.com/
+      avatar: /img/friend_404.gif
+      descr: soulteary.com
+    - name: KimYx
+      link: https://www.aiking.dev/blog
+      avatar: /img/friend_404.gif
+      descr: aiking.dev

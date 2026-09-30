@@ -1,0 +1,13 @@
+{
+  "name": "ikarp-blog-twikoo-local",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Loopback-only Twikoo backend for local blog preview",
+  "scripts": {
+    "start": "node start.cjs",
+    "test": "node --test test/*.test.cjs",
+    "test:smoke": "node test/smoke.cjs"
+  },
+  "engines": { "node": ">=22" },
+  "dependencies": { "tkserver": "1.7.24" }
+}

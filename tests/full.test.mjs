@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {extractPost,IDS} from '../migration/extractor.mjs';
+import {marked} from 'marked';
+import {load} from 'cheerio';
+const page=body=>`<article><h1>Fixture</h1><time datetime="2020-01-01T12:00:00+09:00"></time><div class="prose">${body}</div></article>`;
+test('all discovered IDs and both legacy hostnames rewrite',()=>{assert.equal(IDS.length,867);for(const host of ['www.ikarp.top','ikarp.top'])assert.match(extractPost(page(`<a href="https://${host}/index.php/archives/20.html#x">old</a>`),1).body,/\]\(\/index.php\/archives\/20.html#x\)/);});
+test('reject missing fields and password-protected content',()=>{assert.throws(()=>extractPost('<article><h1>X</h1></article>',1));assert.throws(()=>extractPost(page('<form><input type="password"></form>'),1),/protected/i);});
+test('safe embedded raster images survive without network asset discovery',()=>{const data='data:image/png;base64,iVBORw0KGgo=';const p=extractPost(page(`<img src="${data}">`),1);assert.match(p.body,/data:image\/png;base64/);assert.equal(p.counts.images,1);assert.deepEqual(p.images,[]);});
+test('literal pipe prose does not turn into invented Markdown tables',()=>{const p=extractPost(page(`<p>| a | b |<br>|---|---|<br>| x | y |</p>`),1);assert.equal(load(marked.parse(p.body))('table').length,0);});
+test('table HTML preserves blank cells and repeated literal spaces',()=>{const p=extractPost(page('<table><tr><td> </td><td>x   y</td></tr></table>'),1);assert.match(p.body,/<td> <\/td>/);assert.match(p.body,/x   y/);});
+test('old code fences, inline html, merged table cells remain exact',()=>{const p=extractPost(page('<pre>```\n&lt;div&gt; &amp; x\n```</pre><table><tr><td colspan="2">a<br>b &amp; c</td></tr></table>'),1);assert.match(p.body,/````\n```\n<div> & x\n```\n````/);assert.match(p.body,/colspan="2"/);assert.equal(p.code[0],'```\n<div> & x\n```');});

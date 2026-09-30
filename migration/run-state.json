@@ -1,0 +1,17 @@
+{
+  "phase": "complete",
+  "last_process_handle": "proc_9df927863fdb",
+  "last_pid": 48112,
+  "running": false,
+  "expected_articles": 867,
+  "migrated_articles": 867,
+  "verified_articles": 867,
+  "localized_assets": 335,
+  "asset_exceptions": 64,
+  "build_exit_code": 0,
+  "verify_exit_code": 0,
+  "test_exit_code": 0,
+  "post_extraction_refresh": "All 867 bodies re-extracted from cached public pages after table-preservation fixes; no network requests; final localized-image frontmatter retained.",
+  "publication_hold": {"legacy_id":237,"status":"pending-manual-key-review"},
+  "report": "migration/report.json"
+}

@@ -7,3 +7,5 @@ db.json
 *.log
 .DS_Store
 raw/
+migration/cache/
+migration/checkpoints/
