@@ -1,6 +1,2 @@
 url: https://leon-book.github.io/blog
 root: /blog/
-theme_config:
-  inject:
-    head:
-      - '<link rel="stylesheet" href="/blog/css/leon.css?v=2">'

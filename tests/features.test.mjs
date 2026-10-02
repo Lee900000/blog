@@ -20,12 +20,46 @@ test('published site exposes the current Leon identity and repository guide', ()
   assert.ok(about.includes('src="../assets/profile/leon-avatar.png"'));
 
   const pages = YAML.parse(read('_config.leon-book-pages.yml'));
-  assert.ok(pages.theme_config.inject.head.includes('<link rel="stylesheet" href="/blog/css/leon.css?v=2">'));
+  assert.equal(site.theme_config, undefined);
+  assert.equal(pages.theme_config, undefined);
+  assert.ok(!(theme().inject?.head ?? []).some(item => item.includes('leon.css')));
 
   assert.ok(existsSync(new URL('../source/README.md', import.meta.url)));
   const deploymentReadme = read('source/README.md');
   assert.ok(deploymentReadme.includes('# Leon Blog'));
   assert.ok(deploymentReadme.includes('https://leon-book.github.io/blog/'));
+});
+
+test('custom stylesheet follows the configured root without duplicate links', () => {
+  const scriptPath = new URL('../scripts/native-features.js', import.meta.url);
+  let beforeGenerate;
+  const hexo = {
+    base_dir: new URL('../', import.meta.url).pathname,
+    config: {root: '/blog/', imported_post_comments: false},
+    theme: {config: {inject: {head: [
+      '<meta name="example" content="kept">',
+      '<link rel="stylesheet" href="/css/leon.css?v=2">'
+    ]}}},
+    extend: {
+      filter: {register: (event, fn) => { if (event === 'before_generate') beforeGenerate = fn; }},
+      generator: {register: () => {}}
+    }
+  };
+
+  vm.runInNewContext(read('scripts/native-features.js'), {hexo, require: createRequire(scriptPath)});
+  assert.equal(typeof beforeGenerate, 'function');
+  beforeGenerate();
+  assert.deepEqual(JSON.parse(JSON.stringify(hexo.theme.config.inject.head)), [
+    '<meta name="example" content="kept">',
+    '<link rel="stylesheet" href="/blog/css/leon.css?v=2">'
+  ]);
+
+  hexo.config.root = '/';
+  beforeGenerate();
+  assert.deepEqual(JSON.parse(JSON.stringify(hexo.theme.config.inject.head)), [
+    '<meta name="example" content="kept">',
+    '<link rel="stylesheet" href="/css/leon.css?v=2">'
+  ]);
 });
 
 test('navigation exposes native archive and taxonomy pages', () => {
