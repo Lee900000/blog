@@ -1,7 +1,9 @@
 <!-- [skill: go-team-standards · 迁移运维] 公开 Typecho 全量迁移与本地验收操作。 -->
-# ikarp-blog-web
+# Leon Blog
 
 Public Typecho articles migrated to Hexo with the native Butterfly theme. Scope is public articles only; comments and independent pages are not migrated. No database, credentials, private pages, or production write operations are used.
+
+The published site is [https://leon-book.github.io/blog/](https://leon-book.github.io/blog/) and is maintained through the `leon-book` GitHub account. This repository remains the source and migration evidence for Leon Blog.
 
 The local theme hero `source/assets/theme/butterfly-teal-smoke.jpg` follows the official `jerryc127/butterfly.js.org` `_config.butterfly.yml` source, which references <https://oss.012700.xyz/butterfly/2024/10/index.jpg>. It is a theme default, not an invented illustration attributed to an article.
 

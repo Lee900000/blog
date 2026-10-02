@@ -1,6 +1,6 @@
 ---
 title: 关于
-description: 关于 leon：技术、业务与产品实践。
+description: 关于 Leon：技术、业务与产品实践。
 source_url: https://www.ikarp.top/index.php/about.html
 comments: false
 toc: true
@@ -8,7 +8,7 @@ disableNunjucks: true
 ---
 <!-- [skill: go-team-standards · 独立页面迁移] 沿用旧站正文，更新本站展示身份。 -->
 
-<div class="leon-profile"><img src="/assets/profile/leon-avatar.png" alt="leon" width="140" height="153"><div><strong>leon</strong><span>技术 · 产品 · AI 实践</span></div></div>
+<div class="leon-profile"><img src="/assets/profile/leon-avatar.png" alt="Leon" width="140" height="153"><div><strong>Leon</strong><span>技术 · 产品 · AI 实践</span></div></div>
 
 # 关于我
 
@@ -21,7 +21,7 @@ disableNunjucks: true
 > 如果说我看得比别人更远些，那是因为我站在巨人的肩膀上。  
 > 而这个博客，就是我的巨人！
 
-你好，我是 leon —— 一个懂技术、更懂业务，正在从工程走向产品的人。
+你好，我是 Leon —— 一个懂技术、更懂业务，正在从工程走向产品的人。
 
 ## 我做过什么
 
@@ -52,6 +52,6 @@ disableNunjucks: true
 ## 联系我
 
 *   邮箱：[axon90000@gmail.com](mailto:axon90000@gmail.com)
-*   GitHub：[github.com/kary2999](https://github.com/kary2999)
+*   GitHub：[github.com/leon-book](https://github.com/leon-book)
 
 > 站在巨人的肩膀上，持续学习。

@@ -9,6 +9,21 @@ const read = path => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8'
 const config = () => YAML.parse(read('_config.yml'));
 const theme = () => YAML.parse(read('_config.butterfly.yml'));
 
+test('published site exposes the current Leon identity and repository guide', () => {
+  const site = config();
+  assert.equal(site.title, 'Leon');
+  assert.equal(site.author, 'Leon');
+  assert.ok(site.skip_render.includes('README.md'));
+
+  const about = read('source/about/index.md');
+  assert.ok(about.includes('https://github.com/leon-book'));
+
+  assert.ok(existsSync(new URL('../source/README.md', import.meta.url)));
+  const deploymentReadme = read('source/README.md');
+  assert.ok(deploymentReadme.includes('# Leon Blog'));
+  assert.ok(deploymentReadme.includes('https://leon-book.github.io/blog/'));
+});
+
 test('navigation exposes native archive and taxonomy pages', () => {
   for (const [name, route, type] of [['标签','tags','tags'], ['分类','categories','categories']]) {
     assert.ok(theme().menu[name]?.startsWith(`/${route}/`));
