@@ -6,6 +6,7 @@
     "test": "node --test tests/*.test.mjs",
     "migrate": "node migration/migrate.mjs",
     "build": "hexo clean && hexo generate",
+    "build:leon-root": "hexo clean && hexo generate --config _config.yml,_config.leon-root-pages.yml",
     "verify": "node migration/verify.mjs",
     "verify:features": "node --test tests/features-built.mjs",
     "server": "hexo server"
