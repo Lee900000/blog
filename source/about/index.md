@@ -8,7 +8,7 @@ disableNunjucks: true
 ---
 <!-- [skill: go-team-standards · 独立页面迁移] 沿用旧站正文，更新本站展示身份。 -->
 
-<div class="leon-profile"><img src="/assets/profile/leon-avatar.png" alt="Leon" width="140" height="153"><div><strong>Leon</strong><span>技术 · 产品 · AI 实践</span></div></div>
+<div class="leon-profile"><img src="../assets/profile/leon-avatar.png" alt="Leon" width="140" height="153"><div><strong>Leon</strong><span>技术 · 产品 · AI 实践</span></div></div>
 
 # 关于我
 
