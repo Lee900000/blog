@@ -108,10 +108,6 @@ CDN:
   option:
     twikoo: /assets/vendor/twikoo-1.7.24.all.min.js
 
-inject:
-  head:
-    - '<link rel="stylesheet" href="/css/leon.css?v=2">'
-
 mermaid:
   enable: true
   code_write: true
