@@ -30,17 +30,17 @@
 ### Task 1: Generate the four-cover visual series
 
 **Files:**
-- Create: `source/assets/market-series/nvda.webp`
-- Create: `source/assets/market-series/commodities.webp`
-- Create: `source/assets/market-series/fx.webp`
-- Create: `source/assets/market-series/index.webp`
+- Create: `source/assets/market-series/nvda.jpg`
+- Create: `source/assets/market-series/commodities.jpg`
+- Create: `source/assets/market-series/fx.jpg`
+- Create: `source/assets/market-series/index.jpg`
 
 **Interfaces:**
 - Produces: four equal-dimension, text-light cover images consumed by post frontmatter.
 
 - [ ] Generate a cohesive black, warm-gold, and ivory editorial-finance cover set with distinct subject symbols for NVIDIA, commodities, FX, and indices.
 - [ ] Inspect all four images for unwanted text, logos, distorted objects, and weak crop composition.
-- [ ] Normalize the files to the same web-ready dimensions and WebP format.
+- [ ] Normalize the files to the same web-ready dimensions and compressed JPEG format.
 
 ### Task 2: Protect homepage-card behavior with tests
 

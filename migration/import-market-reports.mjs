@@ -4,9 +4,33 @@ import { fileURLToPath } from 'node:url';
 import { load } from 'cheerio';
 
 const REPORTS = [
-  { id: 885, slug: 'commodities', title: '币安大宗商品玩法拆解', date: '2026-10-03 00:30:00', tags: ['大宗商品', '币安'] },
-  { id: 886, slug: 'fx', title: '币安外汇玩法拆解', date: '2026-10-03 08:30:00', tags: ['外汇', '币安'] },
-  { id: 887, slug: 'index', title: '币安指数玩法拆解', date: '2026-10-03 16:30:00', tags: ['指数', '币安'] }
+  {
+    id: 885,
+    slug: 'commodities',
+    title: '币安大宗商品玩法拆解',
+    date: '2026-10-03 00:30:00',
+    tags: ['大宗商品', '币安'],
+    cover: '/assets/market-series/commodities.jpg',
+    description: '盘点币安黄金、白银、原油、铜等大宗商品永续与期权，分析指数来源、流动性、休市定价和主要风险。'
+  },
+  {
+    id: 886,
+    slug: 'fx',
+    title: '币安外汇玩法拆解',
+    date: '2026-10-03 08:30:00',
+    tags: ['外汇', '币安'],
+    cover: '/assets/market-series/fx.jpg',
+    description: '梳理币安外汇永续与法币现货，说明指数构成、USDT 影响、流动性差异、资金费率和产品边界。'
+  },
+  {
+    id: 887,
+    slug: 'index',
+    title: '币安指数玩法拆解',
+    date: '2026-10-03 16:30:00',
+    tags: ['指数', '币安'],
+    cover: '/assets/market-series/index.jpg',
+    description: '梳理币安股票指数、ETF 永续、主题指数与相关代币化产品，分析定价来源、成分结构、流动性和风险。'
+  }
 ];
 
 const SERIES_ROUTES = new Map([
@@ -27,7 +51,7 @@ const STYLE = `<style>
 </style>`;
 
 function frontmatter(report) {
-  return `---\ntitle: ${report.title}\ndate: ${report.date}\nlegacy_id: ${report.id}\npermalink: index.php/archives/${report.id}.html\ncategories:\n  - - 金融科技\ntags:\n${report.tags.map(tag => `  - ${tag}`).join('\n')}\nsource_date: 2026-10-03T00:10:00+09:00\nupdated: ${report.date}\ndisableNunjucks: true\ncomments: false\n---\n`;
+  return `---\ntitle: ${report.title}\ndate: ${report.date}\nlegacy_id: ${report.id}\npermalink: index.php/archives/${report.id}.html\ncover: ${report.cover}\ndescription: ${report.description}\npostDesc: ${report.description}\ncategories:\n  - - 金融科技\ntags:\n${report.tags.map(tag => `  - ${tag}`).join('\n')}\nsource_date: 2026-10-03T00:10:00+09:00\nupdated: ${report.date}\ndisableNunjucks: true\ncomments: false\n---\n`;
 }
 
 export async function importMarketReports({ sourceDir, postsDir }) {
