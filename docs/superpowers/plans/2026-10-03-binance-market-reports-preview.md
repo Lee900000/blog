@@ -31,7 +31,7 @@
 ### Task 1: Deterministic report importer
 
 **Files:**
-- Create: `scripts/import-market-reports.mjs`
+- Create: `migration/import-market-reports.mjs`
 - Create: `tests/market-reports.test.mjs`
 - Create: `source/_posts/885.md`
 - Create: `source/_posts/886.md`
@@ -49,7 +49,7 @@ Create tests that call `importMarketReports` in a temporary posts directory and 
 
 Run: `node --test tests/market-reports.test.mjs`
 
-Expected: FAIL because `scripts/import-market-reports.mjs` does not exist.
+Expected: FAIL because `migration/import-market-reports.mjs` does not exist.
 
 - [ ] **Step 3: Implement the minimal importer**
 
@@ -60,7 +60,7 @@ Use Cheerio to extract `<main>`, remove its direct `<h1>`, add `target="_blank" 
 Run:
 
 ```bash
-node scripts/import-market-reports.mjs
+node migration/import-market-reports.mjs
 node --test tests/market-reports.test.mjs
 ```
 
@@ -69,7 +69,7 @@ Expected: three posts written; all focused tests pass.
 - [ ] **Step 5: Commit locally**
 
 ```bash
-git add scripts/import-market-reports.mjs tests/market-reports.test.mjs source/_posts/885.md source/_posts/886.md source/_posts/887.md
+git add migration/import-market-reports.mjs tests/market-reports.test.mjs source/_posts/885.md source/_posts/886.md source/_posts/887.md
 git commit -m "feat(blog): import Binance market research series"
 ```
 
