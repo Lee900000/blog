@@ -70,6 +70,13 @@ test('navigation exposes native archive and taxonomy pages', () => {
   assert.ok(theme().menu['归档'].startsWith('/archives/'));
 });
 
+test('AI practice uses the concise title in navigation and page metadata', () => {
+  assert.ok(theme().menu['AI实践']?.startsWith('/ai/'));
+  assert.equal(theme().menu['AI 落地介绍'], undefined);
+  const page = YAML.parse(read('source/ai/index.md').split('---')[1]);
+  assert.equal(page.title, 'AI实践');
+});
+
 test('shuoshuo is a native empty page, not invented dated content', () => {
   assert.ok(theme().menu['说说']?.startsWith('/shuoshuo/'));
   const page = YAML.parse(read('source/shuoshuo/index.md').split('---')[1]);

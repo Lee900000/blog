@@ -13,7 +13,7 @@ async function fetchResource(url){
  if(!response.ok)throw new Error(`HTTP ${response.status}`);
  return response;
 }
-for(const [slug,title] of [['ai','AI 落地介绍'],['about','关于']]){
+for(const [slug,title] of [['ai','AI实践'],['about','关于']]){
  const sourceURL=`${origin}/index.php/${slug}.html`;
  const $=load(await (await fetchResource(sourceURL)).text());
  const content=$('article .prose').first();

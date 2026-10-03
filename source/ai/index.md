@@ -1,5 +1,5 @@
 ---
-title: AI 落地介绍
+title: AI实践
 description: AI 落地与开源作品：开发工具、桌面应用与实践记录。
 source_url: https://www.ikarp.top/index.php/ai.html
 comments: false
