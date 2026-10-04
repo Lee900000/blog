@@ -12,7 +12,7 @@ test('article 888 preserves the final aggregate report as a scoped blog post', a
   assert.match(post, /^title: 币安衍生品与 TradFi 业务全景$/m);
   assert.match(post, /^legacy_id: 888$/m);
   assert.match(post, /^permalink: index\.php\/archives\/888\.html$/m);
-  assert.match(post, /^date: 2026-10-03 21:00:00$/m);
+  assert.match(post, /^date: 2026-10-04 12:00:00$/m);
   assert.match(post, /^cover: \/assets\/market-series\/binance-overview\.svg$/m);
   assert.match(post, /^description: .+$/m);
   assert.match(post, /^postDesc: .+$/m);
