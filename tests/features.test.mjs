@@ -5,6 +5,7 @@ import YAML from 'yaml';
 import vm from 'node:vm';
 import { createRequire } from 'node:module';
 import { existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 const read = path => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8');
 const config = () => YAML.parse(read('_config.yml'));
 const theme = () => YAML.parse(read('_config.butterfly.yml'));
@@ -34,7 +35,7 @@ test('custom stylesheet follows the configured root without duplicate links', ()
   const scriptPath = new URL('../scripts/native-features.js', import.meta.url);
   let beforeGenerate;
   const hexo = {
-    base_dir: new URL('../', import.meta.url).pathname,
+    base_dir: fileURLToPath(new URL('../', import.meta.url)),
     config: {root: '/blog/', imported_post_comments: false},
     theme: {config: {inject: {head: [
       '<meta name="example" content="kept">',
@@ -62,11 +63,11 @@ test('custom stylesheet follows the configured root without duplicate links', ()
   ]);
 });
 
-test('navigation exposes native archive and taxonomy pages', () => {
-  for (const [name, route, type] of [['标签','tags','tags'], ['分类','categories','categories']]) {
-    assert.ok(theme().menu[name]?.startsWith(`/${route}/`));
-    assert.equal(YAML.parse(read(`source/${route}/index.md`).split('---')[1]).type, type);
-  }
+test('navigation exposes the selected native archive and taxonomy pages', () => {
+  assert.ok(theme().menu['标签']?.startsWith('/tags/'));
+  assert.equal(YAML.parse(read('source/tags/index.md').split('---')[1]).type, 'tags');
+  assert.equal(YAML.parse(read('source/categories/index.md').split('---')[1]).type, 'categories');
+  assert.equal(theme().menu['分类'], undefined);
   assert.ok(theme().menu['归档'].startsWith('/archives/'));
 });
 
@@ -77,8 +78,8 @@ test('AI practice uses the concise title in navigation and page metadata', () =>
   assert.equal(page.title, 'AI实践');
 });
 
-test('shuoshuo is a native empty page, not invented dated content', () => {
-  assert.ok(theme().menu['说说']?.startsWith('/shuoshuo/'));
+test('shuoshuo remains an unlisted native empty page, not invented dated content', () => {
+  assert.equal(theme().menu['说说'], undefined);
   const page = YAML.parse(read('source/shuoshuo/index.md').split('---')[1]);
   assert.equal(page.type, 'shuoshuo');
   assert.ok(page.title.includes('暂无内容'));
@@ -125,7 +126,7 @@ test('imported comments opt-in changes rendering only and respects scope and swi
   assert.ok(existsSync(scriptPath), 'render-time comment hook must exist');
   let filter;
   const hexo = {
-    base_dir: new URL('../', import.meta.url).pathname,
+    base_dir: fileURLToPath(new URL('../', import.meta.url)),
     config: {imported_post_comments: true},
     extend: {filter: {register: (event, fn) => { if (event === 'before_post_render') filter = fn; }}, generator: {register: () => {}}}
   };
