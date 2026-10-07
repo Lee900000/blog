@@ -14,7 +14,8 @@ archive_dir: archives
 category_dir: categories
 skip_render:
   - README.md
-  - arbitrage/**
+  - arbitrage/*.html
+  - arbitrage/assets/**
 new_post_name: :title.md
 default_layout: post
 external_link:

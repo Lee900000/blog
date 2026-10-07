@@ -13,21 +13,23 @@ test('Leon navigation exposes the self-contained arbitrage collection', () => {
   const menu = YAML.parse(read('_config.butterfly.yml')).menu;
   assert.match(menu['量化套利'], /^\/arbitrage\/ /);
   const skip = YAML.parse(read('_config.yml')).skip_render;
-  assert.ok(skip.includes('arbitrage/**'));
-  assert.ok(existsSync(join(root, suite, 'index.html')));
+  assert.ok(skip.includes('arbitrage/*.html'));
+  assert.ok(!skip.includes('arbitrage/**'));
+  assert.ok(existsSync(join(root, suite, 'index.md')));
   assert.ok(existsSync(join(root, suite, 'assets/common.css')));
 });
 
-test('nine calculators and the analysis checklist retain their local links', () => {
-  const index = read(`${suite}/index.html`);
+test('ten calculators and the analysis checklist retain their local links', () => {
+  const index = read(`${suite}/index.md`);
   const targets = [...index.matchAll(/data-src="([^"]+\.html)"/g)].map(match => match[1]);
-  assert.equal(targets.length, 10);
-  assert.equal(new Set(targets).size, 10);
+  assert.equal(targets.length, 11);
+  assert.equal(new Set(targets).size, 11);
   for (const target of targets) {
     assert.ok(existsSync(join(root, suite, target)), target);
     const page = read(`${suite}/${target}`);
+    assert.match(page, /assets\/common\.css/);
+    assert.match(page, /assets\/theme-shell\.js/);
     if (/^\d\d-/.test(target)) {
-      assert.match(page, /assets\/common\.css/);
       assert.match(page, /class="formula"/);
       assert.match(page, /<script>/);
     }
@@ -35,15 +37,38 @@ test('nine calculators and the analysis checklist retain their local links', () 
 });
 
 test('mobile index keeps the strategy list bounded so the demo stays reachable', () => {
-  const index = read(`${suite}/index.html`);
-  assert.match(index, /aside\{[^}]*max-height:40vh;[^}]*overflow-y:auto/);
+  const index = read('source/css/arbitrage.css');
+  assert.match(index, /\.strategy-nav\{[^}]*max-height:40vh/);
+  assert.match(index, /\.strategy-nav\{[^}]*overflow:auto/);
 });
 
-test('arbitrage pages use opaque neutral backgrounds for maximum readability', () => {
-  const index = read(`${suite}/index.html`);
+test('collection index is rendered by Butterfly and keeps the framed reading pane', () => {
+  const index = read(`${suite}/index.md`);
+  assert.match(index, /layout:\s*page/);
+  assert.match(index, /aside:\s*false/);
+  assert.match(index, /top_img:\s*false/);
+  assert.doesNotMatch(index, /class="site-nav"/);
+  assert.match(index, /class="viewer-shell"/);
+  const theme = read('_config.butterfly.yml');
+  assert.match(theme, /css\/arbitrage\.css/);
+  assert.match(theme, /js\/arbitrage\.js/);
+});
+
+test('standalone calculator pages use the Leon Blog shell without sidebar widgets', () => {
   const common = read(`${suite}/assets/common.css`);
-  assert.doesNotMatch(index, /butterfly-teal-smoke\.jpg|backdrop-filter/);
-  assert.match(index, /--bg:#f6f8fb; --card:#ffffff/);
-  assert.doesNotMatch(common, /butterfly-teal-smoke\.jpg|backdrop-filter/);
-  assert.match(common, /--bg:#f6f8fb; --card:#ffffff/);
+  const shell = read(`${suite}/assets/theme-shell.js`);
+
+  assert.doesNotMatch(common, /butterfly-teal-smoke\.jpg/);
+  assert.match(common, /\.arbitrage-site-nav/);
+  assert.match(common, /body\.is-embedded/);
+  assert.match(common, /body\.is-embedded \.wrap\{[^}]*background:var\(--card\)[^}]*box-shadow:var\(--shadow\)/);
+  assert.match(common, /body\.is-embedded\{[^}]*background:transparent/);
+  assert.match(shell, /window\.self\s*!==\s*window\.top/);
+  assert.match(shell, /canvas-ribbon\.min\.js/);
+  assert.match(shell, /ribbon\.setAttribute\('size', '150'\)/);
+  assert.match(shell, /ribbon\.setAttribute\('alpha', '0\.6'\)/);
+  for (const path of ['/', '/archives/', '/tags/', '/link/', '/ai/', '/arbitrage/', '/about/']) {
+    assert.ok(shell.includes(path), path);
+  }
+  assert.doesNotMatch(shell, /aside-content|card-author|card-announcement|card-toc|card-recent-post/);
 });

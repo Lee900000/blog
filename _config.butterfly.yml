@@ -114,3 +114,9 @@ mermaid:
   code_write: true
   zoom_pan: false
   open_in_new_tab: false
+
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/arbitrage.css">
+  bottom:
+    - <script defer src="/js/arbitrage.js"></script>
