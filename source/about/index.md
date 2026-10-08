@@ -52,6 +52,6 @@ disableNunjucks: true
 ## 联系我
 
 *   邮箱：[axon90000@gmail.com](mailto:axon90000@gmail.com)
-*   GitHub：[github.com/leon-book](https://github.com/leon-book)
+*   GitHub：[github.com/kary2999](https://github.com/kary2999)
 
 > 站在巨人的肩膀上，持续学习。

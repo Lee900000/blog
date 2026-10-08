@@ -17,7 +17,7 @@ test('published site exposes the current Leon identity and repository guide', ()
   assert.ok(site.skip_render.includes('README.md'));
 
   const about = read('source/about/index.md');
-  assert.ok(about.includes('https://github.com/leon-book'));
+  assert.ok(about.includes('https://github.com/kary2999'));
   assert.ok(about.includes('src="../assets/profile/leon-avatar.png"'));
 
   const pages = YAML.parse(read('_config.leon-book-pages.yml'));
