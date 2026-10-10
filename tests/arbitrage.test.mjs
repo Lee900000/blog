@@ -67,7 +67,7 @@ test('standalone calculator pages use the Leon Blog shell without sidebar widget
   assert.match(shell, /canvas-ribbon\.min\.js/);
   assert.match(shell, /ribbon\.setAttribute\('size', '150'\)/);
   assert.match(shell, /ribbon\.setAttribute\('alpha', '0\.6'\)/);
-  for (const path of ['/', '/archives/', '/tags/', '/link/', '/ai/', '/arbitrage/', '/about/']) {
+  for (const path of ['/', '/archives/', '/tags/', '/link/', '/works/', '/arbitrage/', '/about/']) {
     assert.ok(shell.includes(path), path);
   }
   assert.doesNotMatch(shell, /aside-content|card-author|card-announcement|card-toc|card-recent-post/);

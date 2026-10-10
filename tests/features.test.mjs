@@ -72,10 +72,10 @@ test('navigation exposes the selected native archive and taxonomy pages', () => 
 });
 
 test('AI practice uses the concise title in navigation and page metadata', () => {
-  assert.ok(theme().menu['AI实践']?.startsWith('/ai/'));
+  assert.equal(theme().menu['AI实践'], undefined);
   assert.equal(theme().menu['AI 落地介绍'], undefined);
   const page = YAML.parse(read('source/ai/index.md').split('---')[1]);
-  assert.equal(page.title, 'AI实践');
+  assert.equal(page.title, '作品内容已迁移');
 });
 
 test('shuoshuo remains an unlisted native empty page, not invented dated content', () => {
