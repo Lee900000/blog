@@ -1,3 +1,5 @@
+import { createRequire as routeRequire } from 'node:module';
+const articleRoutes = routeRequire(import.meta.url)('../article-routes.json');
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
@@ -29,7 +31,7 @@ const cards = [
 
 test('market series homepage cards use covers and human summaries instead of article CSS', () => {
   for (const expected of cards) {
-    const title = $(`a.article-title[href="/index.php/archives/${expected.id}.html"]`).first();
+    const title = $(`a.article-title[href="/${articleRoutes[expected.id]}"]`).first();
     assert.equal(title.length, 1, `card ${expected.id} exists`);
     const card = title.closest('.recent-post-item');
     assert.equal(card.find(`img[src="${expected.cover}"]`).length, 1, `card ${expected.id} cover`);

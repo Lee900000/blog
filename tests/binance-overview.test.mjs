@@ -1,9 +1,11 @@
+import { createRequire as routeRequire } from 'node:module';
+const articleRoutes = routeRequire(import.meta.url)('../article-routes.json');
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 
 const postPath = new URL('../source/_posts/888.md', import.meta.url);
-const generatedArticlePath = new URL('../public/index.php/archives/888.html', import.meta.url);
+const generatedArticlePath = new URL(`../public/${articleRoutes[888]}`, import.meta.url);
 const generatedHomePath = new URL('../public/index.html', import.meta.url);
 
 test('article 888 preserves the final aggregate report as a scoped blog post', async () => {
@@ -11,7 +13,7 @@ test('article 888 preserves the final aggregate report as a scoped blog post', a
 
   assert.match(post, /^title: 币安衍生品与 TradFi 业务全景$/m);
   assert.match(post, /^legacy_id: 888$/m);
-  assert.match(post, /^permalink: index\.php\/archives\/888\.html$/m);
+  assert.ok(post.includes('permalink: ' + articleRoutes[888]));
   assert.match(post, /^date: 2026-10-04 12:00:00$/m);
   assert.match(post, /^cover: \/assets\/market-series\/binance-overview\.svg$/m);
   assert.match(post, /^description: .+$/m);
@@ -26,7 +28,7 @@ test('article 888 preserves the final aggregate report as a scoped blog post', a
   assert.equal(externalLinks.length, 18, 'all 18 external sources from the final report must remain linked');
 
   for (const id of [884, 885, 886, 887]) {
-    assert.match(post, new RegExp(`/index\\.php/archives/${id}\\.html`));
+    assert.match(post, new RegExp(articleRoutes[id]));
   }
 
   assert.doesNotMatch(post, /(^|[}\s])body\s*\{/m);
@@ -45,7 +47,7 @@ test('generated site exposes article 888 and a clean homepage card', async () =>
   assert.match(article, /<table/);
   assert.match(article, /binance-docs\.github\.io\/Brokerage-API/);
   for (const id of [884, 885, 886, 887]) {
-    assert.match(article, new RegExp(`index\\.php/archives/${id}\\.html`));
+    assert.match(article, new RegExp(articleRoutes[id]));
   }
 
   assert.match(home, /assets\/market-series\/binance-overview\.svg/);

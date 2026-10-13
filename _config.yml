@@ -6,7 +6,7 @@ language: zh-CN
 timezone: Asia/Tokyo
 url: http://localhost:4000
 root: /
-permalink: index.php/archives/:legacy_id.html
+permalink: archives/:slug.html
 source_dir: source
 public_dir: public
 tag_dir: tags

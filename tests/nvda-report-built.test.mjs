@@ -1,9 +1,11 @@
+import { createRequire as routeRequire } from 'node:module';
+const articleRoutes = routeRequire(import.meta.url)('../article-routes.json');
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { load } from 'cheerio';
 
-const html = readFileSync(new URL('../public/index.php/archives/884.html', import.meta.url), 'utf8');
+const html = readFileSync(new URL(`../public/${articleRoutes[884]}`, import.meta.url), 'utf8');
 const $ = load(html);
 const report = $('.nvda-report');
 

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "routes:prepare": "node tools/article-routes.cjs",
     "test": "node --test tests/*.test.mjs",
     "migrate": "node migration/migrate.mjs",
     "build": "hexo clean && hexo generate",

@@ -5,6 +5,7 @@ import { tmpdir } from 'node:os'
 import { join, relative, resolve } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { spawnSync } from 'node:child_process'
+import { verifyArticleRoutes } from './verify-article-routes.mjs'
 
 export const EXPECTED_ACCOUNT = 'leon-book'
 export const PUBLISH_REPOSITORY = 'https://github.com/leon-book/leon-book.github.io.git'
@@ -73,6 +74,7 @@ async function main() {
     throw new Error('Generated public/index.html is missing')
   }
   assertSensitivePagesExcluded(listFiles(publicDirectory))
+  verifyArticleRoutes(workspace)
 
   const temporaryRoot = await mkdtemp(join(tmpdir(), 'leon-blog-publish-'))
   const checkout = join(temporaryRoot, 'site')

@@ -1,3 +1,5 @@
+import { createRequire as routeRequire } from 'node:module';
+const articleRoutes = routeRequire(import.meta.url)('../article-routes.json');
 import assert from 'node:assert/strict';
 import { mkdtemp, readFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -56,9 +58,9 @@ test('local blog build lists and renders all three reports without leaking repor
   const homepage = load(await readFile(new URL('public/index.html', root), 'utf8'));
 
   for (const item of cases) {
-    const route = `/index.php/archives/${item.id}.html`;
+    const route = `/${articleRoutes[item.id]}`;
     assert.ok(homepage(`a[href="${route}"]`).length > 0, `homepage links to ${item.id}`);
-    const page = load(await readFile(new URL(`public/index.php/archives/${item.id}.html`, root), 'utf8'));
+    const page = load(await readFile(new URL(`public/${articleRoutes[item.id]}`, root), 'utf8'));
     assert.equal(page('.market-report').length, 1);
     assert.equal(page('.market-report h1').length, 0);
     assert.equal(page('.market-report table').length, item.tables);
