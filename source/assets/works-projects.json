@@ -1,4 +1,16 @@
 {
+  "purr-swap": {
+    "description": "Purr Swap · 换金所，点击访问网站体验。",
+    "images": [{"alt": "Purr Swap · 换金所", "src": "/assets/pages/purr-swap-cover.png"}],
+    "links": [{"label": "访问网站", "url": "https://kary2999.github.io/purr-swap/"}]
+  },
+  "P2P-Ws": {
+    "images": [{"alt": "关联项目 SChat 界面", "src": "/assets/pages/95bacacdab919dff932e.png"}],
+    "links": [
+      {"label": "关联作品：SChat 在线体验", "url": "https://kary2999.github.io/SChat/"},
+      {"label": "SChat 源码", "url": "https://github.com/kary2999/SChat"}
+    ]
+  },
   "monitor": {
     "description": "加密货币现货做市的监控工具箱，聚合做市过程中需要盯的各项指标，PHP 实现。",
     "images": [
@@ -68,6 +80,10 @@
       {
         "label": "在线体验",
         "url": "https://kary2999.github.io/SChat/"
+      },
+      {
+        "label": "关联项目：P2P-Ws",
+        "url": "https://github.com/kary2999/P2P-Ws"
       }
     ]
   },

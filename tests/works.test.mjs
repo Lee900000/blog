@@ -4,21 +4,31 @@ import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
 const source = () => readFileSync('source/js/works.js', 'utf8');
 const api = () => { const context = {URL, AbortSignal}; vm.runInNewContext(source(), context); return context.LeonWorks; };
-test('AI practice is merged into horizontal works with original project assets', () => {
+test('AI practice uses a responsive three-column grid and retains original project assets', () => {
   const catalog = JSON.parse(readFileSync('source/assets/works-projects.json', 'utf8'));
   assert.equal(catalog['quant-tool'].images.length, 4);
   assert.equal(catalog['code-ferry'].images.length, 3);
   assert.ok(catalog['WebJudge'].links.some(link => link.url.includes('chromewebstore')));
   assert.ok(catalog['trade-backtest']);
   assert.ok(catalog['the-drawer']);
+  assert.ok(catalog['purr-swap'].links.some(link => link.url === 'https://kary2999.github.io/purr-swap/'));
+  assert.ok(catalog['purr-swap'].images.length);
+  assert.ok(catalog['P2P-Ws'].links.some(link => link.url === 'https://kary2999.github.io/SChat/'));
+  assert.ok(catalog.SChat.links.some(link => link.url === 'https://github.com/kary2999/P2P-Ws'));
   assert.doesNotMatch(readFileSync('_config.butterfly.yml','utf8'), /AI实践: \/ai\//);
-  assert.match(readFileSync('source/css/works.css','utf8'), /overflow-x: auto/);
+  const css = readFileSync('source/css/works.css','utf8');
+  assert.match(css, /repeat\(3, minmax\(0, 1fr\)\)/);
+  assert.match(css, /repeat\(2, minmax\(0, 1fr\)\)/);
+  assert.doesNotMatch(readFileSync('source/works/index.md','utf8'), /data-scroll|works-rail/);
+  assert.ok(readFileSync('source/assets/works-placeholder.svg','utf8').includes('<svg'));
+  assert.match(source(), /works-placeholder\.svg/);
   assert.match(readFileSync('source/ai/index.md','utf8'), /\/works\//);
 });
 test('works only includes selected public projects sorted by stars then selection order', () => {
   const repos = [{name:'monitor',private:false,stargazers_count:2}, {name:'LazyCat',private:false,stargazers_count:8}, {name:'other',private:false,stargazers_count:999}, {name:'quant-tool',private:true,stargazers_count:100}, {name:'go-skill',private:false,stargazers_count:2}];
   assert.equal(api().select(repos).map(r => r.name).join(','), 'LazyCat,go-skill,monitor');
-  assert.equal(api().selected.length, 15);
+  assert.equal(api().selected.length, 16);
+  assert.equal(api().select([{name:'work-boss', private:false, stargazers_count:0}])[0].name, 'work-boss');
 });
 test('works loads all public repository pages and rejects API failures', async () => {
   const urls = [];
