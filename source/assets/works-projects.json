@@ -1,4 +1,17 @@
 {
+  "work-boss": {
+    "description": "面向个人与多个 AI Agent 的任务督办工具：通过 Lark／飞书安排每日任务、收集进度、催办逾期事项，并自动顺延和重排未完成任务。基于 macOS 定时脚本运行，无需依赖大模型。",
+    "images": [
+      {"alt": "work-boss：Lark 任务排期", "src": "https://github.com/user-attachments/assets/d27e2a73-eb22-4409-8a0f-16648a5d6e0a"},
+      {"alt": "work-boss：任务督办界面", "src": "https://github.com/user-attachments/assets/4a3dcebc-ce49-4b64-9955-93ed55b18bdf"}
+    ],
+    "links": []
+  },
+  "prd-forge": {
+    "description": "将需求想法、原型或会议纪要整理为结构化 PRD 的 Claude Code Skill。先追问并确认需求缺口，再覆盖业务流程、字段规则、异常处理、权限与风险等 12 个模块；附通用提示词，可供其他大模型使用。",
+    "images": [],
+    "links": []
+  },
   "purr-swap": {
     "description": "Purr Swap · 换金所，点击访问网站体验。",
     "images": [{"alt": "Purr Swap · 换金所", "src": "/assets/pages/purr-swap-cover.png"}],
@@ -27,7 +40,7 @@
     ]
   },
   "quant-tool": {
-    "description": "自研的量化监控工具，纯静态页面，打开即用。",
+    "description": "面向加密货币做市的可视化工具集，支持铺单参数查看、订单簿深度分析、挂单均匀性检查和跨交易所深度对比。纯静态部署，默认使用模拟数据演示，部分工具支持公开行情接入。",
     "images": [
       {
         "alt": "quant-tool",
@@ -88,7 +101,7 @@
     ]
   },
   "go-skill": {
-    "description": "Go 微服务团队编码规范的单一源分发工具：一份 `standards/*.md`，同时产出 Claude Code Skill 和 Cursor `.mdc` 规则，附轻量 demo 模板、术语表和图形化安装器，双击即可把团队规范装进 AI 编辑器。",
+    "description": "面向 Go 微服务团队的编码规范与 AI 编程规则工具，将统一规范分发为 Claude Code Skill 和 Cursor Rules。提供图形化安装器，支持全局或项目级安装，附代码模板、可搜索术语表和版本记录。",
     "images": [
       {
         "alt": "go-skill",
@@ -103,7 +116,7 @@
     ]
   },
   "markdownShow": {
-    "description": "轻量的在线 Markdown 渲染展示工具。",
+    "description": "拖拽即用的 Markdown 阅读与展示工具，提供离线网页版（PWA）和 Chrome 扩展。支持代码高亮、Mermaid 图表、目录导航与明暗主题，扩展可自动渲染 Markdown 链接，并支持多文件切换。",
     "images": [
       {
         "alt": "markdownShow",
@@ -183,7 +196,7 @@
     ]
   },
   "mini-bar": {
-    "description": "macOS 菜单栏浮动浏览器（摸鱼神器）：多个始终置顶的独立浮窗，工作间隙随时瞄一眼视频、文档或消息。支持大小窗自由切换（200×150 ↔ 1200×800）、全局快捷键、网格 / 级联自动布局、多工作区（各自独立的代理与书签配置）。Python 实现，CI 自动产出 DMG / ZIP 安装包。",
+    "description": "macOS 菜单栏浮动浏览器（摸鱼神器）：用多个置顶小窗看视频、查文档、盯消息，不用反复切换窗口。支持大小窗自由切换、全局快捷键、网格／级联布局，以及独立代理和书签配置的多工作区。",
     "images": [
       {
         "alt": "mini-bar 大窗模式看视频",
