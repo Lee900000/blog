@@ -1,0 +1,2 @@
+# Renew only the tago certificate; leave other sites' renewal policies unchanged.
+23 3,15 * * * root /usr/bin/certbot renew --cert-name tago.top --quiet --deploy-hook '/usr/bin/nginx -t && /usr/bin/nginx -s reload'

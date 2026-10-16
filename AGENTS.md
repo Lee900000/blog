@@ -5,7 +5,8 @@
 ## 固定边界
 
 - 只在本目录中编辑博客源码；不要回写 `/Users/karp/Code/ikarp-blog-web`。
-- 正式网站是 `https://leon-book.github.io/`。
+- 主站是 `https://tago.top/`，`www.tago.top` 跳转到主站；原 `https://leon-book.github.io/` 保留。
+- 用户于 2026-10-17 授权额外部署到 `root@47.245.29.197:/opt/webserver/tago`，服务器部署见 `docs/deploy/tago.md`。以下 GitHub 仓库限制不变。
 - 正式发布仓库只能是 `leon-book/leon-book.github.io`。
 - 不得向 `kary2999` 账号、`leon-book/blog` 或其他仓库推送。
 - 文章 `237`、`704` 不得进入公开构建或发布产物。
@@ -23,6 +24,6 @@
 6. 只有用户明确要求发布时，运行：
    `npm run publish:leon -- --confirm leon-book.github.io`
 
-发布工具会再次检查 GitHub 登录账号、唯一目标仓库、测试、构建和敏感文章排除状态。不要绕过工具直接复制或推送 `public/`。
+发布工具会再次检查 GitHub 登录账号、唯一目标仓库、测试、构建和敏感文章排除状态。GitHub Pages 不要绕过工具直接复制或推送 `public/`；已授权的独立服务器部署按 `docs/deploy/tago.md` 执行。
 
 更多背景见 `docs/博客工作区交接.md`。
