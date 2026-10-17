@@ -22,7 +22,12 @@ search:
 avatar:
   img: /assets/profile/leon-avatar.png
   effect: false
-favicon: /assets/profile/leon-avatar.png
+favicon: /assets/brand/favicon.svg
+
+nav:
+  logo: /assets/brand/tago-logo-hero.svg
+  display_title: true
+  display_post_title: true
 
 subtitle:
   enable: true
@@ -117,6 +122,9 @@ mermaid:
 
 inject:
   head:
+    - <link rel="stylesheet" href="/css/brand.css">
+    - <link rel="icon" href="/assets/brand/favicon.ico" sizes="32x32">
+    - <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
     - <link rel="stylesheet" href="/css/arbitrage.css">
     - <link rel="stylesheet" href="/css/works.css">
   bottom:
