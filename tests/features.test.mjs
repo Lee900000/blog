@@ -10,9 +10,11 @@ const read = path => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8'
 const config = () => YAML.parse(read('_config.yml'));
 const theme = () => YAML.parse(read('_config.butterfly.yml'));
 
-test('published site exposes the current Leon identity and repository guide', () => {
+test('published site exposes the Tago brand while retaining the Leon author and repository guide', () => {
   const site = config();
-  assert.equal(site.title, 'Leon');
+  assert.equal(site.title, 'Tago · 开发手记');
+  assert.equal(site.subtitle, '记录技术、量化与想法落地的过程');
+  assert.deepEqual(theme().subtitle.sub, ['记录技术、量化与想法落地的过程']);
   assert.equal(site.author, 'Leon');
   assert.ok(site.skip_render.includes('README.md'));
 
