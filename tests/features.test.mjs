@@ -14,7 +14,7 @@ test('published site exposes the Tago brand while retaining the Leon author and 
   const site = config();
   assert.equal(site.title, 'Tago · 开发手记');
   assert.equal(site.subtitle, '记录技术、量化与想法落地的过程');
-  assert.deepEqual(theme().subtitle.sub, ['记录技术、量化与想法落地的过程']);
+  assert.deepEqual(theme().subtitle.sub, ['如果说我看得比别人更远些，那是因为我站在巨人的肩膀上。<br>而这个博客，就是我的巨人！']);
   assert.equal(site.author, 'Leon');
   assert.ok(site.skip_render.includes('README.md'));
 
