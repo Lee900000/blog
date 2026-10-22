@@ -29,6 +29,9 @@ nav:
   display_title: true
   display_post_title: true
 
+# Keep the user toggle, but open the site in dark mode by default.
+display_mode: dark
+
 subtitle:
   enable: true
   effect: true

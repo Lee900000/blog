@@ -15,6 +15,7 @@ test('published site exposes the Tago brand and Lee author identity', () => {
   assert.equal(site.title, 'Tago · 开发手记');
   assert.equal(site.subtitle, '记录技术、量化与想法落地的过程');
   assert.deepEqual(theme().subtitle.sub, ['如果说我看得比别人更远些，那是因为我站在巨人的肩膀上。<br>而这个博客，就是我的巨人！']);
+  assert.equal(theme().display_mode, 'dark');
   assert.equal(site.author, 'Lee');
   assert.ok(site.skip_render.includes('README.md'));
 
