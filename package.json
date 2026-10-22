@@ -7,8 +7,8 @@
     "test": "node --test tests/*.test.mjs",
     "migrate": "node migration/migrate.mjs",
     "build": "hexo clean && hexo generate",
-    "build:leon-root": "hexo clean && hexo generate --config _config.yml,_config.leon-root-pages.yml",
-    "publish:leon": "node tools/publish-leon-root.mjs",
+    "build:tago": "hexo clean && hexo generate --config _config.yml,_config.tago.yml",
+    "publish:kary": "node tools/publish-kary-source.mjs",
     "verify": "node migration/verify.mjs",
     "verify:features": "node --test tests/features-built.mjs",
     "server": "hexo server"

@@ -1,15 +1,14 @@
 // [skill: dev-dna] 使用显式校验、最小依赖和失败即停止的发布流程。
-import { existsSync, readdirSync, rmSync } from 'node:fs'
-import { mkdtemp } from 'node:fs/promises'
-import { tmpdir } from 'node:os'
+import { existsSync, readdirSync } from 'node:fs'
 import { join, relative, resolve } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { spawnSync } from 'node:child_process'
 import { verifyArticleRoutes } from './verify-article-routes.mjs'
 
-export const EXPECTED_ACCOUNT = 'leon-book'
-export const PUBLISH_REPOSITORY = 'https://github.com/leon-book/leon-book.github.io.git'
-export const REQUIRED_CONFIRMATION = 'leon-book.github.io'
+export const EXPECTED_ACCOUNT = 'kary2999'
+export const PUBLISH_REPOSITORY = 'https://github.com/kary2999/leon-blog-web.git'
+export const PUBLISH_BRANCH = 'preview/ten-post-migration'
+export const REQUIRED_CONFIRMATION = 'kary2999/leon-blog-web'
 const BLOCKED_ARTICLE_IDS = ['237', '704']
 
 function run(command, args, options = {}) {
@@ -61,13 +60,14 @@ async function main() {
   const workspace = resolve(fileURLToPath(new URL('..', import.meta.url)))
   const confirmation = process.argv[2] === '--confirm' ? process.argv[3] : ''
   const account = run('gh', ['api', 'user', '--jq', '.login'], { cwd: workspace, capture: true })
-  assertSafePublishContext({ account, remote: PUBLISH_REPOSITORY, confirmation })
+  const remote = run('git', ['remote', 'get-url', 'origin'], { cwd: workspace, capture: true })
+  assertSafePublishContext({ account, remote, confirmation })
 
   const status = run('git', ['status', '--porcelain'], { cwd: workspace, capture: true })
   if (status) throw new Error('Workspace is not clean. Commit reviewed source changes before publishing.')
 
   run('npm', ['test'], { cwd: workspace })
-  run('npm', ['run', 'build:leon-root'], { cwd: workspace })
+  run('npm', ['run', 'build:tago'], { cwd: workspace })
 
   const publicDirectory = join(workspace, 'public')
   if (!existsSync(join(publicDirectory, 'index.html'))) {
@@ -76,27 +76,11 @@ async function main() {
   assertSensitivePagesExcluded(listFiles(publicDirectory))
   verifyArticleRoutes(workspace)
 
-  const temporaryRoot = await mkdtemp(join(tmpdir(), 'leon-blog-publish-'))
-  const checkout = join(temporaryRoot, 'site')
-  try {
-    run('git', ['clone', '--depth', '1', PUBLISH_REPOSITORY, checkout])
-    const clonedRemote = run('git', ['remote', 'get-url', 'origin'], { cwd: checkout, capture: true })
-    assertSafePublishContext({ account, remote: clonedRemote, confirmation })
-
-    run('rsync', ['-a', '--delete', '--exclude', '.git/', `${publicDirectory}/`, `${checkout}/`])
-    run('git', ['add', '--all'], { cwd: checkout })
-    const changes = run('git', ['status', '--porcelain'], { cwd: checkout, capture: true })
-    if (!changes) {
-      console.log('No generated-site changes to publish.')
-      return
-    }
-
-    run('git', ['commit', '-m', 'chore(pages): publish Leon blog'], { cwd: checkout })
-    run('git', ['push', 'origin', 'HEAD:main'], { cwd: checkout })
-    console.log('Published to https://leon-book.github.io/')
-  } finally {
-    rmSync(temporaryRoot, { recursive: true, force: true })
-  }
+  run('git', ['fetch', 'origin', PUBLISH_BRANCH], { cwd: workspace })
+  const remoteBranch = `origin/${PUBLISH_BRANCH}`
+  run('git', ['merge-base', '--is-ancestor', remoteBranch, 'HEAD'], { cwd: workspace })
+  run('git', ['push', 'origin', `HEAD:${PUBLISH_BRANCH}`], { cwd: workspace })
+  console.log(`Source pushed to ${PUBLISH_REPOSITORY} (${PUBLISH_BRANCH})`)
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {

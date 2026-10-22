@@ -8,7 +8,7 @@
 - 证书：`/etc/letsencrypt/live/tago.top/`，包含两个域名。
 - 自动续期：`/etc/cron.d/tago-renew`，只续期 tago 证书，成功后验证并重载 Nginx。
 
-部署前运行 `npm test` 和 `npm run build:leon-root`，再用独立域名配置构建：
+部署前运行 `npm test` 和 `npm run build:tago`，再用独立域名配置构建：
 
 ```sh
 npx hexo clean
@@ -20,4 +20,4 @@ node tools/verify-article-routes.mjs
 
 `tago-http.conf` 仅用于首次 ACME 验证；正常运行使用 `tago.conf`。修改服务器配置前备份原配置，`nginx -t` 成功才重载。
 
-本地预览仍使用 `npm run server -- --port 4000`；GitHub Pages 发布仍只允许原有 `npm run publish:leon -- --confirm leon-book.github.io`，它会重新生成 Pages 配置，不使用 tago 构建产物。
+本地预览仍使用 `npm run server -- --port 4000`；GitHub 源码同步只允许 `npm run publish:kary -- --confirm kary2999/leon-blog-web`。它只推送源码，不会覆盖服务器产物。

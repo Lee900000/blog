@@ -16,9 +16,9 @@
 
   const nav = document.createElement('nav');
   nav.className = 'arbitrage-site-nav';
-  nav.setAttribute('aria-label', 'Leon Blog 主导航');
+  nav.setAttribute('aria-label', 'Tago 开发手记主导航');
   nav.innerHTML = `
-    <a class="site-name" href="/" target="_top">Leon Blog</a>
+    <a class="site-name" href="/" target="_top">Tago · 开发手记</a>
     <button class="menu-toggle" type="button" aria-label="展开导航" aria-expanded="false">☰</button>
     <div class="site-menu">
       ${items.map(([icon, label, href, current]) =>

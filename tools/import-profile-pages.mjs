@@ -53,7 +53,7 @@ for(const [slug,title] of [['ai','AI实践'],['about','关于']]){
   body=body.replace('你好，我是 Karp','你好，我是 leon');
   body=body.replaceAll('karp90000@gmail.com','axon90000@gmail.com');
   body=body.replace(/到现在写了\s*\*\*844 篇\*\*文章。/,'这里积累了多年的技术文章。');
-  body=`<div class="leon-profile"><img src="/assets/profile/leon-avatar.png" alt="leon" width="140" height="153"><div><strong>leon</strong><span>技术 · 产品 · AI 实践</span></div></div>\n\n${body}`;
+  body=`<div class="leon-profile"><img src="/assets/profile/leon-avatar.png" alt="Lee" width="140" height="153"><div><strong>Lee</strong><span>记录做过的事，也记录正在尝试的事</span></div></div>\n\n${body}`;
  }
  await mkdir(`source/${slug}`,{recursive:true});
  const meta={title,description:slug==='ai'?'AI 落地与开源作品：开发工具、桌面应用与实践记录。':'关于 leon：技术、业务与产品实践。',source_url:sourceURL,comments:false,toc:true,disableNunjucks:true};

@@ -10,12 +10,12 @@ const read = path => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8'
 const config = () => YAML.parse(read('_config.yml'));
 const theme = () => YAML.parse(read('_config.butterfly.yml'));
 
-test('published site exposes the Tago brand while retaining the Leon author and repository guide', () => {
+test('published site exposes the Tago brand and Lee author identity', () => {
   const site = config();
   assert.equal(site.title, 'Tago · 开发手记');
   assert.equal(site.subtitle, '记录技术、量化与想法落地的过程');
   assert.deepEqual(theme().subtitle.sub, ['如果说我看得比别人更远些，那是因为我站在巨人的肩膀上。<br>而这个博客，就是我的巨人！']);
-  assert.equal(site.author, 'Leon');
+  assert.equal(site.author, 'Lee');
   assert.ok(site.skip_render.includes('README.md'));
 
   const about = read('source/about/index.md');
@@ -29,8 +29,8 @@ test('published site exposes the Tago brand while retaining the Leon author and 
 
   assert.ok(existsSync(new URL('../source/README.md', import.meta.url)));
   const deploymentReadme = read('source/README.md');
-  assert.ok(deploymentReadme.includes('# Leon Blog'));
-  assert.ok(deploymentReadme.includes('https://leon-book.github.io/blog/'));
+  assert.ok(deploymentReadme.includes('# Tago · 开发手记'));
+  assert.ok(deploymentReadme.includes('https://www.tago.top/'));
 });
 
 test('custom stylesheet follows the configured root without duplicate links', () => {

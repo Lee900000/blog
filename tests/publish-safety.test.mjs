@@ -6,39 +6,39 @@ import {
   PUBLISH_REPOSITORY,
   assertSafePublishContext,
   assertSensitivePagesExcluded
-} from '../tools/publish-leon-root.mjs'
+} from '../tools/publish-kary-source.mjs'
 
-test('publishing is locked to the Leon account and root Pages repository', () => {
-  assert.equal(EXPECTED_ACCOUNT, 'leon-book')
-  assert.equal(PUBLISH_REPOSITORY, 'https://github.com/leon-book/leon-book.github.io.git')
+test('publishing is locked to the Kary source repository', () => {
+  assert.equal(EXPECTED_ACCOUNT, 'kary2999')
+  assert.equal(PUBLISH_REPOSITORY, 'https://github.com/kary2999/leon-blog-web.git')
 
   assert.doesNotThrow(() => assertSafePublishContext({
-    account: 'leon-book',
+    account: 'kary2999',
     remote: PUBLISH_REPOSITORY,
-    confirmation: 'leon-book.github.io'
+    confirmation: 'kary2999/leon-blog-web'
   }))
 
   assert.throws(
     () => assertSafePublishContext({
-      account: 'kary2999',
+      account: 'leon-book',
       remote: PUBLISH_REPOSITORY,
-      confirmation: 'leon-book.github.io'
+      confirmation: 'kary2999/leon-blog-web'
     }),
     /GitHub account/
   )
 
   assert.throws(
     () => assertSafePublishContext({
-      account: 'leon-book',
-      remote: 'https://github.com/leon-book/blog.git',
-      confirmation: 'leon-book.github.io'
+      account: 'kary2999',
+      remote: 'https://github.com/leon-book/leon-book.github.io.git',
+      confirmation: 'kary2999/leon-blog-web'
     }),
     /publish repository/
   )
 
   assert.throws(
     () => assertSafePublishContext({
-      account: 'leon-book',
+      account: 'kary2999',
       remote: PUBLISH_REPOSITORY,
       confirmation: 'yes'
     }),

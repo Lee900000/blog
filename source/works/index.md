@@ -1,6 +1,6 @@
 ---
 title: 代表作品
-description: Leon 精选的 16 个公开项目，自动同步 GitHub 简介、标签、Star 与 Fork 数据。
+description: Lee 精选的 16 个公开项目，自动同步 GitHub 简介、标签、Star 与 Fork 数据。
 comments: false
 aside: false
 toc: false

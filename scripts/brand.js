@@ -1,6 +1,6 @@
 'use strict';
 
-// Change only the navigation brand; page titles and Leon's author avatar stay intact.
+// Change only the navigation brand; page titles and Lee's author avatar stay intact.
 hexo.extend.filter.register('after_render:html', html => html.replace(
   /(<a\b[^>]*class="nav-site-title"[^>]*>)([\s\S]*?)(<\/a>)/g,
   (match, open, content, close) => {

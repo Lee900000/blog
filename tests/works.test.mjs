@@ -41,5 +41,5 @@ test('works page and profile are connected without changing publishing identity'
   assert.match(readFileSync('source/works/index.md','utf8'), /id="works-grid"/);
   assert.match(readFileSync('_config.butterfly.yml','utf8'), /代表作品: \/works\//);
   assert.match(readFileSync('source/about/index.md','utf8'), /GitHub：\[github.com\/kary2999\]/);
-  assert.match(readFileSync('tools/publish-leon-root.mjs','utf8'), /EXPECTED_ACCOUNT = 'leon-book'/);
+  assert.match(readFileSync('tools/publish-kary-source.mjs','utf8'), /EXPECTED_ACCOUNT = 'kary2999'/);
 });

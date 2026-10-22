@@ -1,22 +1,21 @@
-# Leon Blog
+# Tago · 开发手记
 
-Leon 的个人技术博客，记录技术实践、产品思考与学习过程。
+Lee 的个人博客，记录这些年做过的事、遇到的问题，以及最近的学习和计划。
 
 ## 在线访问
 
-[https://leon-book.github.io/blog/](https://leon-book.github.io/blog/)
+[https://www.tago.top/](https://www.tago.top/)
 
 ## 内容方向
 
-- 后端开发与工程实践
-- AI 工具与工作流
-- 交易系统与产品研究
-- [量化套利专题](https://leon-book.github.io/blog/arbitrage/)：9 个策略的图解、公式与交互计算器，另附基础分析清单。计算结果是简化情景估算，不构成投资建议。
+- 这些年参与过的项目与工程记录
+- 正在学习的产品经理相关内容
+- [量化套利专题](https://www.tago.top/arbitrage/)：策略说明与交互计算器。计算结果是简化情景估算，不构成投资建议。
 
 ## 技术栈
 
-Hexo + Butterfly + GitHub Pages
+Hexo + Butterfly
 
 ## 维护说明
 
-博客由 GitHub 账号 [`leon-book`](https://github.com/leon-book) 发布和维护。历史文章保留原始上下文，当前站点统一使用 Leon 品牌。
+博客由 Lee 维护。文章记录来自不同阶段，部分旧内容保留当时的上下文。

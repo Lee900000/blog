@@ -3,6 +3,6 @@
   <path fill="url(#bg)" d="M0 0h800v450H0z"/><path fill="url(#grid)" d="M0 0h800v450H0z"/>
   <rect x="310" y="108" width="180" height="140" rx="20" fill="#17353e" stroke="#40cbb7" stroke-opacity=".45"/>
   <path d="m370 151-28 27 28 27m60-54 28 27-28 27m-18-62-24 70" fill="none" stroke="#55dbc8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="400" y="300" text-anchor="middle" fill="#d6eee9" font-family="Arial,sans-serif" font-size="25" letter-spacing="6">LEON · PROJECTS</text>
+  <text x="400" y="300" text-anchor="middle" fill="#d6eee9" font-family="Arial,sans-serif" font-size="25" letter-spacing="6">LEE · PROJECTS</text>
   <text x="400" y="337" text-anchor="middle" fill="#8ba6aa" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">BUILD · EXPLORE · SHARE</text>
 </svg>
