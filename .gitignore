@@ -5,6 +5,7 @@ db.json
 .env
 .env.*
 *.log
+.deployment-state/
 .DS_Store
 .superpowers/
 raw/
