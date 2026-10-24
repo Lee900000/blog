@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+<rect width="900" height="560" fill="#171717"/>
+<text x="450" y="32" fill="#eee" font-size="22" text-anchor="middle" font-family="sans-serif">2 倍空单模拟：价格与组合盈亏四象限</text>
+<!-- plot: x=100..820, price 0..13.6; y=90..450, pnl +1000..-1000 -->
+<line x1="100" y1="270" x2="820" y2="270" stroke="#ddd" stroke-width="2"/>
+<line x1="460" y1="80" x2="460" y2="450" stroke="#ddd" stroke-width="2"/>
+<line x1="100" y1="270" x2="820" y2="270" stroke="#777"/>
+<line x1="100" y1="450" x2="100" y2="80" stroke="#777"/>
+<!-- price 3 ADL marker -->
+<line x1="259" y1="80" x2="259" y2="450" stroke="#fb923c" stroke-width="3" stroke-dasharray="8 6"/>
+<circle cx="259" cy="315" r="7" fill="#fb923c"/>
+<!-- combined pnl: net short 1000, from price 6.8 zero; after ADL at 3, hedge reopens 1x => flat-ish -->
+<polyline points="100,450 259,348 460,270 820,92" fill="none" stroke="#f87171" stroke-width="5"/>
+<polyline points="259,348 460,270 820,270" fill="none" stroke="#4ade80" stroke-width="4" stroke-dasharray="10 7"/>
+<text x="110" y="105" fill="#4ade80" font-size="15" font-family="sans-serif">盈利区（组合）</text>
+<text x="110" y="430" fill="#f87171" font-size="15" font-family="sans-serif">亏损区（组合）</text>
+<text x="469" y="100" fill="#ddd" font-size="15" font-family="sans-serif">价格高于 6.8</text>
+<text x="469" y="438" fill="#ddd" font-size="15" font-family="sans-serif">价格低于 6.8</text>
+<text x="259" y="70" fill="#fb923c" font-size="15" text-anchor="middle" font-family="sans-serif">价格 3：模拟触发 ADL</text>
+<text x="275" y="335" fill="#fb923c" font-size="14" font-family="sans-serif">空单被减仓</text>
+<text x="275" y="355" fill="#fb923c" font-size="14" font-family="sans-serif">留下现货裸多头</text>
+<text x="490" y="245" fill="#facc15" font-size="14" font-family="sans-serif">6.8：平均持仓价 / 盈亏 0</text>
+<text x="495" y="290" fill="#4ade80" font-size="14" font-family="sans-serif">减仓后按 1 倍重新对冲：示意</text>
+<!-- ticks -->
+<text x="100" y="480" fill="#ddd" font-size="14" text-anchor="middle" font-family="sans-serif">0</text>
+<text x="259" y="480" fill="#ddd" font-size="14" text-anchor="middle" font-family="sans-serif">3</text>
+<text x="460" y="480" fill="#ddd" font-size="14" text-anchor="middle" font-family="sans-serif">6.8</text>
+<text x="820" y="480" fill="#ddd" font-size="14" text-anchor="middle" font-family="sans-serif">13.6</text>
+<text x="830" y="260" fill="#ddd" font-size="14" font-family="sans-serif">价格 →</text>
+<text x="470" y="70" fill="#ddd" font-size="14" font-family="sans-serif">盈亏 ↑</text>
+<text x="470" y="505" fill="#aaa" font-size="13" text-anchor="middle" font-family="sans-serif">示意图：忽略手续费、资金费、强平规则；价格 3 的 ADL 触发线仅为模拟假设</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
+<rect width="1000" height="650" fill="#171717"/>
+<text x="500" y="38" fill="#f5f5f5" font-size="24" text-anchor="middle" font-family="sans-serif">ADL 后怎么处理：重新建仓 vs 卖出现货</text>
+<!-- center trigger -->
+<rect x="350" y="85" width="300" height="105" rx="16" fill="#292929" stroke="#fb923c" stroke-width="3"/>
+<text x="500" y="120" fill="#fb923c" font-size="20" text-anchor="middle" font-family="sans-serif">价格跌到 3</text>
+<text x="500" y="150" fill="#eee" font-size="17" text-anchor="middle" font-family="sans-serif">模拟触发 ADL</text>
+<text x="500" y="176" fill="#aaa" font-size="14" text-anchor="middle" font-family="sans-serif">空单被减掉，现货暂时裸露</text>
+<!-- arrows -->
+<path d="M420 190 L240 265" stroke="#aaa" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<path d="M580 190 L760 265" stroke="#aaa" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<!-- branches -->
+<rect x="55" y="270" width="370" height="245" rx="16" fill="#10261a" stroke="#4ade80" stroke-width="3"/>
+<text x="240" y="310" fill="#4ade80" font-size="21" text-anchor="middle" font-family="sans-serif">A · 重新建仓</text>
+<text x="80" y="350" fill="#eee" font-size="16" font-family="sans-serif">确认剩余现货 / 空单 → 补开缺口</text>
+<text x="80" y="385" fill="#eee" font-size="16" font-family="sans-serif">按 1 倍重新对冲</text>
+<text x="80" y="430" fill="#4ade80" font-size="18" font-family="sans-serif">✓ 现货 1,000 U</text>
+<text x="80" y="462" fill="#4ade80" font-size="18" font-family="sans-serif">✓ 空单补回 1,000 U</text>
+<text x="80" y="500" fill="#facc15" font-size="15" font-family="sans-serif">保留资金费机会，但继续承担市场风险</text>
+<rect x="575" y="270" width="370" height="245" rx="16" fill="#2a1717" stroke="#f87171" stroke-width="3"/>
+<text x="760" y="310" fill="#f87171" font-size="21" text-anchor="middle" font-family="sans-serif">B · 卖出现货</text>
+<text x="600" y="350" fill="#eee" font-size="16" font-family="sans-serif">确认仓位 → 卖出现货换 USDT</text>
+<text x="600" y="385" fill="#eee" font-size="16" font-family="sans-serif">结束这笔套利组合</text>
+<text x="600" y="430" fill="#4ade80" font-size="18" font-family="sans-serif">✓ 现货数量归零</text>
+<text x="600" y="462" fill="#4ade80" font-size="18" font-family="sans-serif">✓ 后续币价风险归零</text>
+<text x="600" y="500" fill="#facc15" font-size="15" font-family="sans-serif">放弃后续资金费，换取风险收口</text>
+<!-- decision footer -->
+<rect x="150" y="565" width="700" height="50" rx="10" fill="#242424"/>
+<text x="500" y="597" fill="#ddd" font-size="16" text-anchor="middle" font-family="sans-serif">盘口足够 + 仓位清楚 + 费率仍值得 → A　　否则 → B</text>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#aaa"/></marker></defs>
+</svg>
