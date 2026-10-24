@@ -1,11 +1,8 @@
 {
-  "work-boss": {
-    "description": "面向个人与多个 AI Agent 的任务督办工具：通过 Lark／飞书安排每日任务、收集进度、催办逾期事项，并自动顺延和重排未完成任务。基于 macOS 定时脚本运行，无需依赖大模型。",
-    "images": [
-      {"alt": "work-boss：Lark 任务排期", "src": "https://github.com/user-attachments/assets/d27e2a73-eb22-4409-8a0f-16648a5d6e0a"},
-      {"alt": "work-boss：任务督办界面", "src": "https://github.com/user-attachments/assets/4a3dcebc-ce49-4b64-9955-93ed55b18bdf"}
-    ],
-    "links": []
+  "axon-contract-h5": {
+    "description": "Axon 模拟交易 H5：面向移动端的合约模拟交易体验页面。",
+    "images": [],
+    "links": [{"label": "在线体验", "url": "https://kary2999.github.io/axon-contract-h5/"}]
   },
   "prd-forge": {
     "description": "将需求想法、原型或会议纪要整理为结构化 PRD 的 Claude Code Skill。先追问并确认需求缺口，再覆盖业务流程、字段规则、异常处理、权限与风险等 12 个模块；附通用提示词，可供其他大模型使用。",

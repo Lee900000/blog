@@ -28,7 +28,8 @@ test('works only includes selected public projects sorted by stars then selectio
   const repos = [{name:'monitor',private:false,stargazers_count:2}, {name:'LazyCat',private:false,stargazers_count:8}, {name:'other',private:false,stargazers_count:999}, {name:'quant-tool',private:true,stargazers_count:100}, {name:'go-skill',private:false,stargazers_count:2}];
   assert.equal(api().select(repos).map(r => r.name).join(','), 'LazyCat,go-skill,monitor');
   assert.equal(api().selected.length, 16);
-  assert.equal(api().select([{name:'work-boss', private:false, stargazers_count:0}])[0].name, 'work-boss');
+  assert.equal(api().select([{name:'axon-contract-h5', private:false, stargazers_count:0}])[0].name, 'axon-contract-h5');
+  assert.equal(api().select([{name:'work-boss', private:false, stargazers_count:0}]).length, 0);
 });
 test('works loads all public repository pages and rejects API failures', async () => {
   const urls = [];

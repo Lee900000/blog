@@ -1,8 +1,8 @@
 (function (root) {
   'use strict';
-  const CACHE_KEY = 'leon-works-kary2999-v2';
+  const CACHE_KEY = 'leon-works-kary2999-v3';
   const TTL = 30 * 60 * 1000;
-  const selected = ['monitor-swap', 'exchange-asset-report', 'markdownShow', 'prd-forge', 'quant-tool', 'go-skill', 'code-ferry', 'monitor', 'mini-bar', 'PerfMon', 'WebJudge', 'LazyCat', 'purr-swap', 'atool', 'P2P-Ws', 'work-boss'];
+  const selected = ['monitor-swap', 'exchange-asset-report', 'markdownShow', 'prd-forge', 'quant-tool', 'go-skill', 'code-ferry', 'monitor', 'mini-bar', 'PerfMon', 'WebJudge', 'LazyCat', 'purr-swap', 'atool', 'P2P-Ws', 'axon-contract-h5'];
   const rank = name => selected.findIndex(item => item.toLowerCase() === String(name).toLowerCase());
   function select(repos) {
     return repos.filter(r => r && r.private === false && rank(r.name) >= 0)
