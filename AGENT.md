@@ -88,33 +88,24 @@ curl -I https://tago.top/archives/<文章固定标识>.html
 
 ## 本地每 10 分钟检测
 
-定时任务模板在：
-
-```text
-/Volumes/AiCode/博客/tools/top.tago.blog-deploy.plist
-```
-
-其调用 `tools/deploy-tago-if-github-updated.sh`，间隔 600 秒。启用前确保脚本可执行、工作区干净，并确认本机 SSH 密钥存在：`/Users/karp/.ssh/hermes_control`。
+使用用户级 cron 调用同一部署脚本，间隔 10 分钟。启用前确保脚本可执行、工作区干净，并确认本机 SSH 密钥存在：`/Users/karp/.ssh/hermes_control`。
 
 ```bash
-mkdir -p /Volumes/AiCode/博客/.deployment-state ~/Library/LaunchAgents
-cp /Volumes/AiCode/博客/tools/top.tago.blog-deploy.plist \
-  ~/Library/LaunchAgents/top.tago.blog-deploy.plist
-launchctl bootstrap "gui/$(id -u)" \
-  ~/Library/LaunchAgents/top.tago.blog-deploy.plist
+(crontab -l 2>/dev/null | grep -v 'tago-auto-deploy'; \
+ echo '*/10 * * * * /bin/bash /Volumes/AiCode/博客/tools/deploy-tago-if-github-updated.sh # tago-auto-deploy') | crontab -
 ```
 
-查看任务：
+查看任务与日志：
 
 ```bash
-launchctl print "gui/$(id -u)/top.tago.blog-deploy"
+crontab -l | grep tago-auto-deploy
 tail -f /Volumes/AiCode/博客/.deployment-state/tago-auto-deploy.log
 ```
 
 停用任务：
 
 ```bash
-launchctl bootout "gui/$(id -u)/top.tago.blog-deploy"
+crontab -l | grep -v 'tago-auto-deploy' | crontab -
 ```
 
 ## 禁止事项
