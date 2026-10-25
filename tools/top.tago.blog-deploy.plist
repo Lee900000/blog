@@ -4,6 +4,8 @@
 <dict>
   <key>Label</key>
   <string>top.tago.blog-deploy</string>
+  <key>Program</key>
+  <string>/bin/bash</string>
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
