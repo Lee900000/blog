@@ -38,6 +38,12 @@ disableNunjucks: true
 
 <noscript>开启 JavaScript 可查看互动图表。也可以直接查看<a href="../archives/">文章归档</a>。</noscript>
 
+## Token 使用记录
+
+<div id="token-usage" aria-live="polite"><p>正在读取 Token 使用汇总…</p></div>
+
+<noscript>开启 JavaScript 可查看 Token 使用汇总。</noscript>
+
 ## 联系方式
 
 *   邮箱：[axon90000@gmail.com](mailto:axon90000@gmail.com)

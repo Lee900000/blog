@@ -126,6 +126,7 @@ mermaid:
 inject:
   head:
     - <link rel="stylesheet" href="/css/activity.css">
+    - <link rel="stylesheet" href="/css/token-usage.css">
     - <link rel="stylesheet" href="/css/brand.css">
     - <link rel="icon" href="/assets/brand/favicon.ico" sizes="32x32">
     - <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
@@ -133,5 +134,6 @@ inject:
     - <link rel="stylesheet" href="/css/works.css">
   bottom:
     - <script defer src="/js/activity.js"></script>
+    - <script defer src="/js/token-usage.js"></script>
     - <script defer src="/js/arbitrage.js"></script>
     - <script defer src="/js/works.js"></script>
