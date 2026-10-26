@@ -15,6 +15,7 @@ test('GitHub deployment watcher records a revision only after successful server 
   assert.match(script, /git clone --single-branch --branch "\$branch"/)
   assert.doesNotMatch(script, /workspace has uncommitted changes/)
   assert.match(script, /npm run build:tago\nnpm test/)
+  assert.match(script, /rm -f "\$deployment_checkout\/_multiconfig\.yml"/)
   assert.match(script, /rsync -a --delete/)
   assert.match(script, /printf '%s\\n' "\$remote_sha" > "\$state_file"/)
 })

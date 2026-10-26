@@ -12,6 +12,8 @@ deployment_checkout="$HOME/.local/share/tago-deploy/repo"
 state_directory="$HOME/.local/state/tago-deploy"
 state_file="$state_directory/tago-last-deployed"
 log_file="$state_directory/tago-auto-deploy.log"
+cleanup() { rm -f "$deployment_checkout/_multiconfig.yml"; }
+trap cleanup EXIT
 
 mkdir -p "$state_directory"
 exec >> "$log_file" 2>&1
