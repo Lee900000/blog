@@ -1,25 +1,25 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-26T12:52:31.074Z",
+  "generatedAt": "2026-10-27T03:34:27.944Z",
   "timezone": "Asia/Tokyo",
-  "days": 84,
+  "days": 85,
   "totals": {
-    "inputTokens": 103383015,
-    "outputTokens": 17931572,
-    "cacheCreationTokens": 55368463,
-    "cacheReadTokens": 3760522007,
-    "costUsd": 3244.9788487500005,
-    "totalTokens": 3937205057
+    "inputTokens": 104040484,
+    "outputTokens": 18011333,
+    "cacheCreationTokens": 55823907,
+    "cacheReadTokens": 3783776055,
+    "costUsd": 3256.7122586500004,
+    "totalTokens": 3961651779
   },
   "agents": [
     {
       "id": "claude-code",
       "name": "Claude Code",
-      "inputTokens": 81136,
-      "outputTokens": 11478151,
-      "cacheCreationTokens": 55368463,
-      "cacheReadTokens": 2292590887,
-      "costUsd": 1443.3642672499998,
+      "inputTokens": 81256,
+      "outputTokens": 11515202,
+      "cacheCreationTokens": 55823907,
+      "cacheReadTokens": 2299532615,
+      "costUsd": 1448.7355746499998,
       "models": [
         "claude-sonnet-5",
         "claude-opus-5",
@@ -29,7 +29,7 @@
         "claude-opus-5-5",
         "claude-haiku-4-5-20251001"
       ],
-      "totalTokens": 2359518637
+      "totalTokens": 2366952980
     },
     {
       "id": "hermes",
@@ -56,11 +56,11 @@
     {
       "id": "codex",
       "name": "Codex",
-      "inputTokens": 41148231,
-      "outputTokens": 2311012,
+      "inputTokens": 41805580,
+      "outputTokens": 2353722,
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 667401216,
-      "costUsd": 472.73008350000003,
+      "cacheReadTokens": 683713536,
+      "costUsd": 479.092186,
       "models": [
         "gpt-5",
         "gpt-5.5",
@@ -74,7 +74,7 @@
         "gpt-6.1-sol",
         "gpt-6-luna"
       ],
-      "totalTokens": 710860459
+      "totalTokens": 727872838
     },
     {
       "id": "deepseek",
@@ -2951,6 +2951,14 @@
           "costUsd": 8.706389999999999,
           "costComplete": true
         },
+        "gpt-6-astra": {
+          "inputTokens": 171753,
+          "outputTokens": 4613,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 8033280,
+          "costUsd": 2.5068974999999996,
+          "costComplete": true
+        },
         "claude-opus-4-8": {
           "inputTokens": 208,
           "outputTokens": 110608,
@@ -2965,14 +2973,6 @@
           "cacheCreationTokens": 1538452,
           "cacheReadTokens": 167302928,
           "costUsd": 108.46019399999996,
-          "costComplete": true
-        },
-        "gpt-6-astra": {
-          "inputTokens": 171753,
-          "outputTokens": 4613,
-          "cacheCreationTokens": 0,
-          "cacheReadTokens": 8033280,
-          "costUsd": 2.5068974999999996,
           "costComplete": true
         }
       },
@@ -3014,6 +3014,14 @@
           "costUsd": 51.48634600000002,
           "costComplete": true
         },
+        "gpt-6-astra": {
+          "inputTokens": 351270,
+          "outputTokens": 28721,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 10086912,
+          "costUsd": 3.830718000000001,
+          "costComplete": true
+        },
         "claude-opus-5": {
           "inputTokens": 6,
           "outputTokens": 1487,
@@ -3028,14 +3036,6 @@
           "cacheCreationTokens": 107724,
           "cacheReadTokens": 1688826,
           "costUsd": 0.4632356000000001,
-          "costComplete": true
-        },
-        "gpt-6-astra": {
-          "inputTokens": 351270,
-          "outputTokens": 28721,
-          "cacheCreationTokens": 0,
-          "cacheReadTokens": 10086912,
-          "costUsd": 3.830718000000001,
           "costComplete": true
         }
       },
@@ -3132,6 +3132,14 @@
           "costUsd": 3.3860400000000004,
           "costComplete": true
         },
+        "gpt-6-astra": {
+          "inputTokens": 418838,
+          "outputTokens": 6490,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 5042048,
+          "costUsd": 2.4049570000000005,
+          "costComplete": true
+        },
         "claude-haiku-4-5-20251001": {
           "inputTokens": 1408,
           "outputTokens": 79229,
@@ -3146,14 +3154,6 @@
           "cacheCreationTokens": 333514,
           "cacheReadTokens": 28724937,
           "costUsd": 12.000455099999998,
-          "costComplete": true
-        },
-        "gpt-6-astra": {
-          "inputTokens": 418838,
-          "outputTokens": 6490,
-          "cacheCreationTokens": 0,
-          "cacheReadTokens": 5042048,
-          "costUsd": 2.4049570000000005,
           "costComplete": true
         }
       },
@@ -3289,20 +3289,20 @@
           "costUsd": 11.974629000000002,
           "costComplete": true
         },
-        "claude-sonnet-5-5": {
-          "inputTokens": 16,
-          "outputTokens": 5251,
-          "cacheCreationTokens": 24787,
-          "cacheReadTokens": 1386918,
-          "costUsd": 0.6436104,
-          "costComplete": true
-        },
         "gpt-6-astra": {
           "inputTokens": 252326,
           "outputTokens": 10956,
           "cacheCreationTokens": 0,
           "cacheReadTokens": 3928832,
           "costUsd": 1.7773629999999994,
+          "costComplete": true
+        },
+        "claude-sonnet-5-5": {
+          "inputTokens": 16,
+          "outputTokens": 5251,
+          "cacheCreationTokens": 24787,
+          "cacheReadTokens": 1386918,
+          "costUsd": 0.6436104,
           "costComplete": true
         }
       },
@@ -3391,20 +3391,20 @@
           "costUsd": 2.199911,
           "costComplete": true
         },
-        "claude-sonnet-5-5": {
-          "inputTokens": 270,
-          "outputTokens": 195847,
-          "cacheCreationTokens": 839885,
-          "cacheReadTokens": 25801328,
-          "costUsd": 15.718223400000001,
-          "costComplete": true
-        },
         "gpt-6-astra": {
           "inputTokens": 149697,
           "outputTokens": 158,
           "cacheCreationTokens": 0,
           "cacheReadTokens": 0,
           "costUsd": 0.3766125,
+          "costComplete": true
+        },
+        "claude-sonnet-5-5": {
+          "inputTokens": 270,
+          "outputTokens": 195847,
+          "cacheCreationTokens": 839885,
+          "cacheReadTokens": 25801328,
+          "costUsd": 15.718223400000001,
           "costComplete": true
         }
       },
@@ -3446,20 +3446,20 @@
           "costUsd": 1.038107,
           "costComplete": true
         },
-        "claude-sonnet-5-5": {
-          "inputTokens": 208,
-          "outputTokens": 123736,
-          "cacheCreationTokens": 1704881,
-          "cacheReadTokens": 26016158,
-          "costUsd": 19.89079739999999,
-          "costComplete": true
-        },
         "gpt-6-astra": {
           "inputTokens": 516513,
           "outputTokens": 16214,
           "cacheCreationTokens": 0,
           "cacheReadTokens": 12145024,
           "costUsd": 4.570748499999998,
+          "costComplete": true
+        },
+        "claude-sonnet-5-5": {
+          "inputTokens": 208,
+          "outputTokens": 123736,
+          "cacheCreationTokens": 1704881,
+          "cacheReadTokens": 26016158,
+          "costUsd": 19.89079739999999,
           "costComplete": true
         }
       },
@@ -3501,22 +3501,6 @@
           "costUsd": 1.4428969999999999,
           "costComplete": true
         },
-        "claude-sonnet-5-5": {
-          "inputTokens": 752,
-          "outputTokens": 482771,
-          "cacheCreationTokens": 2991304,
-          "cacheReadTokens": 139456707,
-          "costUsd": 67.02865709999999,
-          "costComplete": true
-        },
-        "claude-opus-5-5": {
-          "inputTokens": 18,
-          "outputTokens": 2533,
-          "cacheCreationTokens": 122124,
-          "cacheReadTokens": 578962,
-          "costUsd": 1.5741360000000002,
-          "costComplete": true
-        },
         "gpt-6-astra": {
           "inputTokens": 476459,
           "outputTokens": 27128,
@@ -3531,6 +3515,22 @@
           "cacheCreationTokens": 0,
           "cacheReadTokens": 1617280,
           "costUsd": 0.9202799999999999,
+          "costComplete": true
+        },
+        "claude-sonnet-5-5": {
+          "inputTokens": 752,
+          "outputTokens": 482771,
+          "cacheCreationTokens": 2991304,
+          "cacheReadTokens": 139456707,
+          "costUsd": 67.02865709999999,
+          "costComplete": true
+        },
+        "claude-opus-5-5": {
+          "inputTokens": 18,
+          "outputTokens": 2533,
+          "cacheCreationTokens": 122124,
+          "cacheReadTokens": 578962,
+          "costUsd": 1.5741360000000002,
           "costComplete": true
         }
       },
@@ -3848,20 +3848,20 @@
           "costUsd": 0.7557803999999998,
           "costComplete": true
         },
-        "claude-sonnet-5-5": {
-          "inputTokens": 962,
-          "outputTokens": 858560,
-          "cacheCreationTokens": 2581276,
-          "cacheReadTokens": 160053586,
-          "costUsd": 76.38501779999997,
-          "costComplete": true
-        },
         "gpt-5.6-terra": {
           "inputTokens": 627883,
           "outputTokens": 21979,
           "cacheCreationTokens": 0,
           "cacheReadTokens": 5635328,
           "costUsd": 3.3082244999999992,
+          "costComplete": true
+        },
+        "claude-sonnet-5-5": {
+          "inputTokens": 962,
+          "outputTokens": 858560,
+          "cacheCreationTokens": 2581276,
+          "cacheReadTokens": 160053586,
+          "costUsd": 76.38501779999997,
           "costComplete": true
         }
       },
@@ -4078,11 +4078,11 @@
       }
     },
     "2026-10-26": {
-      "inputTokens": 824439,
-      "outputTokens": 135714,
-      "cacheCreationTokens": 535190,
-      "cacheReadTokens": 20333634,
-      "costUsd": 11.0657739,
+      "inputTokens": 1077035,
+      "outputTokens": 188352,
+      "cacheCreationTokens": 618594,
+      "cacheReadTokens": 36642614,
+      "costUsd": 17.267852500000004,
       "models": {
         "gpt-6-luna": {
           "inputTokens": 145558,
@@ -4092,20 +4092,20 @@
           "costUsd": 0.551824,
           "costComplete": true
         },
-        "claude-sonnet-5-5": {
-          "inputTokens": 90,
-          "outputTokens": 81790,
-          "cacheCreationTokens": 535190,
-          "cacheReadTokens": 5831618,
-          "costUsd": 6.1877454,
+        "gpt-5.6-terra": {
+          "inputTokens": 818193,
+          "outputTokens": 68259,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 21493760,
+          "costUsd": 8.4428075,
           "costComplete": true
         },
-        "gpt-5.6-terra": {
-          "inputTokens": 565667,
-          "outputTokens": 37760,
-          "cacheCreationTokens": 0,
-          "cacheReadTokens": 9251072,
-          "costUsd": 4.2933354999999995,
+        "claude-sonnet-5-5": {
+          "inputTokens": 160,
+          "outputTokens": 103929,
+          "cacheCreationTokens": 618594,
+          "cacheReadTokens": 9897910,
+          "costUsd": 8.240351999999998,
           "costComplete": true
         }
       },
@@ -4131,6 +4131,40 @@
           }
         }
       }
+    },
+    "2026-10-27": {
+      "inputTokens": 404873,
+      "outputTokens": 27123,
+      "cacheCreationTokens": 372040,
+      "cacheReadTokens": 6945068,
+      "costUsd": 5.5313313,
+      "models": {
+        "gpt-5.6-terra": {
+          "inputTokens": 236650,
+          "outputTokens": 9110,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 2028288,
+          "costUsd": 1.235347,
+          "costComplete": true
+        },
+        "gpt-6-luna": {
+          "inputTokens": 168173,
+          "outputTokens": 3101,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 2041344,
+          "costUsd": 0.9772835000000002,
+          "costComplete": true
+        },
+        "claude-sonnet-5-5": {
+          "inputTokens": 50,
+          "outputTokens": 14912,
+          "cacheCreationTokens": 372040,
+          "cacheReadTokens": 2875436,
+          "costUsd": 3.3187008000000007,
+          "costComplete": true
+        }
+      },
+      "sources": {}
     }
   }
 }
