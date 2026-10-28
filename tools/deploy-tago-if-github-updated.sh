@@ -3,30 +3,21 @@
 set -euo pipefail
 export PATH="/Users/karp/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 
-workspace="$(cd "$(dirname "$0")/.." && pwd)"
 branch="preview/ten-post-migration"
 remote_repository="https://github.com/kary2999/leon-blog-web.git"
 server="root@47.245.29.197"
 server_key="/Users/karp/.ssh/hermes_control"
 server_root="/opt/webserver/tago"
-state_directory="$workspace/.deployment-state"
+deployment_checkout="$HOME/.local/share/tago-deploy/repo"
+state_directory="$HOME/.local/state/tago-deploy"
 state_file="$state_directory/tago-last-deployed"
 log_file="$state_directory/tago-auto-deploy.log"
+cleanup() { rm -f "$deployment_checkout/_multiconfig.yml"; }
+trap cleanup EXIT
 
 mkdir -p "$state_directory"
 exec >> "$log_file" 2>&1
 printf '\n[%s] checking GitHub deployment branch\n' "$(date '+%Y-%m-%d %H:%M:%S')"
-
-cd "$workspace"
-if [ -n "$(git status --porcelain)" ]; then
-  echo "refusing deployment: workspace has uncommitted changes"
-  exit 1
-fi
-
-if [ "$(git remote get-url origin)" != "$remote_repository" ]; then
-  echo "refusing deployment: origin is not the approved repository"
-  exit 1
-fi
 
 remote_sha="$(git ls-remote "$remote_repository" "refs/heads/$branch" | awk 'NR == 1 { print $1 }')"
 if [ -z "$remote_sha" ]; then
@@ -43,15 +34,24 @@ if [ "$remote_sha" = "$last_deployed" ]; then
   exit 0
 fi
 
-git fetch origin "$branch"
-if ! git merge-base --is-ancestor HEAD "$remote_sha"; then
-  echo "refusing deployment: GitHub is not a fast-forward from the local checkout"
-  exit 1
+if [ ! -d "$deployment_checkout/.git" ]; then
+  mkdir -p "$(dirname "$deployment_checkout")"
+  git clone --single-branch --branch "$branch" "$remote_repository" "$deployment_checkout"
+else
+  [ "$(git -C "$deployment_checkout" remote get-url origin)" = "$remote_repository" ] || { echo "refusing deployment: unexpected deployment checkout remote"; exit 1; }
+  git -C "$deployment_checkout" diff --quiet || { echo "refusing deployment: deployment checkout has local changes"; exit 1; }
+  git -C "$deployment_checkout" fetch origin "$branch"
+  git -C "$deployment_checkout" checkout "$branch"
+  git -C "$deployment_checkout" merge --ff-only "origin/$branch"
 fi
-git merge --ff-only "$remote_sha"
+cd "$deployment_checkout"
 
-npm test
+if [ ! -d node_modules ]; then
+  npm ci
+fi
+
 npm run build:tago
+npm test
 node tools/verify-article-routes.mjs
 
 backup_name="tago-$(date '+%Y%m%d-%H%M%S').tar.gz"
@@ -61,6 +61,10 @@ rsync -a --delete -e "ssh -i $server_key -o BatchMode=yes -o ConnectTimeout=12" 
   public/ "$server:$server_root/"
 ssh -i "$server_key" -o BatchMode=yes -o ConnectTimeout=12 "$server" \
   "test -f $server_root/index.html"
+
+# Restore the latest server-side daily aggregate after public/ is refreshed.
+ssh -i "$server_key" -o BatchMode=yes -o ConnectTimeout=12 "$server" \
+  "test -f /opt/webserver/tago-data/token-usage/bin/aggregate.py && python3 /opt/webserver/tago-data/token-usage/bin/aggregate.py /opt/webserver/tago-data/token-usage/daily $server_root/assets/token-usage.json"
 
 printf '%s\n' "$remote_sha" > "$state_file"
 echo "deployed: $remote_sha"

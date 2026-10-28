@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
+  <title id="title">个人量化理财的风险监控与风险预防链路</title>
+  <desc id="desc">从发现数据与仓位异常，到核验、分级提醒及人工处置的四步风险链路。每一步都强调数据来源、时间和人工确认。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#101820"/><stop offset="1" stop-color="#17283a"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#b9cbd8"/></marker>
+    <style>
+      .title{font:700 38px -apple-system,BlinkMacSystemFont,'PingFang SC','Noto Sans CJK SC',sans-serif;fill:#f7fafc}.subtitle{font:400 22px -apple-system,BlinkMacSystemFont,'PingFang SC','Noto Sans CJK SC',sans-serif;fill:#cbd8e3}.step{font:700 29px -apple-system,BlinkMacSystemFont,'PingFang SC','Noto Sans CJK SC',sans-serif;fill:#fff}.body{font:400 23px -apple-system,BlinkMacSystemFont,'PingFang SC','Noto Sans CJK SC',sans-serif;fill:#e4edf4}.note{font:600 19px -apple-system,BlinkMacSystemFont,'PingFang SC','Noto Sans CJK SC',sans-serif;fill:#a9bbca}.action{font:700 21px -apple-system,BlinkMacSystemFont,'PingFang SC','Noto Sans CJK SC',sans-serif;fill:#f5f7fa}.ok{fill:#5ee2a5}.warn{fill:#ffd166}.bad{fill:#ff8396}.blue{fill:#7bb5ff}</style>
+  </defs>
+  <rect width="1200" height="860" rx="30" fill="url(#bg)"/>
+  <text x="600" y="62" class="title" text-anchor="middle">个人量化理财：风险监控与风险预防</text>
+  <text x="600" y="98" class="subtitle" text-anchor="middle">先核验，再提醒；异常不是自动交易指令</text>
+
+  <rect x="40" y="145" width="290" height="265" rx="20" fill="#183142" stroke="#4d97bd" stroke-width="3"/>
+  <text x="85" y="192" class="step">1 · 发现信号</text><line x1="85" y1="212" x2="325" y2="212" stroke="#4d97bd" stroke-width="2"/>
+  <text x="85" y="250" class="body">净值与本金流水</text><text x="85" y="291" class="body">仓位、强平距离、ADL</text><text x="85" y="332" class="body">费率、盘口与成交</text><text x="85" y="378" class="note">曲线跳变 / 费率转负 / 同步超时</text>
+
+  <path d="M331 278 H420" stroke="#b9cbd8" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <rect x="430" y="145" width="340" height="265" rx="20" fill="#302b1d" stroke="#d0ae52" stroke-width="3"/>
+  <text x="460" y="192" class="step">2 · 核验口径</text><line x1="460" y1="212" x2="740" y2="212" stroke="#d0ae52" stroke-width="2"/>
+  <text x="460" y="250" class="body">快照完整，统计范围一致</text><text x="460" y="291" class="body">净值已扣除入金 / 出金</text><text x="460" y="332" class="body">现货与合约数量仍配平</text><text x="460" y="378" class="warn" style="font:700 18px -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif">数据缺失 → 标为“待确认”，不当作零风险</text>
+
+  <path d="M771 278 H860" stroke="#b9cbd8" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <rect x="870" y="145" width="290" height="265" rx="20" fill="#35202a" stroke="#db6880" stroke-width="3"/>
+  <text x="900" y="192" class="step">3 · 分级提醒</text><line x1="900" y1="212" x2="1130" y2="212" stroke="#db6880" stroke-width="2"/>
+  <text x="900" y="254" class="body"><tspan class="ok">低</tspan><tspan>　记录并继续观察</tspan></text><text x="900" y="300" class="body"><tspan class="warn">中</tspan><tspan>　Lark 提醒，核对仓位</tspan></text><text x="900" y="346" class="body"><tspan class="bad">高</tspan><tspan>　提示风险收口条件</tspan></text><text x="900" y="382" class="note">提醒只负责发现问题</text>
+
+  <path d="M600 414 V508" stroke="#b9cbd8" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <rect x="55" y="520" width="1090" height="290" rx="22" fill="#162b25" stroke="#51c18a" stroke-width="3"/>
+  <text x="600" y="570" class="step" text-anchor="middle">4 · 人工核验与处置</text><text x="600" y="604" class="subtitle" text-anchor="middle">系统提供事实与提醒，不替代交易决策</text>
+  <rect x="105" y="650" width="280" height="100" rx="15" fill="#214637"/><text x="245" y="692" class="action" text-anchor="middle">数据无误、仓位配平</text><text x="245" y="725" class="body" text-anchor="middle">继续观察</text>
+  <rect x="460" y="650" width="280" height="100" rx="15" fill="#4a3d20"/><text x="600" y="692" class="action" text-anchor="middle">条件变化</text><text x="600" y="725" class="body" text-anchor="middle">复算费率、滑点与成本</text>
+  <rect x="815" y="650" width="280" height="100" rx="15" fill="#4b2631"/><text x="955" y="692" class="action" text-anchor="middle">风险无法确认或已过高</text><text x="955" y="725" class="body" text-anchor="middle">优先收口敞口</text>
+  <text x="600" y="844" class="blue" style="font:700 20px -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif" text-anchor="middle">预防基线：分离模拟盘与实盘 · 保留快照与成交明细 · 限制权限 · 设定停止入口</text>
+</svg>

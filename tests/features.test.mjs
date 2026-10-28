@@ -34,6 +34,17 @@ test('published site exposes the Tago brand and Lee author identity', () => {
   assert.ok(deploymentReadme.includes('https://www.tago.top/'));
 });
 
+test('about page includes a privacy-safe Token usage panel and its daily sync contract', () => {
+  const about = read('source/about/index.md');
+  assert.ok(about.includes('id="token-usage"'));
+  assert.ok(theme().inject.head.some(item => item.includes('token-usage.css')));
+  assert.ok(theme().inject.bottom.some(item => item.includes('token-usage.js')));
+  assert.ok(existsSync(new URL('../source/assets/token-usage.json', import.meta.url)));
+  assert.ok(existsSync(new URL('../tools/sync-token-usage-to-tago.sh', import.meta.url)));
+  assert.ok(read('tools/sync-token-usage-to-tago.sh').includes('export-token-usage.mjs'));
+  assert.ok(read('tools/com.tago.token-usage-sync.plist').includes('<integer>8</integer>'));
+});
+
 test('custom stylesheet follows the configured root without duplicate links', () => {
   const scriptPath = new URL('../scripts/native-features.js', import.meta.url);
   let beforeGenerate;

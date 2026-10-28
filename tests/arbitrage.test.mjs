@@ -54,6 +54,41 @@ test('collection index is rendered by Butterfly and keeps the framed reading pan
   assert.match(theme, /js\/arbitrage\.js/);
 });
 
+test('collection index introduces the personal quant finance showcase and contact channel', () => {
+  const index = read(`${suite}/index.md`);
+  const css = read('source/css/arbitrage.css');
+
+  assert.match(index, /class="quant-showcase"/);
+  assert.match(index, /mailto:axon90000@gmail\.com/);
+  assert.match(index, /有量化理财需求/);
+  assert.match(css, /\.quant-showcase\{/);
+  assert.match(index, /class="quant-showcase-gallery"/);
+  assert.equal((index.match(/class="quant-showcase-media"/g) || []).length, 5);
+  for (const asset of ['dashboard.png', 'open-order.png', 'trade-history.png', 'funding-history.png', 'funding-overview.png']) {
+    assert.match(index, new RegExp(`assets/arbitrage-showcase/${asset.replace('.', '\\.')}`));
+    assert.ok(existsSync(join(root, 'source/assets/arbitrage-showcase', asset)), asset);
+  }
+  assert.match(css, /\.quant-showcase-gallery\{[^}]*overflow-x:auto/);
+  assert.match(css, /\.quant-showcase-trigger\{[^}]*flex:0 0/);
+});
+
+test('quant finance screenshots open in a keyboard-operable lightbox', () => {
+  const index = read(`${suite}/index.md`);
+  const css = read('source/css/arbitrage.css');
+  const script = read('source/js/arbitrage.js');
+
+  assert.equal((index.match(/class="quant-showcase-trigger/g) || []).length, 5);
+  assert.match(index, /id="quantLightbox"/);
+  assert.match(index, /data-quant-lightbox="previous"/);
+  assert.match(index, /data-quant-lightbox="next"/);
+  assert.match(index, /data-quant-lightbox="close"/);
+  assert.match(css, /\.quant-lightbox\{/);
+  assert.match(script, /quantLightbox/);
+  assert.match(script, /ArrowLeft/);
+  assert.match(script, /ArrowRight/);
+  assert.match(script, /Escape/);
+});
+
 test('standalone calculator pages use the Leon Blog shell without sidebar widgets', () => {
   const common = read(`${suite}/assets/common.css`);
   const shell = read(`${suite}/assets/theme-shell.js`);

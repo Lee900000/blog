@@ -48,6 +48,16 @@ test('native cards, original hero and ribbon load without fabricated visitor cou
   assert.equal($('.site-data .length-num').first().text(), String(manifest.posts.length));
 });
 
+test('about page loads the generated Token usage display without exposing source logs', () => {
+  const about = page('about/index.html');
+  assert.equal(about('#token-usage').length, 1);
+  assert.ok(about('script[src]').toArray().some(node => about(node).attr('src').includes('token-usage.js')));
+  assert.ok(existsSync(new URL('../public/assets/token-usage.json', import.meta.url)));
+  const report = JSON.parse(read('public/assets/token-usage.json'));
+  assert.ok(report.totals.totalTokens > 0);
+  assert.ok(report.agents.every(agent => !Object.hasOwn(agent, 'sessions')));
+});
+
 test('native Twikoo renders all imported articles plus homepage recent-comments wiring', () => {
   assert.ok(existsSync(new URL('../public/assets/vendor/twikoo-1.7.24.all.min.js', import.meta.url)));
   for (const post of manifest.posts) {

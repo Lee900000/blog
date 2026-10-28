@@ -18,6 +18,55 @@ disableNunjucks: true
     </div>
     <span class="arbitrage-count">10 种策略</span>
   </div>
+  <section class="quant-showcase" aria-labelledby="quantShowcaseTitle">
+    <div class="quant-showcase-copy">
+      <span class="quant-showcase-kicker">PERSONAL QUANT FINANCE</span>
+      <h2 id="quantShowcaseTitle">个人量化理财</h2>
+      <p>围绕资金费率、期现与跨期策略建立的监控与执行界面，用于查看仓位、风险提示、资金与策略运行状态。</p>
+      <a class="quant-contact" href="mailto:axon90000@gmail.com?subject=%E9%87%8F%E5%8C%96%E7%90%86%E8%B4%A2%E5%92%A8%E8%AF%A2">有量化理财需求？请通过邮件联系我 <strong>axon90000@gmail.com</strong><i class="fas fa-arrow-up-right-from-square"></i></a>
+    </div>
+    <div class="quant-showcase-gallery" role="region" aria-label="个人量化理财界面预览，可横向滚动" tabindex="0">
+      <button class="quant-showcase-trigger" type="button" data-quant-index="0" aria-label="放大预览：全景监控">
+      <span class="quant-showcase-media">
+        <img src="/assets/arbitrage-showcase/dashboard.png" alt="个人量化理财的总览监控界面" loading="lazy">
+        <span class="quant-showcase-caption">全景监控 · 仓位、策略与风险提示</span>
+      </span>
+      </button>
+      <button class="quant-showcase-trigger" type="button" data-quant-index="1" aria-label="放大预览：策略执行">
+      <span class="quant-showcase-media">
+        <img src="/assets/arbitrage-showcase/open-order.png" alt="BCH 合约开仓指令界面" loading="lazy">
+        <span class="quant-showcase-caption">策略执行 · 合约开仓指令</span>
+      </span>
+      </button>
+      <button class="quant-showcase-trigger" type="button" data-quant-index="2" aria-label="放大预览：交易记录">
+      <span class="quant-showcase-media">
+        <img src="/assets/arbitrage-showcase/trade-history.png" alt="BTC 合约历史成交记录" loading="lazy">
+        <span class="quant-showcase-caption">交易记录 · 成交与手续费明细</span>
+      </span>
+      </button>
+      <button class="quant-showcase-trigger" type="button" data-quant-index="3" aria-label="放大预览：资金费率收益">
+      <span class="quant-showcase-media">
+        <img src="/assets/arbitrage-showcase/funding-history.png" alt="SOL 合约资金费收益记录" loading="lazy">
+        <span class="quant-showcase-caption">资金费率 · 收益结算记录</span>
+      </span>
+      </button>
+      <button class="quant-showcase-trigger" type="button" data-quant-index="4" aria-label="放大预览：策略分析">
+      <span class="quant-showcase-media">
+        <img src="/assets/arbitrage-showcase/funding-overview.png" alt="资金费率策略与多空比走势" loading="lazy">
+        <span class="quant-showcase-caption">策略分析 · 资金费率与多空比</span>
+      </span>
+      </button>
+    </div>
+  </section>
+  <div class="quant-lightbox" id="quantLightbox" role="dialog" aria-modal="true" aria-label="量化理财图片预览" hidden>
+    <button class="quant-lightbox-close" type="button" data-quant-lightbox="close" aria-label="关闭图片预览"><i class="fas fa-xmark"></i></button>
+    <button class="quant-lightbox-nav previous" type="button" data-quant-lightbox="previous" aria-label="查看上一张"><i class="fas fa-chevron-left"></i></button>
+    <figure class="quant-lightbox-content">
+      <img id="quantLightboxImage" src="" alt="">
+      <figcaption id="quantLightboxCaption"></figcaption>
+    </figure>
+    <button class="quant-lightbox-nav next" type="button" data-quant-lightbox="next" aria-label="查看下一张"><i class="fas fa-chevron-right"></i></button>
+  </div>
   <div class="arbitrage-workspace">
     <aside class="strategy-nav" id="strategyNav" aria-label="套利策略导航">
       <div class="strategy-label">总览</div>

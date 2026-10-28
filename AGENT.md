@@ -86,27 +86,37 @@ curl -I https://tago.top/
 curl -I https://tago.top/archives/<文章固定标识>.html
 ```
 
-## 本地每 10 分钟检测
+## 本地每日自动部署
 
-使用用户级 cron 调用同一部署脚本，间隔 10 分钟。启用前确保脚本可执行、工作区干净，并确认本机 SSH 密钥存在：`/Users/karp/.ssh/hermes_control`。
+使用 macOS 用户级 LaunchAgent，每天本机时间 08:40 调用同一部署脚本。它从独立 GitHub 检出目录构建，因此不会读取外置盘工作区的未提交修改。
+
+安装或更新：
 
 ```bash
-(crontab -l 2>/dev/null | grep -v 'tago-auto-deploy'; \
- echo '*/10 * * * * /bin/bash /Volumes/AiCode/博客/tools/deploy-tago-if-github-updated.sh # tago-auto-deploy') | crontab -
+cd /Volumes/AiCode/博客
+bash tools/install-tago-deploy-scheduler.sh
 ```
 
-查看任务与日志：
+立即手动触发、查看状态与日志：
 
 ```bash
-crontab -l | grep tago-auto-deploy
-tail -f /Volumes/AiCode/博客/.deployment-state/tago-auto-deploy.log
+launchctl kickstart -k gui/$(id -u)/top.tago.site-deploy
+launchctl print gui/$(id -u)/top.tago.site-deploy
+tail -f /Users/karp/.local/state/tago-deploy/tago-auto-deploy.log
 ```
 
 停用任务：
 
 ```bash
-crontab -l | grep -v 'tago-auto-deploy' | crontab -
+launchctl bootout gui/$(id -u)/top.tago.site-deploy
 ```
+
+## Token 使用量展示
+
+- 关于页读取 `/assets/token-usage.json`；只包含每日聚合 Token、估算成本、模型与 Agent 分类，绝不上传原始会话或提示词。
+- 本机原始聚合来自 `~/.kimyx-token-usage/collector-state-v5/transactions/*/aggregate.json`。可运行 `node tools/export-token-usage.mjs` 刷新仓库的展示快照。
+- 手动同步：`tools/sync-token-usage-to-tago.sh`。它上传每日聚合至 `/opt/webserver/tago-data/token-usage/daily/`，服务器自动汇总为 `/opt/webserver/tago/assets/token-usage.json`。
+- LaunchAgent `top.tago.token-usage-sync` 每天 08:00（本机时区）调用同步脚本；日志在 `~/.kimyx-token-usage/tago-blog-sync.log`。
 
 ## 禁止事项
 
