@@ -72,3 +72,18 @@ test('Giscus renders on every public article only and has no homepage comments f
   assert.equal(home('#card-newest-comments').length, 0);
   assert.equal(home('#giscus-wrap').length, 0);
 });
+
+test('mysql incremental-upgrades article has a stable public route and developer SQL examples', () => {
+  const post = read('source/_posts/898.md');
+  assert.match(post, /title: MySQL 5\.7 到 8\.4：给 InnoDB 旧表的增量升级清单/);
+  assert.match(post, /CONSTRAINT ck_orders_positive_qty CHECK \(qty > 0\)/);
+  assert.match(post, /CONSTRAINT ck_orders_rest_qty CHECK \(rest_qty >= 0 AND rest_qty <= qty\)/);
+  assert.match(post, /ERROR 3819 \(HY000\): Check constraint 'ck_orders_rest_qty' is violated/);
+  assert.match(post, /max_connections.*151/);
+  assert.match(post, /REPEATABLE READ/);
+  assert.match(post, /GitHub 2018 MySQL 集群网络分区/);
+  assert.match(post, /character_set_client/);
+  assert.match(post, /SET NAMES utf8mb4/);
+  assert.match(post, /Illegal mix of collations/);
+  assert.match(post, /permalink: archives\/[a-f0-9]{8}\.html/);
+});
