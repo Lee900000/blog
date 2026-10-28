@@ -126,16 +126,19 @@ test('native announcement, ribbon and siteinfo are truthful', () => {
   assert.deepEqual(t.busuanzi, {site_uv: false, site_pv: false, page_pv: false});
 });
 
-test('article and newest comments use only the local Twikoo backend', () => {
-  assert.equal(theme().comments?.use, 'Twikoo');
-  assert.equal(theme().twikoo.envId, 'http://127.0.0.1:8089/');
-  assert.equal(theme().twikoo.visitor, false);
-  assert.equal(theme().aside.card_newest_comments.enable, true);
+test('article comments use Giscus with an isolated GitHub Discussions repository', () => {
+  assert.deepEqual(theme().comments?.use, ['Giscus']);
+  assert.equal(theme().comments.lazyload, false);
+  assert.equal(theme().comments.count, false);
+  assert.equal(theme().aside.card_newest_comments.enable, false);
   assert.equal(config().imported_post_comments, true);
-  assert.equal(theme().CDN.option.twikoo, '/assets/vendor/twikoo-1.7.24.all.min.js');
+  assert.equal(theme().giscus.repo, 'kary2999/tago-comments');
+  assert.equal(theme().giscus.option['data-mapping'], 'pathname');
+  assert.equal(theme().giscus.option['data-lang'], 'zh-CN');
+  assert.equal(theme().CDN.option?.twikoo, undefined);
 });
 
-test('imported comments opt-in changes rendering only and respects scope and switch', () => {
+test('article comments render on every public post and stay off non-article pages', () => {
   const scriptPath = new URL('../scripts/native-features.js', import.meta.url);
   assert.ok(existsSync(scriptPath), 'render-time comment hook must exist');
   let filter;
@@ -149,8 +152,8 @@ test('imported comments opt-in changes rendering only and respects scope and swi
   assert.equal(filter({...original}).comments, true);
   assert.equal(filter({...original}).raw, original.raw);
   assert.equal(filter({...original, layout: 'page'}).comments, false);
-  assert.equal(filter({...original, legacy_id: 999999}).comments, false);
-  assert.equal(filter({layout: 'post', comments: false}).comments, false);
+  assert.equal(filter({...original, legacy_id: 999999}).comments, true);
+  assert.equal(filter({layout: 'post', comments: false}).comments, true);
   hexo.config.imported_post_comments = false;
   assert.equal(filter({...original}).comments, false);
 });

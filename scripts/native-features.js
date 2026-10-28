@@ -1,9 +1,5 @@
 'use strict';
 
-// Render-time approval only: imported Markdown (including held article 237) stays untouched.
-const { join } = require('node:path');
-const importedIds = new Set(require(join(hexo.base_dir, 'migration/manifest.json')).posts.map(post => post.legacy_id));
-
 // Butterfly injects configured HTML verbatim, so a root-absolute custom CSS URL
 // breaks when the site is published below /blog/. Derive one link from Hexo's
 // active root and remove stale copies before every generation.
@@ -16,7 +12,7 @@ hexo.extend.filter.register('before_generate', () => {
 });
 
 hexo.extend.filter.register('before_post_render', data => {
-  if (hexo.config.imported_post_comments === true && data.layout === 'post' && importedIds.has(data.legacy_id)) {
+  if (hexo.config.imported_post_comments === true && data.layout === 'post') {
     data.comments = true;
   }
   return data;
