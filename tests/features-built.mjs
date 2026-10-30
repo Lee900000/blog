@@ -85,5 +85,53 @@ test('mysql incremental-upgrades article has a stable public route and developer
   assert.match(post, /character_set_client/);
   assert.match(post, /SET NAMES utf8mb4/);
   assert.match(post, /Illegal mix of collations/);
+  assert.match(post, /cover: \/assets\/mysql-upgrade\/innodb-upgrade-hero\.jpg/);
+  assert.match(post, /top_img: \/assets\/mysql-upgrade\/innodb-upgrade-hero\.jpg/);
   assert.match(post, /permalink: archives\/[a-f0-9]{8}\.html/);
+});
+
+test('recent quant-risk review uses a local hero image', () => {
+  const post = read('source/_posts/897.md');
+  assert.match(post, /cover: \/assets\/quant-risk-review\/performance-review-hero\.jpg/);
+  assert.match(post, /top_img: \/assets\/quant-risk-review\/performance-review-hero\.jpg/);
+});
+
+test('database landscape article separates relational, non-relational, analytical and streaming choices', () => {
+  const post = read('source/_posts/899.md');
+  assert.match(post, /DB-Engines/);
+  assert.match(post, /Stack Overflow 2026/);
+  assert.match(post, /关系型数据库：保存订单、账户与最终事实/);
+  assert.match(post, /非关系型与专用数据存储/);
+  assert.match(post, /数仓与分析/);
+  assert.match(post, /接入成本如何理解/);
+  assert.match(post, /版本怎么看：最新不等于主流/);
+  assert.match(post, /版本快照（最新 \/ 主流）/);
+  assert.match(post, /最新：\*\*9\.7\.4 LTS\*\*[\s\S]*主流：\*\*8\.4 LTS\*\*/);
+  assert.match(post, /授权 \/ 付费方式/);
+  assert.match(post, /cdn\.simpleicons\.org/);
+  assert.match(post, /开源 Apache-2\.0/);
+  assert.match(post, /源码可见/);
+  assert.match(post, /云服务按计算 \/ 存储计费/);
+  assert.match(post, /最佳使用场景/);
+  assert.match(post, /Apache Kafka/);
+  assert.match(post, /Apache Pulsar/);
+  assert.match(post, /不参加数据库排名/);
+  assert.match(post, /permalink: archives\/[a-f0-9]{8}\.html/);
+});
+
+test('liquidation guide distinguishes liquidation, insurance funds, ADL and mark-price verification', () => {
+  const post = read('source/_posts/900.md');
+  assert.match(post, /title: 你的仓位是怎么被平仓的：从强平、风险基金到 ADL/);
+  assert.match(post, /插针、维持保证金不足与没有阶梯/);
+  assert.match(post, /ADL 与“风险基金看起来没有用”/);
+  assert.match(post, /用户怀疑标记价被“做出来了”/);
+  assert.match(post, /liquidation-risk-engine\.jpg/);
+  assert.match(post, /liquidation-verification-path\.svg/);
+  assert.match(post, /scenario-wick-and-margin\.svg/);
+  assert.match(post, /scenario-insurance-fund-adl\.svg/);
+  assert.match(post, /scenario-mark-price-audit\.svg/);
+  assert.match(post, /binance\.com\/en\/support\/faq\/detail\/360033525371/);
+  assert.match(post, /hyperliquid\.gitbook\.io\/hyperliquid-docs\/trading\/liquidations/);
+  assert.match(post, /permalink: archives\/[a-f0-9]{8}\.html/);
+  assert.doesNotMatch(post, /\/(?:Volumes|Users)\//, 'public post does not disclose local filesystem paths');
 });

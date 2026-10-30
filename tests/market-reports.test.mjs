@@ -56,10 +56,14 @@ test('import keeps each report complete while adapting it to the Butterfly artic
 test('local blog build lists and renders all three reports without leaking report styles', async () => {
   const root = new URL('../', import.meta.url);
   const homepage = load(await readFile(new URL('public/index.html', root), 'utf8'));
+  const archives = load(await readFile(new URL('public/archives/index.html', root), 'utf8'));
 
   for (const item of cases) {
     const route = `/${articleRoutes[item.id]}`;
-    assert.ok(homepage(`a[href="${route}"]`).length > 0, `homepage links to ${item.id}`);
+    assert.ok(
+      homepage(`a[href="${route}"]`).length > 0 || archives(`a[href="${route}"]`).length > 0,
+      `homepage or archive links to ${item.id}`
+    );
     const page = load(await readFile(new URL(`public/${articleRoutes[item.id]}`, root), 'utf8'));
     assert.equal(page('.market-report').length, 1);
     assert.equal(page('.market-report h1').length, 0);

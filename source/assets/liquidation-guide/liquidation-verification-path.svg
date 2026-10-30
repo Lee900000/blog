@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 620" role="img" aria-labelledby="title desc">
+  <title id="title">合约仓位从触发到处理的核验链路</title>
+  <desc id="desc">指数与盘口进入标记价，标记价触发维持保证金判断，随后按盘口平仓、风险基金与自动减仓处理，并留下可核验的数据。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#091827"/><stop offset="1" stop-color="#102435"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L10,5.5 L0,11 z" fill="#6bd4e9"/></marker>
+    <marker id="arrowWarn" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto"><path d="M0,0 L10,5.5 L0,11 z" fill="#ffba58"/></marker>
+  </defs>
+  <rect width="1440" height="620" rx="28" fill="url(#bg)"/>
+  <g font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif">
+    <text x="72" y="86" fill="#eef8ff" font-size="34" font-weight="700">一次强平，不该只剩下一句「系统处理」</text>
+    <text x="72" y="124" fill="#97b5c7" font-size="19">每一个节点都应该有可回放的时间戳、输入价格、规则版本与结果。</text>
+    <g stroke="#285069" stroke-width="2" fill="#0d2637">
+      <rect x="72" y="203" width="246" height="150" rx="18"/><rect x="408" y="203" width="246" height="150" rx="18"/>
+      <rect x="744" y="203" width="246" height="150" rx="18"/><rect x="1080" y="203" width="286" height="150" rx="18"/>
+    </g>
+    <g fill="#eaf8ff" font-size="25" font-weight="700"><text x="104" y="258">1. 价格输入</text><text x="440" y="258">2. 标记价</text><text x="776" y="258">3. 风险触发</text><text x="1112" y="258">4. 强平后处理</text></g>
+    <g fill="#9fc1d1" font-size="18"><text x="104" y="298">指数成分、权重</text><text x="104" y="326">盘口、异常源剔除</text><text x="440" y="298">公式、窗口、回退</text><text x="440" y="326">每次计算结果</text><text x="776" y="298">权益、维持保证金</text><text x="776" y="326">档位、手续费、阈值</text><text x="1112" y="298">订单簿成交 / 接管</text><text x="1112" y="326">基金使用 / ADL 队列</text></g>
+    <g fill="none" stroke="#6bd4e9" stroke-width="4" marker-end="url(#arrow)" filter="url(#glow)"><path d="M320 278 H397"/><path d="M656 278 H733"/></g>
+    <path d="M992 278 H1069" fill="none" stroke="#ffba58" stroke-width="4" marker-end="url(#arrowWarn)" filter="url(#glow)"/>
+    <g>
+      <rect x="72" y="432" width="1294" height="112" rx="18" fill="#102e32" stroke="#35b9a1" stroke-width="2"/>
+      <text x="104" y="477" fill="#65ead1" font-size="22" font-weight="700">事后核验：同一 UTC 时刻应能对齐这四段证据</text>
+      <text x="104" y="516" fill="#c3e5df" font-size="19">价格来源与标记价快照　→　保证金 / 档位 / 规则版本　→　委托与成交记录　→　风险基金变动、ADL 排名与最终结算</text>
+    </g>
+  </g>
+</svg>

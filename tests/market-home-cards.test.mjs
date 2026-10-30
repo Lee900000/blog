@@ -1,11 +1,23 @@
 import { createRequire as routeRequire } from 'node:module';
 const articleRoutes = routeRequire(import.meta.url)('../article-routes.json');
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import test from 'node:test';
 import { load } from 'cheerio';
 
-const $ = load(readFileSync(new URL('../public/index.html', import.meta.url), 'utf8'));
+const renderedListPages = [
+  new URL('../public/index.html', import.meta.url),
+  ...readdirSync(new URL('../public/page/', import.meta.url))
+    .map(page => new URL(`../public/page/${page}/index.html`, import.meta.url))
+];
+const findArticleCard = route => {
+  for (const page of renderedListPages) {
+    const $ = load(readFileSync(page, 'utf8'));
+    const title = $(`a.article-title[href="/${route}"]`).first();
+    if (title.length) return { $, title };
+  }
+  return null;
+};
 const cards = [
   {
     id: 884,
@@ -29,10 +41,11 @@ const cards = [
   }
 ];
 
-test('market series homepage cards use covers and human summaries instead of article CSS', () => {
+test('market series cards retain covers and human summaries across paginated article lists', () => {
   for (const expected of cards) {
-    const title = $(`a.article-title[href="/${articleRoutes[expected.id]}"]`).first();
-    assert.equal(title.length, 1, `card ${expected.id} exists`);
+    const found = findArticleCard(articleRoutes[expected.id]);
+    assert.ok(found, `card ${expected.id} exists`);
+    const { title } = found;
     const card = title.closest('.recent-post-item');
     assert.equal(card.find(`img[src="${expected.cover}"]`).length, 1, `card ${expected.id} cover`);
     const summary = card.find('.content').text().replace(/\s+/g, ' ').trim();
