@@ -5,7 +5,9 @@ menu:
   标签: /tags/ || fas fa-tags
   友链: /link/ || fas fa-link
   代表作品: /works/ || fas fa-code
-  量化套利: /arbitrage/ || fas fa-chart-line
+  币圈指南:
+    交易术语字典: /archives/5596f036.html || fas fa-book
+    量化套利: /arbitrage/ || fas fa-chart-line
   关于: /about/ || fas fa-user
 
 search:

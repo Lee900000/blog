@@ -1,4 +1,7 @@
 /* Native Butterfly page enhancement for /arbitrage/. */
+.layout:has(.arbitrage-app){max-width:1520px;width:calc(100% - 32px)}
+#page:has(.arbitrage-app){box-sizing:border-box;width:100%;max-width:1440px;margin:0 auto;padding:clamp(20px,3vw,40px)}
+@media(max-width:620px){.layout:has(.arbitrage-app){width:calc(100% - 16px)}}
 .arbitrage-app{--arb-accent:#49b1f5;--arb-ink:var(--font-color);--arb-line:var(--light-grey);margin:-18px -22px -26px}
 .arbitrage-intro{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:28px 30px;border-bottom:1px solid var(--arb-line)}
 .arbitrage-intro p{margin:0;color:var(--card-meta);line-height:1.8}

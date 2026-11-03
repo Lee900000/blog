@@ -3,6 +3,14 @@
 set -euo pipefail
 
 export PATH="/Users/karp/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
+# GitHub access uses the local proxy; this job has no server deployment traffic.
+export HTTP_PROXY="http://127.0.0.1:7890"
+export HTTPS_PROXY="http://127.0.0.1:7890"
+export ALL_PROXY="socks5://127.0.0.1:7890"
+export http_proxy="$HTTP_PROXY"
+export https_proxy="$HTTPS_PROXY"
+export all_proxy="$ALL_PROXY"
+export NO_PROXY="127.0.0.1,localhost"
 repository="https://github.com/kary2999/leon-blog-web.git"
 branch="preview/ten-post-migration"
 account="kary2999"
@@ -20,7 +28,10 @@ else
   git -C "$checkout" diff --quiet || { echo "refusing: daily checkout has local changes" >&2; exit 1; }
   git -C "$checkout" fetch origin "$branch"
   git -C "$checkout" checkout "$branch"
-  git -C "$checkout" merge --ff-only "origin/$branch"
+  # This checkout is disposable and only ever contains this task's single-file
+  # maintenance commit. Resetting prevents a rejected concurrent push from
+  # leaving tomorrow's scheduled run permanently behind the remote branch.
+  git -C "$checkout" reset --hard "origin/$branch"
 fi
 
 [ "$(gh api user --jq .login)" = "$account" ] || { echo "refusing: expected GitHub account $account" >&2; exit 1; }

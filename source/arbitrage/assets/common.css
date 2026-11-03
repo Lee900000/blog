@@ -1,4 +1,5 @@
 /* ===== 数字货币量化套利 · 共用样式 ===== */
+.crypto-menu{position:relative}.crypto-menu>summary{cursor:pointer;white-space:nowrap}.crypto-menu-links{position:absolute;right:0;top:calc(100% + 8px);min-width:230px;display:grid;gap:6px;padding:12px;background:var(--paper,#f7f5ef);border:1px solid var(--line,#ccc);border-radius:8px;box-shadow:0 8px 24px #0003}.crypto-menu-links a{padding:6px 8px}@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .crypto-menu-links{background:#202020}}@media(max-width:768px){.crypto-menu-links{position:static;margin-top:8px;box-shadow:none}}
 :root{
   --bg:#f7f9f9; --card:#ffffff; --ink:#4c4948; --muted:#6f6b6a;
   --line:#e7e7e7; --accent:#00a99d; --accent-soft:#e4f7f5;
@@ -102,7 +103,7 @@ strong{font-weight:600}
 /* 公式块 */
 .formula{background:var(--code);border:1px solid var(--line);border-radius:10px;
   padding:12px 15px;font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:13.5px;
-  overflow-x:auto;margin:12px 0;color:var(--ink)}
+  white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.8;overflow-x:auto;margin:12px 0;color:var(--ink)}
 .formula .c{color:var(--muted)}
 
 /* 计算器 */

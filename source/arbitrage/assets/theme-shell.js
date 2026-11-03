@@ -10,7 +10,7 @@
     ['◆', '标签', '/tags/'],
     ['∞', '友链', '/link/'],
     ['⚙', '代表作品', '/works/'],
-    ['⌁', '量化套利', '/arbitrage/', 'page'],
+    ['⌁', '币圈指南', null, 'crypto'],
     ['●', '关于', '/about/']
   ];
 
@@ -22,7 +22,9 @@
     <button class="menu-toggle" type="button" aria-label="展开导航" aria-expanded="false">☰</button>
     <div class="site-menu">
       ${items.map(([icon, label, href, current]) =>
-        `<a href="${href}" target="_top"${current ? ' aria-current="page"' : ''}><span aria-hidden="true">${icon}</span> ${label}</a>`
+        current === 'crypto'
+          ? `<details class="crypto-menu"><summary><span aria-hidden="true">${icon}</span> ${label}</summary><div class="crypto-menu-links"><a href="/archives/5596f036.html" target="_top">交易术语字典</a><a href="/arbitrage/" target="_top" aria-current="page">量化套利</a></div></details>`
+          : `<a href="${href}" target="_top"><span aria-hidden="true">${icon}</span> ${label}</a>`
       ).join('')}
     </div>`;
 

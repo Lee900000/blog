@@ -2,6 +2,14 @@
 # Deploy tago.top only after its GitHub source branch advances.
 set -euo pipefail
 export PATH="/Users/karp/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
+# GitHub access uses the local proxy; SSH/rsync deployment remains direct.
+export HTTP_PROXY="http://127.0.0.1:7890"
+export HTTPS_PROXY="http://127.0.0.1:7890"
+export ALL_PROXY="socks5://127.0.0.1:7890"
+export http_proxy="$HTTP_PROXY"
+export https_proxy="$HTTPS_PROXY"
+export all_proxy="$ALL_PROXY"
+export NO_PROXY="127.0.0.1,localhost"
 
 branch="preview/ten-post-migration"
 remote_repository="https://github.com/kary2999/leon-blog-web.git"

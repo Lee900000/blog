@@ -3,6 +3,14 @@
 set -euo pipefail
 export PATH="/Users/karp/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 export GIT_TERMINAL_PROMPT=0
+# GitHub access uses the local proxy; SSH/rsync deployment remains direct.
+export HTTP_PROXY="http://127.0.0.1:7890"
+export HTTPS_PROXY="http://127.0.0.1:7890"
+export ALL_PROXY="socks5://127.0.0.1:7890"
+export http_proxy="$HTTP_PROXY"
+export https_proxy="$HTTPS_PROXY"
+export all_proxy="$ALL_PROXY"
+export NO_PROXY="127.0.0.1,localhost"
 
 workspace="${TAGO_TOKEN_TOOLS_DIR:-$(cd "$(dirname "$0")/.." && pwd)}"
 node_bin="${NODE_BIN:-/Users/karp/.local/bin/node}"

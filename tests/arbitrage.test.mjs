@@ -9,9 +9,15 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const read = path => readFileSync(join(root, path), 'utf8');
 const suite = 'source/arbitrage';
 
+test('formula blocks preserve authored line breaks and wrap on small screens', () => {
+  const css = read(`${suite}/assets/common.css`);
+  assert.match(css, /\.formula\{[^}]*white-space:pre-wrap/);
+  assert.match(css, /\.formula\{[^}]*overflow-wrap:anywhere/);
+});
+
 test('Leon navigation exposes the self-contained arbitrage collection', () => {
   const menu = YAML.parse(read('_config.butterfly.yml')).menu;
-  assert.match(menu['量化套利'], /^\/arbitrage\/ /);
+  assert.match(menu['币圈指南']['量化套利'], /^\/arbitrage\/ /);
   const skip = YAML.parse(read('_config.yml')).skip_render;
   assert.ok(skip.includes('arbitrage/*.html'));
   assert.ok(!skip.includes('arbitrage/**'));

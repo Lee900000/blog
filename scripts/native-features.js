@@ -9,6 +9,13 @@ hexo.extend.filter.register('before_generate', () => {
   const inject = hexo.theme.config.inject ?? {};
   const head = (inject.head ?? []).filter(item => !item.includes('leon.css'));
   hexo.theme.config.inject = {...inject, head: [...head, stylesheet]};
+  hexo.theme.config.asset = {...hexo.theme.config.asset, local_search: `${root}/js/monthly-search.js`};
+}, 20);
+
+hexo.extend.generator.register('monthly-search', function (locals) {
+  const { createMonthlyIndex } = require('../tools/monthly-search.cjs');
+  const result = createMonthlyIndex(locals.posts.toArray(), this.config.root);
+  return [{ path: 'search/manifest.json', data: JSON.stringify(result.manifest) }, ...result.shards];
 });
 
 hexo.extend.filter.register('before_post_render', data => {

@@ -11,6 +11,8 @@ test('GitHub deployment watcher records a revision only after successful server 
   const script = readFileSync(scriptPath, 'utf8')
 
   assert.match(script, /branch="preview\/ten-post-migration"/)
+  assert.match(script, /export HTTPS_PROXY="http:\/\/127\.0\.0\.1:7890"/)
+  assert.match(script, /export ALL_PROXY="socks5:\/\/127\.0\.0\.1:7890"/)
   assert.match(script, /git ls-remote .*refs\/heads\/\$branch/)
   assert.match(script, /last-deployed/)
   assert.match(script, /deployment_checkout="\$HOME\/\.local\/share\/tago-deploy\/repo"/)
