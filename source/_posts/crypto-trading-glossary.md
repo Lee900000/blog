@@ -12,6 +12,7 @@ tags:
   - 风险管理
 comments: false
 permalink: archives/5596f036.html
+listed: false
 ---
 
 第一次打开交易所，看到的可能是 U、C2C、Maker、标记价格、维持保证金率……每个词单独看似乎都不难，放到一次交易里就容易混在一起。
