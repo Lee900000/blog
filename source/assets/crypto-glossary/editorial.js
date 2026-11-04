@@ -237,7 +237,81 @@
   entries['未实现盈亏'].formulas=[f('买涨和买跌分别算','只适用于线性合约，不含手续费和资金费。未平仓时常用标记价作参考，实际仍看平台口径。','买涨的浮动盈亏 =（参考价 − 开仓价）× 持有币数\n买跌的浮动盈亏 =（开仓价 − 参考价）× 持有币数',[['参考价','这次用来估算赚亏的价格'],['开仓价','这笔持仓的平均入场价格'],['持有币数','还没有平掉的币数，取正数']])];
   entries['已实现盈亏'].formulas=[f('平掉多少，就算多少','只算平仓价差，手续费和资金费用要按平台的字段说明另外核对。','买涨的平仓盈亏 =（平仓价 − 开仓价）× 本次平仓币数\n买跌的平仓盈亏 =（开仓价 − 平仓价）× 本次平仓币数',[['平仓价','这次实际成交的平均价格'],['开仓价','原持仓的平均入场价格'],['本次平仓币数','本次真正平掉的数量，取正数']])];
   entries['破产价格'].formulas=[f('保证金刚好亏光的理论位置','单仓位线性模型，不计费用。这里不是平台一定会等到的价格。','买涨的破产价 = 开仓价 − 分配的保证金 ÷ 持有币数\n买跌的破产价 = 开仓价 + 分配的保证金 ÷ 持有币数',[['分配的保证金','放在这笔仓位上承担亏损的钱'],['持有币数','换算后的币数，取正数'],['开仓价','平均入场价格']])];
+  Object.assign(entries['破产价格'],{
+    definition:'先把它理解成“这笔仓位的钱刚好亏光”的理论价格。它不同于平台开始强制减仓或平仓的触发价，也不保证你能按这个价格在市场成交。实际平台还会按自己的清算和接管规则处理。',
+    scope:'下面只推导 USDT 本位线性单仓位，不计手续费、资金费、追加保证金、其他持仓和风险档位变化；不能代替真实账户风控计算。',
+    example:'教学假设：用 3,000 USDT 保证金，在 30,000 USDT 买涨 1 枚 BTC。每跌 1,000，价差亏损 1,000；跌至 27,000 时，价差亏损 3,000，恰好耗尽这笔保证金。真实强平通常已在此前触发，不能等到 27,000 才处理风险。',
+    sections:[{title:'官方怎么说，哪些不是一回事',paragraphs:[
+      'Binance 的清算说明区分强平触发与后续处置：标记价格触及强平价格会触发清算；账户在处置后仍不满足要求时，文档还描述了按破产价格关闭及保险基金接管的机制。不能把“接管用的价格”理解成市场保证成交价。该帮助页也提醒内容可能过时，实际以适用交易规则、清算规则和合约规格为准。',
+      'OKX 的澳大利亚帮助页同样区分破产价格、强平触发价格与实际处置结果。这里只引用其概念区别，不把该地区页面当成所有地区、产品和账户的统一清算细则。'
+    ],sources:[['Binance · Futures Liquidation Protocols','https://www.binance.com/en/support/faq/detail/360033525271'],['OKX Australia · Forced liquidation FAQ','https://www.okx.com/en-au/help/forced-liquidation-faq']]}],
+    cautions:['触及维持要求就可能进入强平，不会为了等你把保证金亏光才开始。','破产价格、强平触发价、接管价格和实际市场成交价不要混用。','全仓、多币种抵押、币本位反向合约不能套用这里的单仓位公式。'],
+    sources:[['Binance · 清算流程与破产价格','https://www.binance.com/en/support/faq/detail/360033525271'],['OKX Australia · 破产价与强平价的区别','https://www.okx.com/en-au/help/forced-liquidation-faq']],
+    basis:'公式是教学推导：令“分配保证金 + 线性价差盈亏 = 0”后解出价格，不是 Binance 或 OKX 官方账户风控的完整公式。官方链接用于核对概念和机制；示例参数是假设，不是实时风险数据。',
+    related:['强平价格','维持保证金','未实现盈亏'],verifiedAt:'2026-11-04（上述机制说明；公式为标明范围的教学推导）'
+  });
   entries['自动减仓'].formulas.forEach(formula=>formula.advanced=true);
+  entries['交易手续费'].definition='成交时，平台按这次实际成交的数量、价格和适用费率计算费用。挂单成交与吃单成交（英文为 Maker、Taker）可能适用不同费率；并不是按你的全部持仓重复收费。';
+  entries['交易手续费'].formulas=[f('只算这一次成交','限线性成交；张数先按面值换成币数。订单分多笔成交时，应分别按对应价格与费率计算再相加。','本笔成交费用 = 本笔成交币数 × 本笔成交价格 × 本笔手续费率',[
+    ['本笔成交币数','这一次实际成交的数量，取正数；不是成交前或成交后的总持仓数量'],
+    ['本笔成交价格','这一次实际成交的价格；不能用触发价代替'],
+    ['本笔手续费率','这次成交适用的费率；0.04% 换成小数为 0.0004，负费率的返还按产品规则']
+  ])];
+  entries['交易手续费'].example='教学假设：原来持有 1 BTC，这次只平掉 0.1 BTC，成交价 30,000 USDT，假设费率 0.04%，本笔费用为 0.1 × 30,000 × 0.0004 = 1.2 USDT。没有成交的其余仓位不因此再次收取本笔交易费。';
+  entries['交易手续费'].sources=[['OKX · 按实际开平仓数量计算合约手续费','https://www.okx.com/help/how-to-calculate-the-contract-transaction-fee'],['OKX · 账户适用费率',api+'#trading-account-rest-api-get-fee-rates']];
+  entries['强平价格'].formulas[3].scope='两条腿必须分别计算。这里只演示固定档位、不计费用的全仓模型，其他合约状态暂时不变。分母为零时，不能用这条除法求出唯一强平价；结果不是正数、候选价格下维持要求为负，或候选价格已跨风险档位时，也不能把结果当作有效强平价。须回到“账户权益与维持要求相等”的关系和实际平台规则重新核对。';
+  entries['标记价格'].formulas[0].scope='本项目的等权基差示例：对有效样本作简单平均。OKX 帮助文档说明“指数价加基差移动平均”的结构；这里的样本数、等权方式和窗口是教学假设，不代表 OKX 当前实现细节。';
+  entries['标记价格'].formulas[0].expression='本次中间价 =（本次买一价 + 本次卖一价）÷ 2\n本次基差 = 本次中间价 − 本次指数价\n平均基差 = 所有有效基差样本之和 ÷ 有效样本数\n示例标记价 = 当前指数价 + 平均基差';
+  entries['标记价格'].cautions[1]='指数移动平均和简单移动平均的算法不同；采样窗口不同，也不能仅凭名称相似就当成同一个结果。';
+  entries['已实现盈亏'].cautions[0]='某些“已实现盈亏”字段已经计入手续费和资金费用；先查字段说明，再决定是否另扣，避免重复计算。';
+  entries['维持保证金率'].scope='带速算额的固定档位模型；不能忽略速算额，直接把“维持保证金 ÷ 仓位总金额”当成档位维持保证金率。';
+  entries['初始保证金率'].formulas=[f('比例小数与百分数分开读','仓位金额大于零；只有基础初始保证金等于仓位金额除以杠杆倍数时，才能使用杠杆倒数。','初始保证金率（小数） = 基础初始保证金 ÷ 仓位总金额\n符合上述基础模型时：初始保证金率（小数） = 1 ÷ 杠杆倍数\n显示百分数时：将比例小数乘 100，再加 % 号；例如 0.1 显示为 10%',[['基础初始保证金、仓位总金额','使用同一币种及同一仓位范围，不含预留费用'],['杠杆倍数','本例用于计算基础初始保证金的杠杆设置']])];
+  entries['合约面值与乘数'].scope='不同平台可能用不同名称表达“一张合约代表多少”。先查单张面值、面值币种和是否另有独立乘数，不能仅凭字段名相似就直接互换。';
+  entries['合约面值与乘数'].cautions[0]='同时核对单张面值、面值币种、独立乘数和线性／反向类型；具体接口字段名放到单独的字段对照区查看。';
+  const proofreadExamples={
+    '强平价格':'教学假设：逐仓买涨 1 BTC，分配保证金 3,000 USDT，开仓价每枚 30,000 USDT，维持保证金率 5%，速算额为 0。预估强平价约为每枚 28,421.05 USDT；此时仓位权益和维持保证金都约为 1,421.05 USDT。若另一个模型把维持保证金固定为开仓金额的 5%，会得到 28,500 USDT；两种假设不能混用。',
+    '维持保证金':'教学假设：仓位总金额 100,000 USDT，档位维持保证金率 0.5%，速算额 50 USDT，则维持保证金为 100,000 × 0.005 − 50 = 450 USDT。不是当前产品档位。',
+    '资金费率':'教学假设：平均溢价指数为 0.10%，同周期利率为 0.01%，利率差允许偏离值为 0.05%。利率减去平均溢价得到 −0.09%，限制到允许范围后取 −0.05%；加回平均溢价，得到尚未检查最终上下限的费率 0.05%。仍需核对产品上下限和周期换算。',
+    '收益率':'收益 100 USDT，以 1,000 USDT 投入作为分母，收益率为 10%；若改以 10,000 USDT 仓位总金额为分母，则为 1%。先说明分母，再比较收益率。',
+    '维持保证金率':'维持保证金 450 USDT，仓位总金额 100,000 USDT，速算额 50 USDT，档位维持保证金率为（450 + 50）÷ 100,000 = 0.5%，不是直接用 450 ÷ 100,000 得到的 0.45%。',
+    '自动减仓':'仅演示项目排序模型：买涨仓位的开仓均价为 30,000 USDT，参考价为 33,000 USDT，理论破产价为 27,000 USDT。按开仓均价计算的盈利比例为 10%，有效杠杆为 33,000 ÷（33,000 − 27,000）= 5.5，项目盈利排序值为 0.55。它不是 Binance 或 OKX 的实际排队分数。',
+    '全仓钱包余额':'全仓钱包余额、全仓浮动盈亏、下单可用余额是不同的数。例如钱包余额 3,000 USDT、全仓浮亏 1,000 USDT，不能仍把 3,000 USDT 当作包含浮亏后的权益；这个基础例子也不能直接说明还能下单或转出多少。',
+    '可用余额':'页面显示“可用余额”有钱，不代表可以全部转出。下单可用和最大可转出可能使用不同规则，转出前应查看对应的可转出金额。'
+  };
+  for(const [key,example]of Object.entries(proofreadExamples))entries[key].example=example;
+  entries['自动减仓'].definition='强平留下的风险无法继续由平台规定的风险处理机制承接时，平台可能按规则强制减掉对手方的部分仓位，这叫自动减仓。被减仓的一方可能本来正在盈利，也没有主动点击平仓。触发条件、排队顺序和处置价格，要看具体平台和产品规则。';
+  entries['自动减仓'].scope='下方算式只是配套项目的教学排序模型。Binance 和 OKX 的官方排序口径并不相同，不能把这里的分数当成它们的实际排队分数或触发概率。';
+  entries['自动减仓'].sources=[
+    ['Binance · ADL 机制和官方排序口径','https://www.binance.com/en-AU/support/faq/detail/360033525471'],
+    ['OKX · ADL 机制和官方排序口径','https://www.okx.com/help/iv-introduction-to-auto-deleveraging-adl'],
+    ['OKX · 仓位 ADL 字段对照',api+'#trading-account-rest-api-get-positions']
+  ];
+  // Reviewed field references override ambiguous mappings in the supplied
+  // historical source. Account risk ratios and tier parameters are not aliases.
+  entries['保证金率'].fields=[
+    ['OKX · 账户余额','mgnRatio：适用账户的风险比例；以对应账户模式和币种层级为准',api+'#trading-account-rest-api-get-balance'],
+    ['OKX · 持仓信息','mgnRatio：持仓风险比例，不是风险档位的维持费率',api+'#trading-account-rest-api-get-positions']
+  ];
+  entries['维持保证金率'].fields=[
+    ['Binance · 风险分层','maintMarginRatio：本档维持保证金率',tiers],
+    ['OKX · 仓位档位','mmr：档位接口中的维持保证金率；与余额/持仓接口的同名金额字段区分',api+'#public-data-rest-api-get-position-tiers']
+  ];
+  entries['合约面值与乘数'].fields=[
+    ['OKX · 产品信息','ctVal：每张合约面值；ctValCcy：面值计价币种；ctMult：合约乘数',api+'#public-data-rest-api-get-instruments']
+  ];
+  entries['杠杆'].fields=[
+    ['Binance · 交易对配置','leverage：该交易对的杠杆设置','https://developers.binance.com/docs/derivatives/usds-margined-futures/account/rest-api/Symbol-Config'],
+    ['OKX · 持仓信息','lever：仓位杠杆；不要与产品信息中的最高可用杠杆混用',api+'#trading-account-rest-api-get-positions']
+  ];
+  entries['自动减仓'].fields=[
+    ['Binance · 仓位 ADL 分位','adlQuantile：0–4，由低到高；此接口文档注明约每 30 秒更新', 'https://developers.binance.com/docs/derivatives/usds-margined-futures/trade/rest-api/Position-ADL-Quantile-Estimation'],
+    ['OKX · 持仓信息','adl：仓位 ADL 指示，具体取值按所用接口核对；不是发生概率',api+'#trading-account-rest-api-get-positions']
+  ];
+  entries['收益率'].fields=[['OKX · 持仓信息','uplRatio：未实现盈亏比例，不是任意投资净收益率的通用字段',api+'#trading-account-rest-api-get-positions']];
+  entries['标记价格'].fields=[
+    ['Binance · 标记价行情','markPrice：标记价格；MARK_PRICE 是条件订单的参考类型枚举，不是同一个价格字段','https://developers.binance.com/docs/derivatives/usds-margined-futures/market-data/rest-api/Mark-Price'],
+    ['OKX · 标记价格','markPx：标记价格',api+'#public-data-rest-api-get-mark-price']
+  ];
   function isolatedLiquidation({margin,quantity,entry,rate,side,cum=0}){
     if(![margin,quantity,entry,rate,side,cum].every(Number.isFinite)||quantity<=0||![1,-1].includes(side))return null;
     const denominator=quantity*(rate-side);if(!denominator)return null;

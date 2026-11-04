@@ -14,7 +14,7 @@ body:has(.dictionary-reader) #page-header:before{background:transparent}
 .dr-sidebar{min-width:0;position:sticky;top:80px;align-self:start;max-height:calc(100dvh - 105px);display:flex;flex-direction:column}
 .dr-category-label{font-size:10px;color:var(--card-meta)}.dr-category-label select{display:block;width:100%;margin-top:8px;padding:10px;border:1px solid var(--light-grey);border-radius:6px;background:var(--card-bg);color:var(--font-color);font-size:12px}
 .dr-nav-count{font-size:10px;color:var(--card-meta);padding:16px 8px 10px}.dr-terms{overflow:auto;min-height:0;scrollbar-width:thin;padding-right:8px}.dr-terms button{display:block;width:100%;padding:10px 12px;margin:3px 0;border:0;border-radius:6px;background:transparent;color:var(--card-meta);font-size:12px;text-align:left;cursor:pointer;line-height:1.6}.dr-terms button:hover{background:var(--global-bg);color:var(--font-color)}.dr-terms button.active{background:var(--global-bg);color:#cf8d64;box-shadow:inset 2px 0 #cf8d64}
-.dr-main{min-width:0;min-height:650px;padding:5px 20px 20px 0}.dr-breadcrumb{font-size:11px;color:var(--card-meta);margin:0 0 26px}
+.dr-main{min-width:0;min-height:650px;padding:5px 20px 20px 0;scroll-margin-top:85px}.dr-breadcrumb{font-size:11px;color:var(--card-meta);margin:0 0 26px}
 #article-container .dr-content h3,#article-container .dr-content h4{border:0!important;padding:0!important;margin:0 0 22px!important;font-size:30px!important;font-weight:550;line-height:1.5;color:var(--font-color)!important}
 #article-container .dr-content h2{color:var(--font-color)!important;font-size:28px!important;margin:0 0 22px!important}
 #article-container .dr-content p{font-size:15px;line-height:2;color:var(--font-color);margin:12px 0 22px;max-width:850px}
@@ -35,5 +35,6 @@ body:has(.dictionary-reader) #page-header:before{background:transparent}
 #article-container .dr-content .dr-example{border-left:2px solid #bd8755;padding:2px 0 2px 16px;margin:24px 0;max-width:850px}
 #article-container .dr-content .dr-example>h4{font-size:12px!important;color:var(--card-meta)!important;margin-bottom:8px!important}
 #article-container .dr-content .dr-example p{font-size:14px;margin:0;line-height:1.9}
+#article-container .dr-content .dr-source-status{font-size:12px;color:#b88260;border-left:2px solid #b88260;padding:8px 12px;line-height:1.9}
 @media(max-width:800px){.dr-variables{grid-template-columns:1fr!important}.dr-field-table th:first-child,.dr-field-table td:first-child{width:100px}}
 @media(max-width:800px){#post:has(.dictionary-reader){padding:20px!important}.dr-header{display:block}.dr-search{margin-top:22px;width:100%}.dr-workspace{grid-template-columns:1fr;gap:25px}.dr-sidebar{position:static;max-height:240px}.dr-terms{max-height:145px}.dr-main{padding-right:0;min-height:400px}#article-container .dr-content h3,#article-container .dr-content h4{font-size:24px}.dr-content dl{grid-template-columns:1fr;gap:5px}.dr-content dd{margin-bottom:12px}.dr-breadcrumb{margin-bottom:18px}}

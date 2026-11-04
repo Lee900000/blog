@@ -15,11 +15,13 @@
 
 ## Verification gates
 
-- [ ] Reproduce scope-only `pro-record-552` and audit the whole current directory.
-- [ ] Write failing tests for learner copy and calculator validation before corresponding production code.
-- [ ] Supply each owned entry with definition, example, caution and precise reference or explicit reference status; never fill with generic repeated paragraphs or undocumented platform thresholds.
-- [ ] Integrate beginner copy without replacing stronger existing curated articles or losing source IDs/animation listeners.
-- [ ] Use explicit numerical calculator models; Chinese labels and units, nonfinite/empty/zero validation, reset, accessible result updates, no external API.
-- [ ] Run all tests, then build (not in parallel, because route tests read public files).
-- [ ] Recheck every rendered entry for definition/example coverage and exact duplication; inspect screenshot and exercise calculator inputs, validation and cross-entry navigation.
-- [ ] Leave changes local; no commit, publication or deployment requested.
+- [x] Reproduce scope-only `pro-record-552` and audit the whole current directory.
+- [x] Write failing tests for learner copy and calculator validation before corresponding production code.
+- [x] Supply each owned entry with definition, example, caution and precise reference or explicit reference status; never fill with generic repeated paragraphs or undocumented platform thresholds.
+- [x] Integrate beginner copy without replacing stronger existing curated articles or losing source IDs/animation listeners.
+- [x] Use explicit numerical calculator models; Chinese labels and units, nonfinite/empty/zero validation, reset, accessible result updates, no external API.
+- [x] Run all tests, then build (not in parallel, because route tests read public files).
+- [x] Recheck every rendered entry for definition/example coverage and exact duplication; inspect screenshot and exercise calculator inputs, validation and cross-entry navigation.
+- [x] Leave changes local; no commit, publication or deployment requested.
+
+Evidence and source-verification limits: `docs/交易术语字典-小白文案与试算验收.md`.

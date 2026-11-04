@@ -96,7 +96,7 @@
     for(const entry of entries){
       entry.category=publicCategory(entry);entry.categories=[entry.category];
       const copy=entryCopy(entry);
-      if(copy){entry.title=copy.title;entry.text+=' '+JSON.stringify(copy).toLowerCase();}
+      if(copy){entry.title=copy.title||entry.title;entry.text+=' '+JSON.stringify(copy).toLowerCase();}
       // A source citation is not an article. Do not offer title-only entries.
       entry.hasBody=!!copy||entry.members.some(member=>!member.referenceOnly&&member.nodes.some(node=>{
         const draft=/页面.{0,20}(未读|没读|缺失)|本次未|抓取|见第|本文未|F\d+|^查词|来源标记/;
@@ -137,6 +137,7 @@
       const candidates=sourceRows.filter(row=>/^(含义|说明|备注|注解|币安中文|OKX 中文|中文)$/.test(row.label)&&row.value&&row.value!=='—'&&!draftNote(row.value));
       const definition=copy?.definition||lead?.textContent.trim()||candidates.find(row=>row.value.length>12)?.value||candidates[0]?.value;
       if(definition)paragraph(content,definition,'dr-definition');
+      if(copy?.sourceStatus==='unverified')paragraph(content,'来源待核实：'+copy.sourceNote,'dr-source-status');
       const scope=copy?.scope;
       if(scope)paragraph(section('这个例子适用于什么情况'),scope);
       if(copy?.verifiedAt)paragraph(content,'资料核对：'+copy.verifiedAt,'dr-research-date');
@@ -172,12 +173,12 @@
           for(const [name,meaning]of formula.variables){const dt=document.createElement('dt');dt.textContent=name;const dd=document.createElement('dd');dd.textContent=meaning;dl.append(dt,dd);}target.append(dl);
         }
       }
-      const fieldLabels=/^(币安字段|币安 英文 \/ 字段|OKX 字段|OKX 英文 \/ 字段|本项目字段|本项目对应|字段参考|💡 字段建议|OKX 账户级含义|OKX 持仓级含义)$/;
+      const fieldLabels=/^(币安字段|币安 英文 \/ 字段|OKX 字段|OKX 英文 \/ 字段)$/;
       const fields=new Map();
-      for(const row of sourceRows){
-        if(!fieldLabels.test(row.label)||!row.value||row.value==='—'||draftNote(row.value))continue;
+      const fieldRows=copy?.fields?copy.fields.map(([label,value,url])=>({label,value,url})):sourceRows.filter(row=>fieldLabels.test(row.label));
+      for(const row of fieldRows){
+        if(!row.value||/^—|三方|第三方|非官方|帮助中心公式/.test(row.value)||draftNote(row.value))continue;
         let label=row.label.replace(/^币安 英文 \/ 字段$/,'币安字段').replace(/^OKX 英文 \/ 字段$/,'OKX 字段');
-        if(/本项目|建议|字段参考/.test(label))label='项目命名参考';
         // Compare the rendered text, not markup: <strong> and <code> are the
         // same wording. Preserve account/position scope even for the same code.
         const key=window.GlossaryCopy.key(label+'|'+row.value.replace(/[（(]估算值[）)]/g,''));
@@ -186,9 +187,9 @@
       if(fields.size){
         const region=document.createElement('details');region.className='dr-technical-fields';
         const summary=document.createElement('summary');summary.textContent='接口字段对照（给开发者，可跳过）';region.append(summary);content.append(region);
-        const table=document.createElement('table');table.className='dr-field-table';table.innerHTML='<thead><tr><th>来源 / 范围</th><th>字段或命名</th></tr></thead>';
+        const table=document.createElement('table');table.className='dr-field-table';table.innerHTML='<thead><tr><th>来源 / 范围</th><th>接口字段</th></tr></thead>';
         const tbody=document.createElement('tbody');
-        for(const field of fields.values()){const tr=document.createElement('tr');const label=document.createElement('td');label.textContent=field.label;const value=document.createElement('td');value.innerHTML=field.html;tr.append(label,value);tbody.append(tr);}table.append(tbody);region.append(table);
+        for(const field of fields.values()){const tr=document.createElement('tr');const label=document.createElement('td');label.textContent=field.label;const value=document.createElement('td');value.textContent=field.value;if(field.url){value.append(' · ',sourceLink('官方说明',field.url));}tr.append(label,value);tbody.append(tr);}table.append(tbody);region.append(table);
       }
       const warnings=window.GlossaryCopy.uniqueCopy(copy?.cautions||sourceRows.filter(row=>/注解|备注|区别|差异|注意/.test(row.label)&&/不能|不代表|不适用|不同|不含|仅|未验证|未核实/.test(row.value)).map(row=>row.value),[definition,scope,copy?.example,...(copy?.formulas||[]).map(f=>f.scope)]);
       if(warnings.length){const region=section('容易混淆的地方');const ul=document.createElement('ul');for(const text of warnings){const li=document.createElement('li');li.textContent=text;ul.append(li);}region.append(ul);}
@@ -196,7 +197,8 @@
       if(copy?.related?.length){
         const region=section('接着看这些词');const links=document.createElement('div');links.className='dr-related-links';
         for(const concept of copy.related){
-          const relatedEntry=entries.find(candidate=>candidate.concept===window.GlossaryConcepts.canonical(concept)&&candidate.hasBody);
+          const relatedConcept=window.GlossaryConcepts.canonical(concept);
+          const relatedEntry=entries.find(candidate=>candidate.hasBody&&(candidate.concept===relatedConcept||window.GlossaryConcepts.canonical(candidate.title)===relatedConcept));
           if(!relatedEntry||relatedEntry===entry)continue;
           const link=document.createElement('a');link.href='#'+encodeURIComponent(relatedEntry.id);link.textContent=relatedEntry.title;links.append(link);
         }
@@ -219,22 +221,20 @@
       renderConcept(entry);
       content.classList.toggle('professional-record',entry.professional);
       app.querySelector('.dr-breadcrumb').textContent=entry.category;
-      const existing=entry.nodes.flatMap(node=>[...node.querySelectorAll('a[href]')]).filter(a=>{try{return /(^|\.)(okx\.com|binance\.com|binance\.info)$/.test(new URL(a.href).hostname);}catch(_){return false;}});
+      const existing=entryCopy(entry)?[]:entry.nodes.flatMap(node=>[...node.querySelectorAll('a[href]')]).filter(a=>{try{return /(^|\.)(okx\.com|binance\.com|binance\.info)$/.test(new URL(a.href).hostname);}catch(_){return false;}});
       const unique=new Map([...evidence.querySelectorAll('a')].map(a=>[a.href,a.textContent.trim().replace(/ ↗$/,'')]));
       for(const a of existing)if(!unique.has(a.href))unique.set(a.href,a.textContent.trim());
       evidence.replaceChildren();
       for(const [url,label]of unique)evidence.append(sourceLink(label||'词条原文官方来源',url));
-      if(!unique.size){
+      if(!unique.size&&entryCopy(entry)?.sourceStatus!=='unverified'){
         // Label general indexes as further reading, not as a verified citation for every claim.
         evidence.append(sourceLink('OKX API v5 · 延伸核对入口','https://www.okx.com/docs-v5/en/'));
         evidence.append(sourceLink('Binance 开发文档 · 延伸核对入口','https://developers.binance.com/'));
       }
-      if(entry.title.includes('USDT'))evidence.append(sourceLink('OKX · USDT 介绍','https://www.okx.com/learn/what-is-usdt'));
-      if(entry.title.includes('C2C')||entry.title.includes('P2P'))evidence.append(sourceLink('OKX · P2P 交易流程','https://www.okx.com/help/what-is-p2p-trading'));
       nav.querySelectorAll('button').forEach(b=>{const active=b.dataset.id===entry.id;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','true');else b.removeAttribute('aria-current');});
       const i=shown.indexOf(entry);app.querySelector('.dr-paging span').textContent='共 '+shown.length+' 个匹配概念';
       app.querySelector('.dr-prev').disabled=i<=0;app.querySelector('.dr-next').disabled=i<0||i>=shown.length-1;
-      if(updateHash)history.replaceState(null,'','#'+encodeURIComponent(entry.id));
+      if(updateHash){history.replaceState(null,'','#'+encodeURIComponent(entry.id));app.querySelector('.dr-main').scrollIntoView({block:'start',behavior:'instant'});}
       // Original SVG animations restart when their original element is displayed.
       content.querySelectorAll('.anim').forEach(figure=>{figure.classList.remove('play');requestAnimationFrame(()=>figure.classList.add('play'));});
     }

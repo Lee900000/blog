@@ -3,9 +3,10 @@ import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import fs from 'node:fs';
 import vm from 'node:vm';
+import { fileURLToPath } from 'node:url';
 const require=createRequire(import.meta.url);
 const location=new URL('../source/assets/crypto-glossary/beginner-fields.js',import.meta.url);
-const load=()=>fs.existsSync(location)?require(location.pathname):{records:{}};
+const load=()=>fs.existsSync(location)?require(fileURLToPath(location)):{records:{}};
 
 test('every field-directory entry has a substantive beginner explanation',()=>{
   const expected=require('../tools/glossary-inventory.cjs').inventory().filter(e=>e.category!=='资料与公式说明'&&!e.curated&&/^pro-record-/.test(e.id)&&Number(e.id.slice(11))>=157);
