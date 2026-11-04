@@ -23,7 +23,7 @@
     <div class="site-menu">
       ${items.map(([icon, label, href, current]) =>
         current === 'crypto'
-          ? `<details class="crypto-menu"><summary><span aria-hidden="true">${icon}</span> ${label}</summary><div class="crypto-menu-links"><a href="/archives/5596f036.html" target="_top">交易术语字典</a><a href="/arbitrage/" target="_top" aria-current="page">量化套利</a></div></details>`
+          ? `<details class="crypto-menu"><summary><span aria-hidden="true">${icon}</span> ${label}</summary><div class="crypto-menu-links"><a href="/archives/5596f036.html" target="_top">术语字典</a><a href="/arbitrage/" target="_top" aria-current="page">量化套利</a></div></details>`
           : `<a href="${href}" target="_top"><span aria-hidden="true">${icon}</span> ${label}</a>`
       ).join('')}
     </div>`;

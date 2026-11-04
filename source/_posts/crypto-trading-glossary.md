@@ -1,5 +1,5 @@
 ---
-title: 数字货币与交易术语词典：从买币、钱包到合约风控
+title: 交易术语字典
 description: 用通俗解释、例子和图解认识数字货币、链上钱包、现货、合约、保证金、资金费率及交易所常见字段。
 postDesc: 从第一次买 U 到读懂合约与风控，把容易混淆的数字货币术语放在一起讲清楚。
 date: 2026-11-03 18:00:00
@@ -433,6 +433,14 @@ K 线短时间出现明显偏离周边价格的长影线。原因可能涉及流
 ### 比特币市值占比（BTC Dominance）
 
 比特币市值占所选加密资产总市值的比例。数据来源的资产覆盖范围和市值算法不同，结果也可能不同；占比上升不必然代表 BTC 价格上涨。
+
+### ETF（交易所交易基金）
+
+在证券交易所挂牌买卖的基金。买到的是基金份额，而不是把基金里的资产直接拿到自己的账户。ETF 可以跟踪指数，也可以主动管理；它属于更广义的 ETP，并不意味着保本或必然分散风险。
+
+### ETP（交易所交易产品）
+
+证券交易所挂牌投资产品的总称，包括 ETF、商品信托、交易所交易票据等不同结构。它们虽然都能在交易所买卖，投资者的法律权利和风险却可能不同，不能只凭名称判断是否持有现货或能否赎回成币。
 
 ### 现货 ETF
 
@@ -1072,3 +1080,12 @@ document.addEventListener('pjax:complete', initCryptoGlossary);
 <script src="/assets/crypto-glossary/scene-captions.js"></script>
 <style>.crypto-glossary-search input{background:#faf9f5;color:#292b27}.crypto-glossary-search input::placeholder{color:#827c70;opacity:1}</style>
 <script src="/assets/crypto-glossary/concept-motion.js"></script>
+<link rel="stylesheet" href="/assets/crypto-glossary/directory-reader.css">
+<script src="/assets/crypto-glossary/concepts.js"></script>
+<script src="/assets/crypto-glossary/editorial.js"></script>
+<script src="/assets/crypto-glossary/beginner-trading.js"></script>
+<script src="/assets/crypto-glossary/beginner-fields.js"></script>
+<link rel="stylesheet" href="/assets/crypto-glossary/calculators.css">
+<script src="/assets/crypto-glossary/calculators.js"></script>
+<script src="/assets/crypto-glossary/copy-dedup.js"></script>
+<script src="/assets/crypto-glossary/directory-reader.js"></script>

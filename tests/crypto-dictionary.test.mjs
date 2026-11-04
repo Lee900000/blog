@@ -8,9 +8,11 @@ const read = path => readFileSync(new URL('../' + path, import.meta.url), 'utf8'
 test('crypto menu groups the dictionary and arbitrage', () => {
   const menu = YAML.parse(read('_config.butterfly.yml')).menu;
   assert.equal(menu['量化套利'], undefined);
-  assert.match(menu['币圈指南']['交易术语字典'], /^\/archives\/5596f036\.html/);
+  assert.match(menu['币圈指南']['术语字典'], /^\/archives\/5596f036\.html/);
+  assert.equal(menu['币圈指南']['交易术语字典'], undefined);
   assert.match(menu['币圈指南']['量化套利'], /^\/arbitrage\//);
   assert.match(read('source/arbitrage/assets/theme-shell.js'), /币圈指南/);
+  assert.match(read('source/arbitrage/assets/theme-shell.js'), />术语字典<\/a>/);
 });
 test('professional dictionary preserves all source table records and caveats', () => {
   const post = read('source/_posts/crypto-trading-glossary.md');

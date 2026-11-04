@@ -13,6 +13,7 @@ tag_dir: tags
 archive_dir: archives
 category_dir: categories
 skip_render:
+  - dictionary-preview.html
   - README.md
   - arbitrage/*.html
   - arbitrage/assets/**
