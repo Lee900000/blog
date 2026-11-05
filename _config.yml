@@ -17,6 +17,7 @@ skip_render:
   - README.md
   - arbitrage/*.html
   - arbitrage/assets/**
+  - assets/quant-demo/**
 new_post_name: :title.md
 default_layout: post
 external_link:

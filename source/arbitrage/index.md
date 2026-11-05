@@ -67,6 +67,10 @@ disableNunjucks: true
     </figure>
     <button class="quant-lightbox-nav next" type="button" data-quant-lightbox="next" aria-label="查看下一张"><i class="fas fa-chevron-right"></i></button>
   </div>
+  <section class="quant-opportunities" id="quantOpportunities" aria-label="量化机会 Mock 演示面板">
+    <noscript>量化机会演示需要开启 JavaScript；所有数据均为虚构，不是实时行情。</noscript>
+  </section>
+  <script defer src="/js/quant-opportunities.js"></script>
   <div class="arbitrage-workspace">
     <aside class="strategy-nav" id="strategyNav" aria-label="套利策略导航">
       <div class="strategy-label">总览</div>
