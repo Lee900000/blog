@@ -30,6 +30,7 @@ def token_total(value):
 
 def main(source, output):
     daily = {}
+    snapshot_times = []
     for filename in sorted(os.listdir(source)):
         if not filename.endswith('.json'):
             continue
@@ -39,6 +40,8 @@ def main(source, output):
         usage = payload.get('usage')
         if isinstance(date, str) and isinstance(usage, dict):
             daily[date] = usage
+            if isinstance(payload.get('snapshotGeneratedAt'), str):
+                snapshot_times.append(payload['snapshotGeneratedAt'])
     totals, agents = blank(), {}
     for usage in daily.values():
         add(totals, usage)
@@ -77,7 +80,8 @@ def main(source, output):
     totals['totalTokens'] = token_total(totals)
     report = {
         "schemaVersion": 1,
-        "generatedAt": datetime.now(timezone.utc).isoformat(),
+        "generatedAt": max(snapshot_times) if snapshot_times else None,
+        "aggregatedAt": datetime.now(timezone.utc).isoformat(),
         "timezone": "Asia/Tokyo",
         "days": len(daily),
         "totals": totals,
