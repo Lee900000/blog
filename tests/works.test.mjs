@@ -27,7 +27,12 @@ test('AI practice uses a responsive three-column grid and retains original proje
 test('works only includes selected public projects sorted by stars then selection order', () => {
   const repos = [{name:'monitor',private:false,stargazers_count:2}, {name:'LazyCat',private:false,stargazers_count:8}, {name:'other',private:false,stargazers_count:999}, {name:'quant-tool',private:true,stargazers_count:100}, {name:'go-skill',private:false,stargazers_count:2}];
   assert.equal(api().select(repos).map(r => r.name).join(','), 'LazyCat,go-skill,monitor');
-  assert.equal(api().selected.length, 16);
+  assert.equal(api().selected.length, 13);
+  for (const name of ['prd-forge', 'monitor-swap', 'exchange-asset-report']) {
+    assert.equal(api().select([{name, private:false, stargazers_count:99}]).length, 0);
+    assert.equal(api().isHidden(name.toUpperCase()), true);
+  }
+  assert.equal(api().isHidden('trade-backtest'), false);
   assert.equal(api().select([{name:'axon-contract-h5', private:false, stargazers_count:0}])[0].name, 'axon-contract-h5');
   assert.equal(api().select([{name:'work-boss', private:false, stargazers_count:0}]).length, 0);
 });
