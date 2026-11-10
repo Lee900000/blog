@@ -1,25 +1,25 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-06T11:18:18.176Z",
+  "generatedAt": "2026-11-10T06:17:58.585Z",
   "timezone": "Asia/Tokyo",
-  "days": 89,
+  "days": 93,
   "totals": {
-    "inputTokens": 90824279,
-    "outputTokens": 20842025,
-    "cacheCreationTokens": 73715878,
-    "cacheReadTokens": 4445868572,
-    "costUsd": 3464.8581015500017,
-    "totalTokens": 4631250754
+    "inputTokens": 94668895,
+    "outputTokens": 22647584,
+    "cacheCreationTokens": 81672124,
+    "cacheReadTokens": 4895889662,
+    "costUsd": 3683.525705900002,
+    "totalTokens": 5094878265
   },
   "agents": [
     {
       "id": "claude-code",
       "name": "Claude Code",
-      "inputTokens": 89098,
-      "outputTokens": 15100309,
-      "cacheCreationTokens": 73715878,
-      "cacheReadTokens": 3078263468,
-      "costUsd": 1835.5361580499998,
+      "inputTokens": 92666,
+      "outputTokens": 16514679,
+      "cacheCreationTokens": 81672124,
+      "cacheReadTokens": 3425833870,
+      "costUsd": 2004.1400789000002,
       "models": [
         "claude-sonnet-5",
         "claude-opus-5",
@@ -29,16 +29,16 @@
         "claude-opus-5-5",
         "claude-haiku-4-5-20251001"
       ],
-      "totalTokens": 3167168753
+      "totalTokens": 3524113339
     },
     {
       "id": "hermes",
       "name": "Hermes",
-      "inputTokens": 60008837,
-      "outputTokens": 3681516,
+      "inputTokens": 60284781,
+      "outputTokens": 3701933,
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 759920368,
-      "costUsd": 1342.6369140000002,
+      "cacheReadTokens": 761567600,
+      "costUsd": 1345.2186020000004,
       "models": [
         "gpt-5.6-sol",
         "gpt-5.6-terra",
@@ -51,16 +51,16 @@
         "gpt-6.1-sol",
         "gpt-6-sol"
       ],
-      "totalTokens": 823610721
+      "totalTokens": 825554314
     },
     {
       "id": "codex",
       "name": "Codex",
-      "inputTokens": 27414280,
-      "outputTokens": 1462479,
+      "inputTokens": 30979384,
+      "outputTokens": 1833251,
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 542699008,
-      "costUsd": 285.85236150000003,
+      "cacheReadTokens": 643502464,
+      "costUsd": 333.334357,
       "models": [
         "gpt-5.6-sol",
         "gpt-6-astra",
@@ -70,7 +70,7 @@
         "gpt-5.6-terra",
         "gpt-6.1-terra"
       ],
-      "totalTokens": 571575767
+      "totalTokens": 676315099
     },
     {
       "id": "deepseek",
@@ -4120,18 +4120,18 @@
       }
     },
     "2026-11-06": {
-      "inputTokens": 407470,
-      "outputTokens": 484005,
-      "cacheCreationTokens": 2566855,
-      "cacheReadTokens": 162088926,
-      "costUsd": 71.62279964999993,
+      "inputTokens": 1513158,
+      "outputTokens": 1004486,
+      "cacheCreationTokens": 4311270,
+      "cacheReadTokens": 287824438,
+      "costUsd": 128.31045130000012,
       "models": {
         "gpt-6.1-terra": {
-          "inputTokens": 241568,
-          "outputTokens": 9959,
+          "inputTokens": 740995,
+          "outputTokens": 61290,
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 2185088,
-          "costUsd": 1.299577,
+          "cacheReadTokens": 19019008,
+          "costUsd": 7.526589499999998,
           "costComplete": true
         },
         "gpt-5.6-terra": {
@@ -4140,6 +4140,14 @@
           "cacheCreationTokens": 0,
           "cacheReadTokens": 250880,
           "costUsd": 0.195305,
+          "costComplete": true
+        },
+        "gpt-6.1-sol": {
+          "inputTokens": 605591,
+          "outputTokens": 154040,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 36068864,
+          "costUsd": 16.367268,
           "costComplete": true
         },
         "gpt-6-luna": {
@@ -4151,11 +4159,19 @@
           "costComplete": true
         },
         "claude-sonnet-5-5": {
-          "inputTokens": 1217,
-          "outputTokens": 471767,
-          "cacheCreationTokens": 2566855,
-          "cacheReadTokens": 159459038,
-          "costUsd": 69.76612514999991,
+          "inputTokens": 1887,
+          "outputTokens": 786877,
+          "cacheCreationTokens": 4311270,
+          "cacheReadTokens": 232291766,
+          "costUsd": 103.85949630000009,
+          "costComplete": true
+        },
+        "<synthetic>": {
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "costUsd": 0,
           "costComplete": true
         }
       },
@@ -4177,6 +4193,250 @@
               "costUsd": 0.117293,
               "costComplete": true,
               "totalTokens": 126929
+            }
+          }
+        }
+      }
+    },
+    "2026-11-07": {
+      "inputTokens": 1160702,
+      "outputTokens": 613633,
+      "cacheCreationTokens": 2694898,
+      "cacheReadTokens": 146690463,
+      "costUsd": 74.10576459999997,
+      "models": {
+        "gpt-6.1-sol": {
+          "inputTokens": 825991,
+          "outputTokens": 120344,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 32570240,
+          "costUsd": 16.294014499999992,
+          "costComplete": true
+        },
+        "gpt-6.1-terra": {
+          "inputTokens": 65597,
+          "outputTokens": 5945,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 573824,
+          "costUsd": 0.3966235,
+          "costComplete": true
+        },
+        "gpt-6-luna": {
+          "inputTokens": 183875,
+          "outputTokens": 3357,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 1793152,
+          "costUsd": 0.9583305,
+          "costComplete": true
+        },
+        "claude-sonnet-5-5": {
+          "inputTokens": 1248,
+          "outputTokens": 478705,
+          "cacheCreationTokens": 2694898,
+          "cacheReadTokens": 111220127,
+          "costUsd": 55.651436100000005,
+          "costComplete": true
+        },
+        "<synthetic>": {
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 0,
+          "costUsd": 0,
+          "costComplete": true
+        }
+      },
+      "sources": {
+        "hermes": {
+          "inputTokens": 83991,
+          "outputTokens": 5282,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 533120,
+          "costUsd": 0.80536,
+          "costComplete": true,
+          "totalTokens": 622393,
+          "models": {
+            "gpt-6-astra": {
+              "inputTokens": 83991,
+              "outputTokens": 5282,
+              "cacheCreationTokens": 0,
+              "cacheReadTokens": 533120,
+              "costUsd": 0.80536,
+              "costComplete": true,
+              "totalTokens": 622393
+            }
+          }
+        }
+      }
+    },
+    "2026-11-08": {
+      "inputTokens": 572165,
+      "outputTokens": 413916,
+      "cacheCreationTokens": 2201296,
+      "cacheReadTokens": 124045083,
+      "costUsd": 57.473087,
+      "models": {
+        "gpt-6.1-sol": {
+          "inputTokens": 263742,
+          "outputTokens": 8655,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 2710144,
+          "costUsd": 1.466716,
+          "costComplete": true
+        },
+        "gpt-6-luna": {
+          "inputTokens": 261176,
+          "outputTokens": 1982,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 1505920,
+          "costUsd": 1.05915,
+          "costComplete": true
+        },
+        "claude-sonnet-5-5": {
+          "inputTokens": 1024,
+          "outputTokens": 397795,
+          "cacheCreationTokens": 2201296,
+          "cacheReadTokens": 119442715,
+          "costUsd": 54.399564,
+          "costComplete": true
+        }
+      },
+      "sources": {
+        "hermes": {
+          "inputTokens": 46223,
+          "outputTokens": 5484,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 386304,
+          "costUsd": 0.547657,
+          "costComplete": true,
+          "totalTokens": 438011,
+          "models": {
+            "gpt-6-astra": {
+              "inputTokens": 46223,
+              "outputTokens": 5484,
+              "cacheCreationTokens": 0,
+              "cacheReadTokens": 386304,
+              "costUsd": 0.547657,
+              "costComplete": true,
+              "totalTokens": 438011
+            }
+          }
+        }
+      }
+    },
+    "2026-11-09": {
+      "inputTokens": 597432,
+      "outputTokens": 236946,
+      "cacheCreationTokens": 1160741,
+      "cacheReadTokens": 48172324,
+      "costUsd": 26.07761169999999,
+      "models": {
+        "gpt-6.1-terra": {
+          "inputTokens": 283629,
+          "outputTokens": 17621,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 4786816,
+          "costUsd": 2.1700915,
+          "costComplete": true
+        },
+        "gpt-6.1-sol": {
+          "inputTokens": 168481,
+          "outputTokens": 2720,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 1260544,
+          "costUsd": 0.7771385,
+          "costComplete": true
+        },
+        "gpt-6-luna": {
+          "inputTokens": 120301,
+          "outputTokens": 3491,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 1622016,
+          "costUsd": 0.7586215000000001,
+          "costComplete": true
+        },
+        "claude-sonnet-5-5": {
+          "inputTokens": 580,
+          "outputTokens": 212539,
+          "cacheCreationTokens": 1160741,
+          "cacheReadTokens": 40440484,
+          "costUsd": 22.286416199999998,
+          "costComplete": true
+        }
+      },
+      "sources": {
+        "hermes": {
+          "inputTokens": 24441,
+          "outputTokens": 575,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 62464,
+          "costUsd": 0.085344,
+          "costComplete": true,
+          "totalTokens": 87480,
+          "models": {
+            "gpt-6-astra": {
+              "inputTokens": 24441,
+              "outputTokens": 575,
+              "cacheCreationTokens": 0,
+              "cacheReadTokens": 62464,
+              "costUsd": 0.085344,
+              "costComplete": true,
+              "totalTokens": 87480
+            }
+          }
+        }
+      }
+    },
+    "2026-11-10": {
+      "inputTokens": 408629,
+      "outputTokens": 20583,
+      "cacheCreationTokens": 154896,
+      "cacheReadTokens": 5377708,
+      "costUsd": 4.3234894,
+      "models": {
+        "gpt-6-luna": {
+          "inputTokens": 164016,
+          "outputTokens": 570,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 467456,
+          "costUsd": 0.535454,
+          "costComplete": true
+        },
+        "gpt-6.1-terra": {
+          "inputTokens": 123278,
+          "outputTokens": 716,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 610560,
+          "costUsd": 0.47157499999999997,
+          "costComplete": true
+        },
+        "claude-sonnet-5-5": {
+          "inputTokens": 46,
+          "outputTokens": 10221,
+          "cacheCreationTokens": 154896,
+          "cacheReadTokens": 3634348,
+          "costUsd": 2.1731333999999998,
+          "costComplete": true
+        }
+      },
+      "sources": {
+        "hermes": {
+          "inputTokens": 121289,
+          "outputTokens": 9076,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 665344,
+          "costUsd": 1.143327,
+          "costComplete": true,
+          "totalTokens": 795709,
+          "models": {
+            "gpt-6-astra": {
+              "inputTokens": 121289,
+              "outputTokens": 9076,
+              "cacheCreationTokens": 0,
+              "cacheReadTokens": 665344,
+              "costUsd": 1.143327,
+              "costComplete": true,
+              "totalTokens": 795709
             }
           }
         }
