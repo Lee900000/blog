@@ -22,7 +22,7 @@ search:
       hitsPerPage: 8
 
 avatar:
-  img: /assets/profile/leon-avatar.png
+  img: /assets/profile/leon-avatar-tago.png
   effect: false
 favicon: /assets/brand/favicon.svg
 

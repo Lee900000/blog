@@ -8,7 +8,7 @@ disableNunjucks: true
 ---
 <!-- [skill: go-team-standards · 独立页面迁移] 沿用旧站正文，更新本站展示身份。 -->
 
-<div class="leon-profile"><img src="../assets/profile/leon-avatar.png" alt="Lee" width="140" height="153"><div><strong>Lee</strong><span>记录做过的事，也记录正在尝试的事</span></div></div>
+<div class="leon-profile"><img src="../assets/profile/leon-avatar-tago.png" alt="Lee" width="140" height="140"><div><strong>Lee</strong><span>记录做过的事，也记录正在尝试的事</span></div></div>
 
 # 关于我
 

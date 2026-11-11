@@ -21,7 +21,7 @@ test('published site exposes the Tago brand and Lee author identity', () => {
 
   const about = read('source/about/index.md');
   assert.ok(about.includes('https://github.com/kary2999'));
-  assert.ok(about.includes('src="../assets/profile/leon-avatar.png"'));
+  assert.ok(about.includes('src="../assets/profile/leon-avatar-tago.png"'));
 
   const pages = YAML.parse(read('_config.leon-book-pages.yml'));
   assert.equal(site.theme_config, undefined);
