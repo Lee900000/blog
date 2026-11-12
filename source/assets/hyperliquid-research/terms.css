@@ -1,0 +1,6 @@
+#article-container .hl-key-term { color:#c63838; text-decoration:underline; text-decoration-style:dotted; text-underline-offset:3px; font-weight:700; }
+#article-container .hl-citation { color:#737f8e; font-size:.78em; margin-left:.08em; text-decoration:none; }
+#article-container .hl-citation:hover, #article-container .hl-key-term:hover { text-decoration:underline; }
+#article-container .hl-key-term:focus-visible, #article-container .hl-citation:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
+[data-theme=dark] #article-container .hl-citation { color:#b5c2d0; }
+[data-theme=dark] #article-container .hl-key-term { color:#ff8585; }

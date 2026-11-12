@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 310" role="img" aria-labelledby="title desc">
+  <title id="title">会话回放的基本流程</title><desc id="desc">用户操作经客户端脱敏、事件数据传输和存储，再用于页面重建和回放。</desc>
+  <rect width="1200" height="310" rx="24" fill="#101e2c"/>
+  <text x="600" y="57" text-anchor="middle" fill="#f0f7fa" font-family="sans-serif" font-size="26" font-weight="700">会话回放：从用户操作到页面重建</text>
+  <g font-family="sans-serif" text-anchor="middle">
+    <rect x="35" y="105" width="245" height="120" rx="16" fill="#183b4d" stroke="#48a9ce" stroke-width="2"/>
+    <text x="157" y="151" fill="#f1f9fb" font-size="22" font-weight="700">用户操作</text><text x="157" y="188" fill="#b9d2dd" font-size="17">页面快照与后续变化</text>
+    <rect x="330" y="105" width="245" height="120" rx="16" fill="#183f39" stroke="#55c5a1" stroke-width="2"/>
+    <text x="452" y="151" fill="#f1f9fb" font-size="22" font-weight="700">客户端处理</text><text x="452" y="188" fill="#b9d2dd" font-size="17">按配置遮罩或屏蔽</text>
+    <rect x="625" y="105" width="245" height="120" rx="16" fill="#183b4d" stroke="#48a9ce" stroke-width="2"/>
+    <text x="747" y="151" fill="#f1f9fb" font-size="22" font-weight="700">传输与存储</text><text x="747" y="188" fill="#b9d2dd" font-size="17">保存采集到的事件数据</text>
+    <rect x="920" y="105" width="245" height="120" rx="16" fill="#183f39" stroke="#55c5a1" stroke-width="2"/>
+    <text x="1042" y="151" fill="#f1f9fb" font-size="22" font-weight="700">重建与回放</text><text x="1042" y="188" fill="#b9d2dd" font-size="17">重现页面和交互过程</text>
+    <g fill="none" stroke="#84b7c8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M291 165h25m-8-7 8 7-8 7"/><path d="M586 165h25m-8-7 8 7-8 7"/><path d="M881 165h25m-8-7 8 7-8 7"/></g>
+    <text x="600" y="274" fill="#9bb7c1" font-size="16">示意图：实际采集范围取决于 SDK、配置和部署方式，敏感信息需实测验证</text>
+  </g>
+</svg>

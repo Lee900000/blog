@@ -1,0 +1,25 @@
+.moss-flow { --mf-accent:#adf775; --mf-text:#f1f7f2; --mf-muted:#b1c4b6; margin:1.5rem 0 1.8rem; padding:26px; border:1px solid #345343; border-radius:20px; background:radial-gradient(ellipse at top right,#243d2b,#10231c 70%); color:var(--mf-text); box-shadow:0 14px 32px rgba(0,0,0,.14); }
+.moss-flow * { box-sizing:border-box; }
+.moss-flow__header { display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:24px; }
+.moss-flow__eyebrow { display:block; color:var(--mf-accent); font-size:10px; font-weight:700; letter-spacing:.16em; line-height:1.4; }
+.moss-flow__title { display:block; margin-top:6px; color:var(--mf-text); font-size:21px; font-weight:700; line-height:1.4; }
+.moss-flow__badge { padding:5px 10px; border:1px solid #48664d; border-radius:99px; color:#c2d8bf; font-size:11px; white-space:nowrap; }
+.moss-flow__stages { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+.moss-flow__stage { position:relative; display:flex; flex-direction:column; min-width:0; padding:15px 13px 12px; border:1px solid #355442; border-radius:13px; background:rgba(29,51,38,.9); }
+.moss-flow__stage:not(:last-child)::after { position:absolute; z-index:1; top:28px; right:-13px; display:grid; width:15px; height:15px; place-items:center; border-radius:50%; background:#203b2b; color:#b4f58a; content:'›'; font-size:16px; line-height:1; }
+.moss-flow__stage-head { display:flex; align-items:center; gap:9px; padding-bottom:13px; border-bottom:1px solid #3c5943; }
+.moss-flow__icon { display:grid; flex:none; width:30px; height:30px; place-items:center; border-radius:10px; background:#aaf276; color:#17351c; font-size:16px; font-weight:700; }
+.moss-flow__stage-head small,.moss-flow__stage-head b { display:block; line-height:1.35; }
+.moss-flow__stage-head small { color:#a9c0a9; font-size:9px; letter-spacing:.07em; }
+.moss-flow__stage-head b { margin-top:2px; color:var(--mf-text); font-size:14px; }
+.moss-flow__steps { flex:1; margin:14px 0 12px!important; padding-left:19px!important; color:#aaf276; font-size:12px; }
+.moss-flow__steps li { margin:0 0 12px!important; padding:0!important; }
+.moss-flow__steps li:last-child { margin-bottom:0!important; }
+.moss-flow__steps li::marker { color:#aaf276; font-weight:700; }
+.moss-flow__steps b,.moss-flow__steps span { display:block; line-height:1.5; }
+.moss-flow__steps b { color:#eff7ee; font-size:13px; }
+.moss-flow__steps span { margin-top:3px; color:var(--mf-muted); font-size:12px; }
+.moss-flow__who { margin-top:auto; padding-top:10px; border-top:1px solid #3c5943; color:#b2db9c; font-size:11px; }
+.moss-flow__foot { margin-top:17px; color:var(--mf-muted); font-size:12px; line-height:1.6; }
+@media (max-width:760px) { .moss-flow__stages { grid-template-columns:repeat(2,minmax(0,1fr)); } .moss-flow__stage:nth-child(2)::after { display:none; } }
+@media (max-width:480px) { .moss-flow { padding:19px 16px; } .moss-flow__title { font-size:18px; } .moss-flow__stages { grid-template-columns:1fr; gap:10px; } .moss-flow__stage:not(:last-child)::after { top:auto; right:18px; bottom:-13px; transform:rotate(90deg); } .moss-flow__stage:nth-child(2)::after { display:grid; } }
