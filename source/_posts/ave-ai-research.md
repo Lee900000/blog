@@ -1,0 +1,149 @@
+---
+title: Ave.ai 产品调研：业务模式、收入与资金安全
+description: 梳理 Ave.ai 的产品特色、收入来源、底层交易依赖与用户资金风险。
+postDesc: 从交易路径和钱包控制权理解 Ave 的产品模式。
+cover: /assets/ave-ai-research/market.png
+top_img: /assets/ave-ai-research/market.png
+date: 2026-11-12 12:00:00
+categories:
+  - - 金融科技
+tags:
+  - Ave.ai
+  - 链上交易
+  - Meme
+  - Hyperliquid
+  - 产品调研
+comments: false
+permalink: archives/5203856e.html
+---
+
+> 调研时间：2026 年 11 月 12 日。本文依据 Ave 与 Hyperliquid 官方文档、页面体验和第三方数据整理；费率和产品可能变化，具体以实际页面和交易规则为准。
+
+**Ave.ai 是多链行情与交易终端。** 它通过扫链、地址画像和 AI 叙事帮助用户发现和分析资产，再提供链上现货及 Hyperliquid 永续交易入口。它公开列出的收入来自链上代币交易手续费；用户资金是否安全，取决于所用钱包、授权和交易路径，不能简单用“去中心化”判断。
+
+## 一、Ave.ai 做什么：产品定位与业务链路
+
+<figure>
+  <img src="/assets/ave-ai-research/business-flow.svg" alt="Ave 业务关系图：现货市场向 Ave 提供数据，用户通过 Ave 向链上市场交易；合约用户通过 Ave 向 Hyperliquid 下单。">
+  <figcaption>蓝色箭头表示行情与链上数据；绿色箭头表示用户交易路径。</figcaption>
+</figure>
+
+合约是另一条业务链：用户在 Ave 界面开平仓，Ave 官方说明接入了 Hyperliquid 的永续市场。**提供界面、展示数据、路由订单，与发行资产或独立撮合是不同角色。** 官方将 Ave 描述为 DEX 聚合、数据分析与交易接口，而不是只有一个自有资金池的 DEX。[来源](https://doc.ave.ai/introduce-ave.ai/is-ave.ai-a-dex)
+
+| 模块 | 用户看到什么 | 解决什么问题 |
+|---|---|---|
+| 扫链 | 新代币、发行阶段和筛选条件 | 发现刚出现或活跃的新币 |
+| 行情 | 价格、K 线、交易池、市值与成交 | 了解市场状态 |
+| 地址画像与信号 | KOL、聪明钱、开发者等地址行为 | 观察谁在参与、资金如何变化 |
+| 现货和交易工具 | 钱包、买卖、限价、自动交易、跟单 | 在支持的链上市场执行交易 |
+| 合约 | Hyperliquid 永续行情和开平仓入口 | 参与对应的衍生品市场 |
+| AI 分析 | 信号、叙事总结等 | 将复杂的交易及社交信息整理给用户 |
+| 开发者服务 | 数据 API、交易 API | 为其他产品提供数据与交易接口，收费以商业条款为准 |
+
+[官方新手指南](https://doc.ave.ai/tutorial/quick-guide-for-beginners)；[Ave Cloud](https://cloud.ave.ai/)。官方宣称支持超过 160 条链和 300 多个 DEX；覆盖数据不等于所有链均支持相同的交易、钱包或分析功能。[官方介绍](https://doc.ave.ai/cn)
+
+## 二、Ave 靠什么营收？
+
+![Ave 链上现货交易的费用流向](/assets/ave-ai-research/revenue-flow.svg)
+
+Ave 的[链上交易费用文档](https://doc.ave.ai/tutorial/pc-web-tutorial/ave.ai-fees-and-settings)列出，Bot 钱包交易费为 **0.8%**，连接的链上钱包为 **0.5%**。这是该文档所述的代币交易费率，不能直接套用到合约、充提、所有地区或所有交易路径；具体以确认页面和订单规则为准。
+
+例如，假设适用 0.5% 费率，以 1,000 美元作为收费基数买入，Ave 费用约为 5 美元；卖出又是另一笔交易，按实际卖出金额计算。**网络 Gas、交易池费用、可能的代币费用、滑点或价格影响不是同一项，也不都归 Ave。** 搜索页面显示的“税”具体口径应查看对应产品说明，不能直接认定是政府税收、Ave 收入或总交易成本。
+
+[DefiLlama Ave 页面](https://defillama.com/protocol/ave.ai)披露其按覆盖的链上兑换及适配器方法统计手续费；2026 年 11 月 12 日查看时，最近 30 天显示约 **30.16 万美元**。这只是第三方追踪口径及当时快照，不是公司完整财报、总收入或净利润，交易覆盖和数字均会变化。
+
+## 三、站点特色：扫链、行情与地址分析
+
+扫链是 Ave 的新币发现看板：持续整理所支持的链和发行平台上的代币、交易及阶段变化，并按条件展示。用户可以按创建时间、市值、成交、持有人、开发者持仓和关键词筛选。[官方扫链说明](https://doc.ave.ai/tutorial/pc-web-tutorial/discover-ave-ai-trenches/scanning-the-chain)；[筛选说明](https://doc.ave.ai/tutorial/pc-web-tutorial/discover-ave-ai-trenches/multi-dimensional-filtering)。
+
+| 词 | 通俗解释 |
+|---|---|
+| 发射平台 / Launchpad | 提供代币创建和发行工具的平台，例如 Pump.fun；创建者可以自行填写名称和图标。 |
+| 新内盘 | 代币刚创建，处于发行平台的早期交易阶段。 |
+| 即将打满 | 根据发行平台规则，代币接近下一阶段的条件。 |
+| 已打满 / 毕业 / 外盘 | 达到相应条件，进入该平台规定的后续市场或交易池；目标和迁移方式依平台与时间而异。 |
+
+**打满表示发行阶段变化，不是安全认证或收益承诺。** 市值由价格和供应量按口径计算，不等于实际投入资金；交易额可受机器人或重复买卖影响；持币地址数也不等于真实人数。
+
+行情页面则更侧重价格、成交和排行。两者可以串起来理解：**扫链发现 → 行情详情分析 → 用户决定是否通过交易入口下单。**
+
+![Ave 行情榜单：名称、交易池和交易数据](/assets/ave-ai-research/market.png)
+
+### 地址画像：观察参与者的行为
+
+Ave 在 K 线上叠加开发者、聪明钱和 KOL 等地址交易标记；下方交易历史支持按标签筛选。图上的头像和圆圈是行为标记，并非基金份额或订单簿深度。官方说明可在图表空白处右键选择 Hide marks on bars 隐藏标记。[代币详情页教程](https://doc.ave.ai/cn/ave.ai-jiao-cheng/pc-duan-shi-yong-jiao-cheng/dai-bi-xiang-qing-ye-jiao-xi-tong)
+
+![Ave 代币页地址画像筛选](/assets/ave-ai-research/labels.png)
+
+| 标签 | 如何理解 |
+|---|---|
+| KOL | 平台收录或标记的意见领袖相关钱包；不保证身份识别准确。 |
+| 聪明钱 | 平台根据历史交易表现等条件筛选的观察地址，历史收益不保证未来表现。 |
+| 巨鲸 | 平台识别的大额资金地址；具体门槛和统计对象以页面口径为准。 |
+| 狙击 | 上线或开放流动性附近快速买入的行为。 |
+| DEV | 开发者或创建者相关地址，可用来观察其买卖及转账。 |
+| 钓鱼地址 | Ave 文档将其解释为收到其他地址发送当前代币的钱包；该标签本身不证明地址实施诈骗。 |
+| 阴谋集团 | 平台按资金来源、创建时间等相似特征识别的地址群；不单独证明共同控制或操纵。 |
+| 捆绑地址 | 与捆绑交易等行为有关的地址；一起执行也不自动证明同一人控制。 |
+| 内盘前 50 | 用于观察早期买入者或早期仓位及其变化，具体随代币阶段而异。 |
+| FOMO | 一般指害怕错过机会的心理；页面中具体标签与数字口径需以平台说明为准。 |
+
+标签是分析线索而非身份或行为定论；截图里 KOL 等标签后的分子、分母具体口径，也不能只凭截图推断。[Ave 画像说明](https://doc.ave.ai/cn/ave.ai-hua-xiang-shuo-ming-wen-dang)；[聪明钱介绍](https://doc.ave.ai/cn/ave.ai-jiao-cheng/pc-duan-shi-yong-jiao-cheng/ave.ai-cong-ming-qian-wan-fa-jie-shao)。
+
+### AI 用在哪里？
+
+截图里的 AI 叙事会整理代币与人物、事件或社交讨论的关联，页面还展示生成分析报告、评分等入口。它回答的是“市场在讲什么故事”，不是证明该代币持有对应资产或自动跟踪事件。[Ave 交易指南](https://doc.ave.ai/cn/ave.ai-jiao-cheng/pc-duan-shi-yong-jiao-cheng/ave-ai-xin-hao-guang-chang-jin-gou-jiao-yi-zhi-nan)
+
+官方称信号广场使用自研数据分析引擎观察聪明钱、社交热度、交易和持仓分布等，满足条件时推送信号。[信号广场说明](https://doc.ave.ai/cn/ave.ai-jiao-cheng/pc-duan-shi-yong-jiao-cheng/ave-ai-xin-hao-guang-chang)
+
+这些资料支持“数据筛选、信号及 AI 内容总结”的产品描述；不能仅凭 AI 名称或自动化功能，认定全部信号使用大模型，或每笔交易由 AI 自主决定。叙事中的身份和关系也应回到原始来源核验。
+
+## 四、为什么依赖 DEX 与 Hyperliquid？
+
+**链上现货：** Ave 聚合所支持的交易场所和池子。用户通过 Ave 发起兑换时，实际路径取决于具体链、代币和报价；界面显示资产，不代表 Ave 就是代币发行方或唯一流动性提供者。具体订单应查看报价、池子和链上交易记录。[Ave 定位说明](https://doc.ave.ai/introduce-ave.ai/is-ave.ai-a-dex)
+
+**永续合约：** Ave 官方表示其网页、钱包和机器人支持 Hyperliquid 永续的行情、开平仓和管理。Hyperliquid 提供相应市场与交易基础设施；不能由此推断 Ave 的所有现货或所有未来合约都在 Hyperliquid 上。[官方说明](https://doc.ave.ai/introduce-ave.ai/does-ave.ai-support-hyperliquid)；[本站 Hyperliquid 调研](/archives/081a6063.html)。
+
+### 为什么采用这种接入方式？
+
+官方资料确认 Ave 聚合 DEX 数据与交易入口，并支持 Hyperliquid 永续。基于这一产品结构，可以作出一个产品层面的推断：**接入已有市场，可以让 Ave 复用已经存在的交易池、合约市场和参与者，同时把研发重点放在资产发现、行情分析、钱包与交易体验上。** 这不是 Ave 对成本或商业动机的官方披露。
+
+| 业务 | Ave 提供 | 底层依赖 | 依赖带来的影响 |
+|---|---|---|---|
+| 链上现货 | 多链行情、分析和交易入口 | 具体公链、钱包和所选 DEX 的交易池 | 网络拥堵、池子流动性及智能合约问题会影响成交；不意味着所有订单走同一个 DEX。 |
+| Hyperliquid 永续 | 合约行情、下单及仓位管理界面 | Hyperliquid 对应的合约市场和账户规则 | 订单执行、市场流动性、保证金和强平受对应市场规则影响。 |
+
+因此，Ave 的现货依赖的是**多条链和多个 DEX**；已确认接入 Hyperliquid 的是对应永续业务，不能据此推断所有合约或所有资产只来自 Hyperliquid。[Ave 产品定位](https://doc.ave.ai/introduce-ave.ai/is-ave.ai-a-dex)；[Ave 合约说明](https://doc.ave.ai/introduce-ave.ai/does-ave.ai-support-hyperliquid)。
+
+只用 Ave 看信息，再到 Hyperliquid 官方界面手动交易同一个合约，订单不经过 Ave；如果 Ave 对该笔订单加收 Builder Fee，直接下单可避开这部分费用。Hyperliquid 自身手续费仍然存在。其协议允许第三方在用户授权范围内对特定订单收取 Builder Fee，但这不证明 Ave 一定加收或能确定其费率。[Hyperliquid Builder Code](https://hyperliquid.gitbook.io/hyperliquid-docs/trading/builder-codes)；[Hyperliquid 手续费](https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees)。
+
+下单时应核对实际市场、资产地址和合约标识，以免混淆不同交易产品。
+
+## 五、用户资金是否安全？
+
+![Ave 钱包模式与资金控制关系](/assets/ave-ai-research/asset-control.svg)
+
+**结论：不能确认平台资金绝对安全。** 使用自有钱包和 Bot 钱包面临不同的密钥与托管风险；实际交易还会受到授权、智能合约、网络与市场风险影响。
+
+| 方式 | 资产控制的关键 | 需要关注 |
+|---|---|---|
+| 只看公开行情 | 不需要把资产存入 Ave | 信息可能延迟或有误，不能替代独立核验 |
+| 连接自己的钱包 | 取决于用户所用钱包的密钥管理及授权 | 签名、授权范围及交易路径 |
+| Ave Bot 钱包 | 官方协议称 Bot 钱包私钥及资产由 Ave 存储管理，并称用户操作账户资产 | 平台托管安排、账户权限与提现能力 |
+
+[Ave 用户协议](https://doc.ave.ai/cn/yong-hu-xie-yi)对 Bot 钱包的描述与同一协议中钱包不存储私钥的笼统表述存在区分不够清楚的问题，不能据此认定所有钱包模式相同。**查看链上地址余额，也不能单独证明平台有足够资产覆盖所有用户负债。** 本次检索未发现可核验的 Ave 官方储备及用户负债证明；这不等于证明平台资产不足。
+
+对于自有钱包，资产不必先交给 Ave 保管，但恶意授权、错误签名和第三方合约仍可能导致损失；对于 Bot 钱包，用户还需依赖其密钥管理、账户安全和提现安排。至于在 Ave 使用 Hyperliquid 时资金具体归属及权限，应按所选钱包、实际入金地址、授权页面和账户记录确认，不能从界面名称直接推断。
+
+## 六、与 Moss 的区别
+
+| 维度 | Ave.ai | Moss 相关产品 |
+|---|---|---|
+| 主要入口 | 行情、扫链、地址分析与交易 | Agent 或策略的创建、展示及份额参与 |
+| 用户主要操作 | 找资产、查看信息、下单或设置跟单工具 | 研究策略或 Agent，按具体规则参与其份额 |
+| AI 的位置 | 可见的叙事总结、信号和分析；具体实现因功能而异 | Agent 是核心产品叙事；具体执行由各产品和策略决定 |
+| 与 Hyperliquid 的关系 | 提供其永续市场的交易入口 | 调研的部分交易 Agent 使用 Hyperliquid |
+
+两者有数据、自动交易和 Hyperliquid 的交集，但不能仅凭共享底层市场认定 Ave 是 Moss 的升级版；自动化跟单也不等同于申购策略份额。[本站 Moss 产品调研](/archives/b1dc8308.html)。
+
+从产品角度，Ave 的链路是：**用扫链与行情吸引用户发现机会，用地址画像和叙事降低信息整理成本，再通过钱包及交易入口承接交易。** 它的价值取决于数据覆盖、识别质量、交易体验和费用透明度；这些功能无法消除新币、钱包和合约本身的风险。

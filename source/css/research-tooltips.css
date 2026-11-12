@@ -1,0 +1,5 @@
+.research-term-help{display:inline-flex;vertical-align:super;margin:0 .08em;padding:0;border:0;background:transparent;cursor:pointer;font-size:.68em;line-height:1;color:inherit}
+.research-term-help:focus-visible{outline:2px solid #297acc;outline-offset:2px;border-radius:3px}
+.research-term-popover{position:fixed;z-index:10000;width:min(320px,calc(100vw - 24px));max-height:min(45vh,280px);overflow:auto;padding:12px 14px;border:1px solid #c8d2df;border-radius:10px;background:#fff;color:#172334;box-shadow:0 5px 25px #0003;font-size:14px;line-height:1.6;overflow-wrap:anywhere}
+.research-term-popover[hidden]{display:none}.research-term-popover strong{display:block;margin-bottom:4px}.research-term-popover a{color:#1762a0;text-decoration:underline}
+[data-theme=dark] .research-term-popover{background:#202936;color:#f2f5f9;border-color:#566779}[data-theme=dark] .research-term-popover a{color:#88c4ff}

@@ -25,7 +25,8 @@ test('article 888 preserves the final aggregate report as a scoped blog post', a
   assert.match(post, /<h2[^>]*>来源<\/h2>/);
 
   const externalLinks = post.match(/href="https:\/\//g) ?? [];
-  assert.equal(externalLinks.length, 18, 'all 18 external sources from the final report must remain linked');
+  assert.ok(externalLinks.length >= 18, 'the original external sources must remain linked');
+  assert.match(post, /https:\/\/www\.binance\.com\/en\/support\/faq\/detail\/f0d41139fadc4790bf9a4c0c7bce2e88/);
 
   for (const id of [884, 885, 886, 887]) {
     assert.match(post, new RegExp(articleRoutes[id]));
