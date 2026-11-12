@@ -6,7 +6,7 @@
 <rect x="44" y="177" width="230" height="110" rx="16" fill="#fff" stroke="#d6e3ec"/><text x="68" y="215" font-size="21" font-weight="700" fill="#213e55">用户</text><text x="68" y="247" font-size="15" fill="#637a8c">通过钱包买入 / 卖出</text>
 <rect x="345" y="177" width="250" height="110" rx="16" fill="#eaf6ff" stroke="#afd8ed"/><text x="369" y="215" font-size="21" font-weight="700" fill="#175579">Ave 交易入口</text><text x="369" y="247" font-size="15" fill="#52778b">展示报价并提交交易</text>
 <path d="M278 231 H339" stroke="#4c819b" stroke-width="3" marker-end="url(#arr)"/>
-<rect x="700" y="151" width="326" height="99" rx="15" fill="#eaf7f1" stroke="#b5e2d0"/><text x="723" y="187" font-size="19" font-weight="700" fill="#24674f">Ave 服务费 → Ave</text><text x="723" y="218" font-size="15" fill="#567e6b">官方文档：Bot 0.8% / 链上钱包 0.5%</text>
+<rect x="700" y="151" width="326" height="99" rx="15" fill="#eaf7f1" stroke="#b5e2d0"/><text x="723" y="187" font-size="19" font-weight="700" fill="#24674f">Ave 服务费 → Ave</text><text x="723" y="218" font-size="15" fill="#567e6b">网页文档：Bot 0.8% / 链钱包 0.5%</text>
 <rect x="700" y="268" width="326" height="99" rx="15" fill="#fff" stroke="#d6e3ec"/><text x="723" y="304" font-size="19" font-weight="700" fill="#2a465a">交易池费用 → 具体 DEX 等</text><text x="723" y="335" font-size="15" fill="#637a8c">具体由交易池及协议规则决定</text>
 <rect x="700" y="385" width="326" height="99" rx="15" fill="#fff" stroke="#d6e3ec"/><text x="723" y="421" font-size="19" font-weight="700" fill="#2a465a">网络费 → 区块链网络</text><text x="723" y="452" font-size="15" fill="#637a8c">Gas 与可能设置的优先费</text>
 <path d="M598 215 H649 V200 H695 M649 215 V317 H695 M649 317 V434 H695" stroke="#8baabb" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
