@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-12T10:06:42.484Z",
+  "generatedAt": "2026-11-13T04:47:35.262Z",
   "timezone": "Asia/Tokyo",
-  "days": 95,
+  "days": 96,
   "totals": {
-    "inputTokens": 96405057,
-    "outputTokens": 22713727,
+    "inputTokens": 96469860,
+    "outputTokens": 22720796,
     "cacheCreationTokens": 81927264,
-    "cacheReadTokens": 4921225823,
-    "costUsd": 3697.6014517000017,
-    "totalTokens": 5122271871
+    "cacheReadTokens": 4921722207,
+    "costUsd": 3698.332710700002,
+    "totalTokens": 5122840127
   },
   "agents": [
     {
@@ -34,11 +34,11 @@
     {
       "id": "hermes",
       "name": "Hermes",
-      "inputTokens": 60487272,
-      "outputTokens": 3712216,
+      "inputTokens": 60552075,
+      "outputTokens": 3719285,
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 762491120,
-      "costUsd": 1346.7856770000003,
+      "cacheReadTokens": 762987504,
+      "costUsd": 1347.5169360000002,
       "models": [
         "gpt-5.6-sol",
         "gpt-5.6-terra",
@@ -51,7 +51,7 @@
         "gpt-6.1-sol",
         "gpt-6-sol"
       ],
-      "totalTokens": 826690608
+      "totalTokens": 827258864
     },
     {
       "id": "codex",
@@ -4547,6 +4547,36 @@
               "costUsd": 0.861982,
               "costComplete": true,
               "totalTokens": 597001
+            }
+          }
+        }
+      }
+    },
+    "2026-11-13": {
+      "inputTokens": 64803,
+      "outputTokens": 7069,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 496384,
+      "costUsd": 0.731259,
+      "models": {},
+      "sources": {
+        "hermes": {
+          "inputTokens": 64803,
+          "outputTokens": 7069,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 496384,
+          "costUsd": 0.731259,
+          "costComplete": true,
+          "totalTokens": 568256,
+          "models": {
+            "gpt-6-astra": {
+              "inputTokens": 64803,
+              "outputTokens": 7069,
+              "cacheCreationTokens": 0,
+              "cacheReadTokens": 496384,
+              "costUsd": 0.731259,
+              "costComplete": true,
+              "totalTokens": 568256
             }
           }
         }
