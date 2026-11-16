@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-14T06:23:54.047Z",
+  "generatedAt": "2026-11-16T11:58:03.327Z",
   "timezone": "Asia/Tokyo",
-  "days": 97,
+  "days": 99,
   "totals": {
-    "inputTokens": 96534251,
-    "outputTokens": 22722244,
+    "inputTokens": 96903482,
+    "outputTokens": 22735762,
     "cacheCreationTokens": 81927264,
-    "cacheReadTokens": 4921879519,
-    "costUsd": 3698.554735700002,
-    "totalTokens": 5123063278
+    "cacheReadTokens": 4923971679,
+    "costUsd": 3701.751124700002,
+    "totalTokens": 5125538187
   },
   "agents": [
     {
@@ -34,11 +34,11 @@
     {
       "id": "hermes",
       "name": "Hermes",
-      "inputTokens": 60616466,
-      "outputTokens": 3720733,
+      "inputTokens": 60985697,
+      "outputTokens": 3734251,
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 763144816,
-      "costUsd": 1347.7389610000002,
+      "cacheReadTokens": 765236976,
+      "costUsd": 1350.93535,
       "models": [
         "gpt-5.6-sol",
         "gpt-5.6-terra",
@@ -51,7 +51,7 @@
         "gpt-6.1-sol",
         "gpt-6-sol"
       ],
-      "totalTokens": 827482015
+      "totalTokens": 829956924
     },
     {
       "id": "codex",
@@ -4607,6 +4607,84 @@
               "costUsd": 0.222025,
               "costComplete": true,
               "totalTokens": 223151
+            }
+          }
+        }
+      }
+    },
+    "2026-11-15": {
+      "inputTokens": 252374,
+      "outputTokens": 9536,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 1372288,
+      "costUsd": 2.162573,
+      "models": {},
+      "sources": {
+        "hermes": {
+          "inputTokens": 252374,
+          "outputTokens": 9536,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 1372288,
+          "costUsd": 2.162573,
+          "costComplete": true,
+          "totalTokens": 1634198,
+          "models": {
+            "gpt-6-astra": {
+              "inputTokens": 76894,
+              "outputTokens": 5447,
+              "cacheCreationTokens": 0,
+              "cacheReadTokens": 541568,
+              "costUsd": 0.777811,
+              "costComplete": true,
+              "totalTokens": 623909
+            },
+            "gpt-6.1-sol": {
+              "inputTokens": 175480,
+              "outputTokens": 4089,
+              "cacheCreationTokens": 0,
+              "cacheReadTokens": 830720,
+              "costUsd": 1.384762,
+              "costComplete": true,
+              "totalTokens": 1010289
+            }
+          }
+        }
+      }
+    },
+    "2026-11-16": {
+      "inputTokens": 116857,
+      "outputTokens": 3982,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 719872,
+      "costUsd": 1.033816,
+      "models": {},
+      "sources": {
+        "hermes": {
+          "inputTokens": 116857,
+          "outputTokens": 3982,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 719872,
+          "costUsd": 1.033816,
+          "costComplete": true,
+          "totalTokens": 840711,
+          "models": {
+            "gpt-6-astra": {
+              "inputTokens": 57652,
+              "outputTokens": 2201,
+              "cacheCreationTokens": 0,
+              "cacheReadTokens": 226944,
+              "costUsd": 0.451255,
+              "costComplete": true,
+              "totalTokens": 286797
+            },
+            "gpt-6.1-sol": {
+              "inputTokens": 59205,
+              "outputTokens": 1781,
+              "cacheCreationTokens": 0,
+              "cacheReadTokens": 492928,
+              "costUsd": 0.582561,
+              "costComplete": true,
+              "totalTokens": 553914
             }
           }
         }
