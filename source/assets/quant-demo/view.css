@@ -155,8 +155,8 @@ tr.opp{cursor:pointer}
 tr.opp:hover td{background:var(--wash)}
 tr.det td{white-space:normal;padding:6px 8px 14px}
 td .sub{display:block;color:var(--muted);font-size:11.5px;font-weight:400}
-#opps td .sub{font-size:10.5px;line-height:1.4}
-#opps td .sub.hi{color:var(--ink2)}
+#opps td .sub,#delivery td .sub{font-size:10.5px;line-height:1.4}
+#opps td .sub.hi,#delivery td .sub.hi{color:var(--ink2)}
 .liqmain{display:block;font-weight:650}
 .liqmain.good{color:var(--good)}.liqmain.warn{color:var(--warn)}.liqmain.bad{color:var(--bad)}
 .tag{display:inline-block;font-size:11.5px;padding:0 8px;border-radius:999px;border:1px solid var(--border);color:var(--ink2);line-height:1.6}
@@ -175,6 +175,10 @@ td .sub{display:block;color:var(--muted);font-size:11.5px;font-weight:400}
 .seg button{border:0;background:transparent;padding:2px 10px;cursor:pointer;color:var(--ink2)}
 .seg button+button{border-left:1px solid var(--border)}
 .seg button[aria-pressed="true"]{background:var(--wash);color:var(--ink);font-weight:600}
+.rkfac{width:100%;border-collapse:collapse;margin:6px 0 2px}.rkfac th,.rkfac td{text-align:left;vertical-align:top;padding:5px 8px;border-bottom:1px solid var(--border);font-size:12px}
+.rkled{display:grid;grid-template-columns:minmax(150px,230px) minmax(120px,1fr) 80px;gap:6px 10px;align-items:center;max-width:680px}
+.rkled .bz{height:8px;position:relative;background:var(--border);border-radius:4px}.rkled .bz i{position:absolute;top:0;height:8px;border-radius:4px}
+.rkcmp svg{width:100%;height:auto;display:block}.rkrd{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;min-height:18px;margin:4px 0}
 .sort{border:0;background:transparent;font:inherit;color:inherit;cursor:pointer;padding:0;white-space:nowrap}
 .sort:hover{color:var(--ink)}
 .sort .arr{color:var(--muted);font-size:10px}
@@ -344,8 +348,45 @@ table.pb{width:auto;min-width:60%;border-collapse:collapse}table.pb th,table.pb 
 }
 @media (max-width:900px){ #lockBtn,#resetBtn,#layExport,#layImport{display:none} .colrz{display:none} .zone + .zone{margin-top:12px} }
 
-/* Isolated static embed: no private modules. */
-html,body{background:transparent}body{padding:0;overflow-x:hidden}.demo-note{padding:8px 10px;margin-bottom:8px;border:1px solid var(--opp-bd);border-radius:7px;color:var(--ink2);background:var(--opp-bg);font-size:11px}.demo-note b{color:var(--opp-ac)}
-#msg{font-size:11px;color:var(--warn);margin:5px 0}.card.z{margin-bottom:0}.card.z>.scroll{overflow-x:auto}.tbl-opp{width:100%;min-width:2100px}.tbl-opp>thead th{position:sticky;top:0;background:var(--zbg);z-index:2}.detgrid{width:min(calc(100vw - 48px),1400px)}.detgrid>div{min-width:0}.risk{font-size:12px}.pbwrap{overflow:auto}.dpbooks{grid-template-columns:1fr 1fr}.dpcol{min-width:0}.dpv{min-width:280px}.chart{max-width:100%}tr.opp:focus-visible{outline:2px solid var(--s1);outline-offset:-2px}.bell:disabled,.cmdbtn:disabled{cursor:not-allowed;opacity:.4}
-@media(max-width:900px){.detgrid{grid-template-columns:1fr!important}.dpbooks{grid-template-columns:1fr}.tbl-opp{min-width:2100px}}
+/* ---- 量化机会：方案 A 紧凑表格（只作用在 #opps 里，其它模块不受影响） ---- */
+#opps .otabs{display:flex;gap:2px;margin:-6px -6px 8px;padding:0 6px;border-bottom:1px solid var(--zbd);overflow:auto}
+#opps .otab{appearance:none;border:0;background:none;color:var(--ink2);font:inherit;font-weight:600;padding:9px 12px;border-bottom:2px solid transparent;margin-bottom:-1px;cursor:pointer;white-space:nowrap}
+#opps .otab:hover{color:var(--ink)}#opps .otab[aria-selected=true]{color:var(--ink);border-bottom-color:var(--zac)}
+#opps .otab i{font-style:normal;font-size:11px;font-weight:500;margin-left:6px;padding:1px 6px;border-radius:9px;background:var(--wash);color:var(--ink2)}
+#opps .obar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:2px 0 8px}
+#opps .obar .sp{flex:1}
+#opps .obar .meta,#opps .chip{display:inline-flex;align-items:center;gap:4px;padding:1px 9px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--ink2);font-size:12px}
+#opps .chip b{color:var(--ink);font-weight:600}
+#opps .chip.warn{background:var(--warnbg);border-color:transparent;color:var(--warn)}#opps .chip.good{background:var(--goodbg);border-color:transparent;color:var(--good)}
+#opps details.help{margin:0 0 8px;border:1px dashed var(--border);border-radius:8px;background:var(--surface)}
+#opps details.help>summary{cursor:pointer;padding:5px 10px;color:var(--ink2);font-weight:600}
+#opps details.help .hbody{padding:2px 12px 8px;color:var(--ink2);line-height:1.9;font-size:12px}
+#opps .scroll{border:1px solid var(--border);border-radius:9px;background:var(--surface);overflow:auto;max-height:78vh}
+#opps .scroll table{border-collapse:separate;border-spacing:0}
+#opps .scroll thead th{background:var(--surface);color:var(--muted);position:sticky;top:0;z-index:2;font-size:12px}
+#opps .scroll th,#opps .scroll td{border-bottom:1px solid var(--grid)}
+#opps tbody tr.opp>td{height:46px}
+#opps tbody tr.opp:hover>td{background:var(--wash)}
+#opps tbody tr.opp.dim>td{color:var(--muted)}
+#opps table.tbl-a thead tr.grp th{height:26px;padding:4px 7px 0;text-align:center;color:var(--ink2);border-bottom:0;font-size:11px;letter-spacing:.06em;top:0}
+#opps table.tbl-a thead tr.grp th span{display:block;border-bottom:2px solid var(--grid);padding-bottom:3px}
+#opps table.tbl-a thead tr.grp th.g1 span{border-color:var(--s1)}#opps table.tbl-a thead tr.grp th.g2 span{border-color:var(--zac)}#opps table.tbl-a thead tr.grp th.g3 span{border-color:var(--muted)}
+#opps table.tbl-a thead tr:nth-child(2) th{top:26px}
+#opps table.tbl-a th:first-child,#opps table.tbl-a td:first-child{position:sticky;left:0;background:var(--surface);z-index:1;min-width:116px}
+#opps table.tbl-a thead th:first-child{z-index:3}
+#opps table.tbl-a tbody tr.opp:hover>td:first-child{background:var(--wash)}
+#opps .coin{display:flex;align-items:center;gap:8px;font-weight:650}
+#opps .coin .sub{line-height:1.2}
+#opps .dot{width:8px;height:8px;border-radius:50%;flex:none;background:var(--good)}#opps .dot.no{background:var(--muted)}
+#opps .sc{display:flex;align-items:center;gap:8px;justify-content:flex-end}#opps .sc b{min-width:34px;text-align:right}
+#opps .bar2{width:54px;height:6px;border-radius:3px;background:var(--wash);overflow:hidden;display:inline-block}#opps .bar2 i{display:block;height:100%;background:var(--zac)}
+#opps td.mu,#opps td.mu .sub{color:var(--muted)}
+/* 排名表：数据和表头都居中（标的列靠左）；悬停时固定列要用不透明底色，否则横向滚动时下面的内容会透出来 */
+#opps table.tbl-a th.n,#opps table.tbl-a td.n,#opps table.tbl-a thead tr:nth-child(2) th{text-align:center}
+#opps table.tbl-a thead tr:nth-child(2) th:first-child,#opps table.tbl-a td:first-child{text-align:left}
+#opps table.tbl-a .sc{justify-content:center}
+#opps table.tbl-a th:last-child,#opps table.tbl-a td:last-child{text-align:center}
+#opps table.tbl-a tbody tr.opp:hover>td:first-child{background:var(--surface) linear-gradient(var(--wash),var(--wash))}
+#opps .rkcols{display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start}#opps .rkcols>div{flex:1 1 420px;min-width:300px}
 
+.demo-note{padding:8px 12px;border:1px solid var(--border);border-radius:8px;margin:8px 0;color:var(--ink2);font-size:12px}

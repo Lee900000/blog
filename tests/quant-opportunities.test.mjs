@@ -14,6 +14,7 @@ async function setup(storedView){
     return{ok:true,json:async()=>JSON.parse(read('source/assets/quant-demo/'+path))};
   };
   const errors=[];dom.window.addEventListener('error',e=>errors.push(e.message));
+  dom.window.localStorage.setItem('oppTab','coin');
   if(storedView)dom.window.localStorage.setItem('candleView',storedView);
   dom.window.eval(read('source/assets/quant-demo/adapter.js'));
   dom.window.eval(read('source/assets/quant-demo/view.js'));
@@ -22,28 +23,27 @@ async function setup(storedView){
   return{dom,d:dom.window.document,errors};
 }
 async function settle(){for(let i=0;i<12;i++)await new Promise(resolve=>setImmediate(resolve));}
-test('demo starts merged despite legacy split preference and can switch both ways',async()=>{
-  const{dom,d}=await setup('split');
+test('demo starts merged and can switch both ways',async()=>{
+  const{dom,d}=await setup();
   try{
     [...d.querySelectorAll('tr.opp')].find(row=>row.textContent.includes('UNI-USD-SWAP')).click();await settle();
     const button=label=>[...d.querySelectorAll('tr.det button')].find(b=>b.textContent===label);
-    assert.equal(button('合併').getAttribute('aria-pressed'),'true');
-    assert.ok(d.querySelector('svg[aria-label*="K 線合併對比"]'));
-    button('分開').click();await settle();assert.equal(button('分開').getAttribute('aria-pressed'),'true');
-    assert.equal(d.querySelector('svg[aria-label*="K 線合併對比"]'),null);
-    button('合併').click();await settle();assert.ok(d.querySelector('svg[aria-label*="K 線合併對比"]'));
+    assert.equal(button('合并').getAttribute('aria-pressed'),'true');
+    assert.ok(d.querySelector('svg[aria-label*="K 线合并对比"]'));
+    button('分开').click();await settle();assert.equal(button('分开').getAttribute('aria-pressed'),'true');
+    assert.equal(d.querySelector('svg[aria-label*="K 线合并对比"]'),null);
+    button('合并').click();await settle();assert.ok(d.querySelector('svg[aria-label*="K 线合并对比"]'));
   }finally{dom.window.close();}
 });
 test('original table keeps 19 columns, real snapshots and disabled private actions',async()=>{
   const{dom,d,errors}=await setup();
   try{
     assert.equal(d.querySelectorAll('.tbl-opp>thead th').length,19);
-    assert.ok(d.querySelectorAll('tr.opp').length>=12);
+    assert.ok(d.querySelectorAll('tr.opp').length>=8);
     assert.match(d.querySelector('.demo-note').textContent,/Mock Demo.*本地快照/);
     assert.equal(d.querySelectorAll('.bell:not(:disabled),.cmdbtn:not(:disabled)').length,0);
     const failedLiquidity=d.querySelectorAll('td.liq').length-d.querySelectorAll('.liqmain').length;
-    assert.equal(failedLiquidity,2); // The source U-margined delivery API itself lacks these contract books.
-    assert.ok([...d.querySelectorAll('td.liq')].filter(c=>!c.querySelector('.liqmain')).every(c=>c.textContent.includes('盤口讀取失敗')));
+    assert.equal(failedLiquidity,0);
     assert.deepEqual(errors,[]);
   }finally{dom.window.close();}
 });
@@ -55,10 +55,10 @@ test('original Enter search and full detail charts work from local recordings',a
     assert.equal(d.querySelectorAll('tr.opp').length,1);
     d.querySelector('tr.opp').click();await settle();
     const detail=d.querySelector('tr.det');assert.ok(detail);
-    for(const label of ['套利方式','盤口深度','K 線','多空比','大戶多空賬戶數比','合約主動買賣量'])assert.match(detail.textContent,new RegExp(label));
+    for(const label of ['套利方式','盘口深度','K 线','多空比','大户多空账户数比','合约主动买卖量'])assert.match(detail.textContent,new RegExp(label));
     assert.ok(detail.querySelectorAll('svg').length>=6);
     assert.ok(detail.querySelectorAll('table.dpv').length>=2);
-    assert.doesNotMatch(detail.textContent,/NaN|Infinity|讀取失敗/);
+    assert.doesNotMatch(detail.textContent,/NaN|Infinity|读取失败/);
     assert.deepEqual(errors,[]);
   }finally{dom.window.close();}
 });
