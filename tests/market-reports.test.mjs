@@ -1,6 +1,7 @@
 import { createRequire as routeRequire } from 'node:module';
 const articleRoutes = routeRequire(import.meta.url)('../article-routes.json');
 import assert from 'node:assert/strict';
+import { existsSync } from 'node:fs';
 import { mkdtemp, readFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -17,7 +18,7 @@ const cases = [
 
 const hrefs = $ => $('a[href^="http"]').map((_, node) => $(node).attr('href')).get().sort();
 
-test('import keeps each report complete while adapting it to the Butterfly article shell', async () => {
+test('import keeps each report complete while adapting it to the Butterfly article shell', { skip: existsSync(sourceDir) ? false : 'Original reports exist only in the local source directory' }, async () => {
   const postsDir = await mkdtemp(join(tmpdir(), 'market-report-posts-'));
   const result = await importMarketReports({ sourceDir, postsDir });
   assert.deepEqual(result, { written: [885, 886, 887] });
