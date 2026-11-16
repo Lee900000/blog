@@ -4,7 +4,7 @@ description: 调研 OKX 股票代币、股票与商品衍生品、定价、行�
 postDesc: 从用户和交易所产品视角，区分 OKX 股票代币与股票永续。
 date: 2026-11-11 12:00:00
 categories:
-  - - 金融科技
+  - - 币圈相关
 tags:
   - OKX
   - 股票代币化

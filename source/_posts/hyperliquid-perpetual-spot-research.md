@@ -7,7 +7,7 @@ updated: 2026-09-14 14:15:00
 cover: /assets/hyperliquid-research/usdc-deposit-withdrawal.png
 top_img: /assets/hyperliquid-research/usdc-deposit-withdrawal.png
 categories:
-  - - 金融科技
+  - - 币圈相关
 tags:
   - Hyperliquid
   - 永续合约

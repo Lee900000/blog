@@ -7,7 +7,7 @@ top_img: /assets/liquidation-guide/liquidation-risk-engine.jpg
 date: 2026-11-14 12:00:00
 updated: 2026-11-14 12:00:00
 categories:
-  - - 金融科技
+  - - 币圈相关
 tags:
   - ADL
   - 合约交易

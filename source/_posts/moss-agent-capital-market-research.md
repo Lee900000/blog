@@ -7,7 +7,7 @@ updated: 2026-11-11 22:40:00
 cover: /assets/moss-agent-research/agent-marketplace.png
 top_img: /assets/moss-agent-research/agent-marketplace.png
 categories:
-  - - 金融科技
+  - - 币圈相关
 tags:
   - AI Agent
   - 量化交易

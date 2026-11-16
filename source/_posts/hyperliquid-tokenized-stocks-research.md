@@ -4,7 +4,7 @@ description: 调研 Hyperliquid 股票代币、TradFi 永续、预言机、行�
 postDesc: 用股票现货代币和永续合约两条路径，理解 Hyperliquid 的股票市场。
 date: 2026-11-11 12:10:00
 categories:
-  - - 金融科技
+  - - 币圈相关
 tags:
   - Hyperliquid
   - 股票代币化

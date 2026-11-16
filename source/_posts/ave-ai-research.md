@@ -6,7 +6,7 @@ cover: /assets/ave-ai-research/market.png
 top_img: /assets/ave-ai-research/market.png
 date: 2026-11-12 12:00:00
 categories:
-  - - 金融科技
+  - - 币圈相关
 tags:
   - Ave.ai
   - 链上交易
