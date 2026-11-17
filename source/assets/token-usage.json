@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-16T23:00:05.832Z",
+  "generatedAt": "2026-11-17T23:00:02.807Z",
   "timezone": "Asia/Tokyo",
-  "days": 99,
+  "days": 100,
   "totals": {
-    "inputTokens": 96903482,
-    "outputTokens": 22735762,
+    "inputTokens": 98038498,
+    "outputTokens": 22884313,
     "cacheCreationTokens": 81927264,
-    "cacheReadTokens": 4923971679,
-    "costUsd": 3701.751124700002,
-    "totalTokens": 5125538187
+    "cacheReadTokens": 4932119135,
+    "costUsd": 3727.2150587000024,
+    "totalTokens": 5134969210
   },
   "agents": [
     {
@@ -34,11 +34,11 @@
     {
       "id": "hermes",
       "name": "Hermes",
-      "inputTokens": 60985697,
-      "outputTokens": 3734251,
+      "inputTokens": 62120713,
+      "outputTokens": 3882802,
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 765236976,
-      "costUsd": 1350.93535,
+      "cacheReadTokens": 773384432,
+      "costUsd": 1376.399284,
       "models": [
         "gpt-5.6-sol",
         "gpt-5.6-terra",
@@ -51,7 +51,7 @@
         "gpt-6.1-sol",
         "gpt-6-sol"
       ],
-      "totalTokens": 829956924
+      "totalTokens": 839387947
     },
     {
       "id": "codex",
@@ -1750,11 +1750,11 @@
       }
     },
     "2026-09-17": {
-      "inputTokens": 8783474,
-      "outputTokens": 919837,
+      "inputTokens": 9622967,
+      "outputTokens": 1031220,
       "cacheCreationTokens": 808390,
-      "cacheReadTokens": 133431962,
-      "costUsd": 240.937961,
+      "cacheReadTokens": 138778650,
+      "costUsd": 259.691814,
       "models": {
         "claude-opus-4-8": {
           "inputTokens": 84,
@@ -1775,22 +1775,22 @@
       },
       "sources": {
         "hermes": {
-          "inputTokens": 8783292,
-          "outputTokens": 823672,
+          "inputTokens": 9622785,
+          "outputTokens": 935055,
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 125863936,
-          "costUsd": 226.665013,
+          "cacheReadTokens": 131210624,
+          "costUsd": 245.418866,
           "costComplete": true,
-          "totalTokens": 135470900,
+          "totalTokens": 141768464,
           "models": {
             "gpt-5.6-sol": {
-              "inputTokens": 7613909,
-              "outputTokens": 712520,
+              "inputTokens": 8453402,
+              "outputTokens": 823903,
               "cacheCreationTokens": 0,
-              "cacheReadTokens": 94365440,
-              "costUsd": 202.56793,
+              "cacheReadTokens": 99712128,
+              "costUsd": 221.321783,
               "costComplete": true,
-              "totalTokens": 102691869
+              "totalTokens": 108989433
             },
             "gpt-6.1-sol": {
               "inputTokens": 1169383,
@@ -4685,6 +4685,45 @@
               "costUsd": 0.582561,
               "costComplete": true,
               "totalTokens": 553914
+            }
+          }
+        }
+      }
+    },
+    "2026-11-17": {
+      "inputTokens": 295523,
+      "outputTokens": 37168,
+      "cacheCreationTokens": 0,
+      "cacheReadTokens": 2800768,
+      "costUsd": 6.710081,
+      "models": {},
+      "sources": {
+        "hermes": {
+          "inputTokens": 295523,
+          "outputTokens": 37168,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 2800768,
+          "costUsd": 6.710081,
+          "costComplete": true,
+          "totalTokens": 3133459,
+          "models": {
+            "gpt-5.6-sol": {
+              "inputTokens": 222198,
+              "outputTokens": 36046,
+              "cacheCreationTokens": 0,
+              "cacheReadTokens": 2620928,
+              "costUsd": 6.464978,
+              "costComplete": true,
+              "totalTokens": 2879172
+            },
+            "gpt-6-astra": {
+              "inputTokens": 73325,
+              "outputTokens": 1122,
+              "cacheCreationTokens": 0,
+              "cacheReadTokens": 179840,
+              "costUsd": 0.245103,
+              "costComplete": true,
+              "totalTokens": 254287
             }
           }
         }
