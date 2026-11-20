@@ -4,12 +4,12 @@
   "timezone": "Asia/Tokyo",
   "days": 103,
   "totals": {
-    "inputTokens": 98733399,
-    "outputTokens": 22935145,
+    "inputTokens": 98733744,
+    "outputTokens": 22935607,
     "cacheCreationTokens": 81927264,
-    "cacheReadTokens": 4941239775,
-    "costUsd": 3744.1307497000025,
-    "totalTokens": 5144835583
+    "cacheReadTokens": 4941351647,
+    "costUsd": 3744.2668617000027,
+    "totalTokens": 5144948262
   },
   "agents": [
     {
@@ -34,11 +34,11 @@
     {
       "id": "hermes",
       "name": "Hermes",
-      "inputTokens": 62815614,
-      "outputTokens": 3933634,
+      "inputTokens": 62815959,
+      "outputTokens": 3934096,
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 782505072,
-      "costUsd": 1393.314975,
+      "cacheReadTokens": 782616944,
+      "costUsd": 1393.451087,
       "models": [
         "gpt-5.6-sol",
         "gpt-5.6-terra",
@@ -51,7 +51,7 @@
         "gpt-6.1-sol",
         "gpt-6-sol"
       ],
-      "totalTokens": 849254320
+      "totalTokens": 849366999
     },
     {
       "id": "codex",
@@ -1407,11 +1407,11 @@
       }
     },
     "2026-09-05": {
-      "inputTokens": 4036134,
-      "outputTokens": 276275,
+      "inputTokens": 4036479,
+      "outputTokens": 276737,
       "cacheCreationTokens": 664033,
-      "cacheReadTokens": 83686802,
-      "costUsd": 132.153212,
+      "cacheReadTokens": 83798674,
+      "costUsd": 132.289324,
       "models": {
         "claude-opus-4-8": {
           "inputTokens": 120,
@@ -1424,22 +1424,22 @@
       },
       "sources": {
         "hermes": {
-          "inputTokens": 4036014,
-          "outputTokens": 216546,
+          "inputTokens": 4036359,
+          "outputTokens": 217008,
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 64862720,
-          "costUsd": 114.607016,
+          "cacheReadTokens": 64974592,
+          "costUsd": 114.743128,
           "costComplete": true,
-          "totalTokens": 69115280,
+          "totalTokens": 69227959,
           "models": {
             "gpt-5.6-sol": {
-              "inputTokens": 4036014,
-              "outputTokens": 216546,
+              "inputTokens": 4036359,
+              "outputTokens": 217008,
               "cacheCreationTokens": 0,
-              "cacheReadTokens": 64862720,
-              "costUsd": 114.607016,
+              "cacheReadTokens": 64974592,
+              "costUsd": 114.743128,
               "costComplete": true,
-              "totalTokens": 69115280
+              "totalTokens": 69227959
             }
           }
         }
