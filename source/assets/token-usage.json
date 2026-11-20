@@ -1,25 +1,25 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-20T07:15:13.824Z",
+  "generatedAt": "2026-11-20T15:15:01.845Z",
   "timezone": "Asia/Tokyo",
   "days": 103,
   "totals": {
-    "inputTokens": 100688870,
-    "outputTokens": 25655209,
-    "cacheCreationTokens": 96252204,
-    "cacheReadTokens": 5605539999,
-    "costUsd": 4069.166910175003,
-    "totalTokens": 5828136282
+    "inputTokens": 101015039,
+    "outputTokens": 25858010,
+    "cacheCreationTokens": 97449408,
+    "cacheReadTokens": 5644440370,
+    "costUsd": 4091.666513875003,
+    "totalTokens": 5868762827
   },
   "agents": [
     {
       "id": "claude-code",
       "name": "Claude Code",
-      "inputTokens": 99255,
-      "outputTokens": 19755373,
-      "cacheCreationTokens": 96252204,
-      "cacheReadTokens": 4060336047,
-      "costUsd": 2329.4957480750004,
+      "inputTokens": 99752,
+      "outputTokens": 19942295,
+      "cacheCreationTokens": 97449408,
+      "cacheReadTokens": 4095008066,
+      "costUsd": 2349.8858987750004,
       "models": [
         "claude-sonnet-5",
         "claude-opus-5",
@@ -30,7 +30,7 @@
         "claude-haiku-4-5-20251001",
         "claude-haiku-5-5"
       ],
-      "totalTokens": 4176442879
+      "totalTokens": 4212499521
     },
     {
       "id": "hermes",
@@ -57,11 +57,11 @@
     {
       "id": "codex",
       "name": "Codex",
-      "inputTokens": 34400300,
-      "outputTokens": 1356656,
+      "inputTokens": 34725972,
+      "outputTokens": 1372535,
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 696433152,
-      "costUsd": 343.0950241,
+      "cacheReadTokens": 700661504,
+      "costUsd": 345.20447709999996,
       "models": [
         "gpt-5.6-sol",
         "gpt-6-astra",
@@ -72,7 +72,7 @@
         "gpt-6.1-terra",
         "codex-auto-review"
       ],
-      "totalTokens": 732190108
+      "totalTokens": 736760011
     },
     {
       "id": "deepseek",
@@ -4952,18 +4952,34 @@
       }
     },
     "2026-11-20": {
-      "inputTokens": 1170419,
-      "outputTokens": 137825,
-      "cacheCreationTokens": 449917,
-      "cacheReadTokens": 43722235,
-      "costUsd": 19.722398800000004,
+      "inputTokens": 1496588,
+      "outputTokens": 340626,
+      "cacheCreationTokens": 1647121,
+      "cacheReadTokens": 82622606,
+      "costUsd": 42.222002499999995,
       "models": {
-        "gpt-6.1-sol": {
-          "inputTokens": 168921,
-          "outputTokens": 1641,
+        "gpt-5.6-terra": {
+          "inputTokens": 31658,
+          "outputTokens": 2393,
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 533632,
-          "costUsd": 0.5803254999999999,
+          "cacheReadTokens": 162304,
+          "costUsd": 0.15561599999999998,
+          "costComplete": true
+        },
+        "gpt-6.1-sol": {
+          "inputTokens": 477863,
+          "outputTokens": 17245,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 4736000,
+          "costUsd": 2.6373325000000003,
+          "costComplete": true
+        },
+        "codex-auto-review": {
+          "inputTokens": 16730,
+          "outputTokens": 275,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 25984,
+          "costUsd": 0.052446,
           "costComplete": true
         },
         "gpt-6-luna": {
@@ -4983,19 +4999,11 @@
           "costComplete": true
         },
         "claude-sonnet-5-5": {
-          "inputTokens": 264,
-          "outputTokens": 88792,
-          "cacheCreationTokens": 449917,
-          "cacheReadTokens": 17582971,
-          "costUsd": 9.307065300000005,
-          "costComplete": true
-        },
-        "gpt-5.6-terra": {
-          "inputTokens": 31658,
-          "outputTokens": 2393,
-          "cacheCreationTokens": 0,
-          "cacheReadTokens": 162304,
-          "costUsd": 0.15561599999999998,
+          "inputTokens": 761,
+          "outputTokens": 275714,
+          "cacheCreationTokens": 1647121,
+          "cacheReadTokens": 52254990,
+          "costUsd": 29.69721599999999,
           "costComplete": true
         }
       },
