@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-20T02:45:58.785Z",
+  "generatedAt": "2026-11-20T04:40:13.530Z",
   "timezone": "Asia/Tokyo",
   "days": 103,
   "totals": {
-    "inputTokens": 100309815,
-    "outputTokens": 25549089,
+    "inputTokens": 100560739,
+    "outputTokens": 25568796,
     "cacheCreationTokens": 95902581,
-    "cacheReadTokens": 5578096407,
-    "costUsd": 4056.668160875003,
-    "totalTokens": 5799857892
+    "cacheReadTokens": 5588658967,
+    "costUsd": 4060.454861875003,
+    "totalTokens": 5810691083
   },
   "agents": [
     {
@@ -35,11 +35,11 @@
     {
       "id": "hermes",
       "name": "Hermes",
-      "inputTokens": 62863255,
-      "outputTokens": 3944227,
+      "inputTokens": 62877251,
+      "outputTokens": 3945459,
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 783676784,
-      "costUsd": 1395.439782,
+      "cacheReadTokens": 783785072,
+      "costUsd": 1395.74347,
       "models": [
         "gpt-5.6-sol",
         "gpt-5.6-terra",
@@ -52,16 +52,16 @@
         "gpt-6.1-sol",
         "gpt-6-sol"
       ],
-      "totalTokens": 850484266
+      "totalTokens": 850607782
     },
     {
       "id": "codex",
       "name": "Codex",
-      "inputTokens": 34035471,
-      "outputTokens": 1333162,
+      "inputTokens": 34272399,
+      "outputTokens": 1351637,
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 684646144,
-      "costUsd": 338.88378959999994,
+      "cacheReadTokens": 695100416,
+      "costUsd": 342.3668025999999,
       "models": [
         "gpt-5.6-sol",
         "gpt-6-astra",
@@ -72,7 +72,7 @@
         "gpt-6.1-terra",
         "codex-auto-review"
       ],
-      "totalTokens": 720014777
+      "totalTokens": 730724452
     },
     {
       "id": "deepseek",
@@ -1409,11 +1409,11 @@
       }
     },
     "2026-09-05": {
-      "inputTokens": 4083775,
-      "outputTokens": 286868,
+      "inputTokens": 4097771,
+      "outputTokens": 288100,
       "cacheCreationTokens": 664033,
-      "cacheReadTokens": 84858514,
-      "costUsd": 134.278019,
+      "cacheReadTokens": 84966802,
+      "costUsd": 134.581707,
       "models": {
         "claude-opus-4-8": {
           "inputTokens": 120,
@@ -1426,22 +1426,22 @@
       },
       "sources": {
         "hermes": {
-          "inputTokens": 4083655,
-          "outputTokens": 227139,
+          "inputTokens": 4097651,
+          "outputTokens": 228371,
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 66034432,
-          "costUsd": 116.731823,
+          "cacheReadTokens": 66142720,
+          "costUsd": 117.035511,
           "costComplete": true,
-          "totalTokens": 70345226,
+          "totalTokens": 70468742,
           "models": {
             "gpt-5.6-sol": {
-              "inputTokens": 4083655,
-              "outputTokens": 227139,
+              "inputTokens": 4097651,
+              "outputTokens": 228371,
               "cacheCreationTokens": 0,
-              "cacheReadTokens": 66034432,
-              "costUsd": 116.731823,
+              "cacheReadTokens": 66142720,
+              "costUsd": 117.035511,
               "costComplete": true,
-              "totalTokens": 70345226
+              "totalTokens": 70468742
             }
           }
         }
@@ -4952,11 +4952,11 @@
       }
     },
     "2026-11-20": {
-      "inputTokens": 805360,
-      "outputTokens": 32937,
+      "inputTokens": 1042288,
+      "outputTokens": 51412,
       "cacheCreationTokens": 100294,
-      "cacheReadTokens": 16386931,
-      "costUsd": 7.527337500000002,
+      "cacheReadTokens": 26841203,
+      "costUsd": 11.0103505,
       "models": {
         "gpt-6.1-sol": {
           "inputTokens": 79007,
@@ -4983,11 +4983,11 @@
           "costComplete": true
         },
         "gpt-6.1-terra": {
-          "inputTokens": 381649,
-          "outputTokens": 19444,
+          "inputTokens": 618577,
+          "outputTokens": 37919,
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 12627968,
-          "costUsd": 4.4027745,
+          "cacheReadTokens": 23082240,
+          "costUsd": 7.8857875,
           "costComplete": true
         }
       },
