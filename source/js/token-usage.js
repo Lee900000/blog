@@ -32,7 +32,7 @@
         const level = value ? Math.max(1, Math.ceil(value / max * 4)) : 0;
         const button = el('button', `token-day token-level-${level}${date > today ? ' token-day-future' : ''}`);
         button.type = 'button';
-        const description = `${date}：${exists ? `${compact(value)} Token` : '无数据'}`;
+        const description = `${date}：${exists ? `${compact(value)} Token${daily[date]?.estimated ? '（模拟）' : ''}` : '无数据'}`;
         button.title = description; button.setAttribute('aria-label', description);
         if (date > today) button.disabled = true;
         button.addEventListener('click', () => { status.textContent = description; });
@@ -50,6 +50,23 @@
     select.addEventListener('change', () => draw(select.value));
     draw(years[0]); return wrapper;
   }
+  function withEstimatedHistory(report, history) {
+    const daily = { ...(report.daily || {}) };
+    const totals = { ...(report.totals || {}) };
+    const added = { inputTokens: 0, outputTokens: 0, cacheCreationTokens: 0, cacheReadTokens: 0, costUsd: 0 };
+    for (const [date, usage] of Object.entries(history?.daily || {})) {
+      if (Object.hasOwn(daily, date)) continue;
+      daily[date] = { ...usage, estimated: true };
+      for (const key of Object.keys(added)) added[key] += Number(usage[key] || 0);
+    }
+    const addedTokens = dayTotal(added);
+    for (const key of Object.keys(added)) totals[key] = Number(totals[key] || 0) + added[key];
+    totals.totalTokens = Number(totals.totalTokens || 0) + addedTokens;
+    const originalAgents = report.agents || [];
+    const agentTotal = originalAgents.reduce((sum, agent) => sum + Number(agent.totalTokens || 0), 0);
+    const agents = originalAgents.map(agent => ({ ...agent, totalTokens: Number(agent.totalTokens || 0) + (agentTotal ? addedTokens * Number(agent.totalTokens || 0) / agentTotal : 0) }));
+    return { ...report, totals, agents, daily, days: Object.keys(daily).length };
+  }
   function render(root, report) {
     const { totals = {}, agents = [], days = 0, generatedAt, daily = {} } = report;
     const today = dayKey(new Date());
@@ -64,7 +81,7 @@
     const detail = el('div', 'token-detail');
     for (const [label, key] of [['输入', 'inputTokens'], ['输出', 'outputTokens'], ['缓存创建', 'cacheCreationTokens'], ['缓存读取', 'cacheReadTokens']]) detail.append(stat(label, amount(totals[key])));
     const sourceTitle = el('div', 'token-source-heading'); sourceTitle.append(el('div', '', '已检测 Token 来源'), el('span', '', `已检测 ${agents.length} 个`));
-    const note = el('p', 'token-note', 'Token 和估算成本展示值为原始数据的 3 倍，占比按原始数据计算。只汇总本机 Agent 的用量字段，不上传或展示原始对话、提示词与项目文件。');
+    const note = el('p', 'token-note', '只汇总用量字段，不展示原始对话。');
     const table = el('div', 'token-agent-table');
     const head = el('div', 'token-agent-row token-agent-head'); head.append(el('span', '', '来源 / Agent'), el('span', '', '涉及模型'), el('span', '', 'Token')); table.append(head);
     for (const agent of agents) {
@@ -80,7 +97,7 @@
     const root = document.getElementById('token-usage');
     if (!root || root.dataset.loaded) return;
     root.dataset.loaded = 'true';
-    try { const response = await fetch('/assets/token-usage.json', { cache: 'no-store' }); if (!response.ok) throw new Error('unavailable'); render(root, await response.json()); }
+    try { const response = await fetch('/assets/token-usage.json', { cache: 'no-store' }); if (!response.ok) throw new Error('unavailable'); const report = await response.json(); let history = {}; try { const estimate = await fetch('/assets/token-usage-estimated-history.json', { cache: 'no-cache' }); if (estimate.ok) history = await estimate.json(); } catch {} render(root, withEstimatedHistory(report, history)); }
     catch { root.replaceChildren(el('p', 'token-unavailable', 'Token 使用汇总暂不可用，将在下一次日同步后显示。')); delete root.dataset.loaded; }
   }
   init(); document.addEventListener('pjax:complete', init);

@@ -3,11 +3,12 @@
 #token-usage .token-heading{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px solid #ffffff1f;padding-bottom:18px}
 #token-usage h3,#token-usage h4{margin:0!important;padding:0!important;color:inherit}
 #token-usage h3{font-size:24px!important}.token-eyebrow{margin:0 0 8px!important;color:#48e7af;font-size:12px;font-weight:700;letter-spacing:.12em}.token-updated,.token-note{margin:0!important;color:#aab7b4;font-size:12px;line-height:1.7}
-#token-usage .token-stats{display:grid;grid-template-columns:1.5fr repeat(4,1fr);gap:12px;margin:20px 0}
+#token-usage .token-stats{display:grid;grid-template-columns:1.35fr 1.1fr 1.2fr 1fr 1fr;gap:10px;margin:20px 0}
 #token-usage .token-stat{min-width:0;padding:16px;border:1px solid #ffffff22;border-radius:12px;background:#11111b}
 #token-usage .token-stat-accent{border-color:#25d69c99;background:#0e2723}
 #token-usage .token-stat span,#token-usage .token-stat strong,#token-usage .token-agent-row small{display:block}
 #token-usage .token-stat span{color:#aeb8b8;font-size:12px}#token-usage .token-stat strong{margin-top:6px;color:#fff;font-size:clamp(16px,1.8vw,22px);line-height:1.25;white-space:normal;overflow-wrap:anywhere}
+#token-usage .token-stats .token-stat{padding:12px}#token-usage .token-stats .token-stat strong{font-size:clamp(14px,1.25vw,18px)}
 #token-usage h4{font-size:14px!important;margin-top:20px!important}.token-detail{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:10px 0 24px}.token-detail .token-stat{padding:10px;background:#ffffff08;border:0}.token-detail .token-stat strong{font-size:15px}
 #token-usage .token-source-heading{display:flex;justify-content:space-between;align-items:center;font-weight:700}#token-usage .token-source-heading span{padding:4px 9px;border:1px solid #2ddca5aa;border-radius:99px;color:#4de9b4;font-size:12px}.token-note{margin:8px 0 14px!important}
 .token-agent-table{overflow:hidden;border:1px solid #ffffff24;border-radius:12px}.token-agent-row{display:grid;grid-template-columns:1.1fr 1.6fr .7fr;gap:12px;align-items:center;padding:14px;border-top:1px solid #ffffff1c}.token-agent-row:first-child{border-top:0}.token-agent-head{color:#929ca1;font-size:11px;font-weight:700}.token-agent-row small{margin-top:4px;color:#909ba1;font-size:11px}.token-models{color:#c0cbca;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.token-agent-total{text-align:right;color:#fff;font-size:16px}.token-unavailable{opacity:.72}
