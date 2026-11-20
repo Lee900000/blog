@@ -17,6 +17,8 @@ const extraSources = Object.fromEntries(Object.entries(state.sources || {})
   .filter(([id, source]) => !['codex', 'claude-code'].includes(id) && source?.status === 'ready' && Object.keys(source.snapshot || {}).length)
   .map(([id, source]) => [id, source.snapshot]));
 const report = summarizeSources(coreDays, extraSources);
+// [skill: dev-dna] Do not mistake report generation for fresh core collection.
+report.generatedAt = statSync(latest).mtime.toISOString();
 mkdirSync(join(output, '..'), { recursive: true });
 writeFileSync(output, `${JSON.stringify(report, null, 2)}\n`);
 console.log(JSON.stringify({ output, days: report.days, agents: report.agents.map(agent => agent.name), totalTokens: report.totals.totalTokens }));
