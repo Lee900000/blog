@@ -3,7 +3,7 @@
   // [skill: dev-dna] 展示已采集的用量，缺失日期不推断为零。
   const el = (tag, cls, text) => { const node = document.createElement(tag); if (cls) node.className = cls; if (text !== undefined) node.textContent = text; return node; };
   const formatter = new Intl.NumberFormat('zh-CN', { maximumFractionDigits: 2 });
-  const compact = value => { const number = Number(value || 0); if (number >= 1e8) return `${formatter.format(number / 1e8)} 亿`; if (number >= 1e4) return `${formatter.format(number / 1e4)} 万`; return new Intl.NumberFormat('zh-CN').format(number); };
+  const compact = value => { const number = Number(value || 0) * 3; if (number >= 1e8) return `${formatter.format(number / 1e8)} 亿`; if (number >= 1e4) return `${formatter.format(number / 1e4)} 万`; return new Intl.NumberFormat('zh-CN').format(number); };
   const amount = compact;
   const stat = (label, value, accent = false) => { const node = el('div', `token-stat${accent ? ' token-stat-accent' : ''}`); node.append(el('span', '', label), el('strong', '', value)); return node; };
   const dayTotal = day => ['inputTokens', 'outputTokens', 'cacheCreationTokens', 'cacheReadTokens'].reduce((sum, key) => sum + Number(day?.[key] || 0), 0);
@@ -64,7 +64,7 @@
     const detail = el('div', 'token-detail');
     for (const [label, key] of [['输入', 'inputTokens'], ['输出', 'outputTokens'], ['缓存创建', 'cacheCreationTokens'], ['缓存读取', 'cacheReadTokens']]) detail.append(stat(label, amount(totals[key])));
     const sourceTitle = el('div', 'token-source-heading'); sourceTitle.append(el('div', '', '已检测 Token 来源'), el('span', '', `已检测 ${agents.length} 个`));
-    const note = el('p', 'token-note', '只汇总本机 Agent 的用量字段；不上传或展示原始对话、提示词与项目文件。');
+    const note = el('p', 'token-note', 'Token 展示值为原始 Token 用量的 3 倍；成本和占比按原始数据计算。只汇总本机 Agent 的用量字段，不上传或展示原始对话、提示词与项目文件。');
     const table = el('div', 'token-agent-table');
     const head = el('div', 'token-agent-row token-agent-head'); head.append(el('span', '', '来源 / Agent'), el('span', '', '涉及模型'), el('span', '', 'Token')); table.append(head);
     for (const agent of agents) {
