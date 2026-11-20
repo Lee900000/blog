@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-20T02:37:39.748Z",
+  "generatedAt": "2026-11-20T02:40:13.586Z",
   "timezone": "Asia/Tokyo",
   "days": 103,
   "totals": {
-    "inputTokens": 99883780,
-    "outputTokens": 25521785,
+    "inputTokens": 100307931,
+    "outputTokens": 25546134,
     "cacheCreationTokens": 95902581,
-    "cacheReadTokens": 5564637975,
-    "costUsd": 4050.6373623750032,
-    "totalTokens": 5785946121
+    "cacheReadTokens": 5577817239,
+    "costUsd": 4056.237177875003,
+    "totalTokens": 5799573885
   },
   "agents": [
     {
@@ -35,11 +35,11 @@
     {
       "id": "hermes",
       "name": "Hermes",
-      "inputTokens": 62818869,
-      "outputTokens": 3936367,
+      "inputTokens": 62861371,
+      "outputTokens": 3941272,
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 782846320,
-      "costUsd": 1393.811758,
+      "cacheReadTokens": 783397616,
+      "costUsd": 1395.008799,
       "models": [
         "gpt-5.6-sol",
         "gpt-5.6-terra",
@@ -52,16 +52,16 @@
         "gpt-6.1-sol",
         "gpt-6-sol"
       ],
-      "totalTokens": 849601556
+      "totalTokens": 850200259
     },
     {
       "id": "codex",
       "name": "Codex",
-      "inputTokens": 33653822,
-      "outputTokens": 1313718,
+      "inputTokens": 34035471,
+      "outputTokens": 1333162,
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 672018176,
-      "costUsd": 334.4810150999999,
+      "cacheReadTokens": 684646144,
+      "costUsd": 338.88378959999994,
       "models": [
         "gpt-5.6-sol",
         "gpt-6-astra",
@@ -72,7 +72,7 @@
         "gpt-6.1-terra",
         "codex-auto-review"
       ],
-      "totalTokens": 706985716
+      "totalTokens": 720014777
     },
     {
       "id": "deepseek",
@@ -1409,11 +1409,11 @@
       }
     },
     "2026-09-05": {
-      "inputTokens": 4039389,
-      "outputTokens": 279008,
+      "inputTokens": 4081891,
+      "outputTokens": 283913,
       "cacheCreationTokens": 664033,
-      "cacheReadTokens": 84028050,
-      "costUsd": 132.649995,
+      "cacheReadTokens": 84579346,
+      "costUsd": 133.847036,
       "models": {
         "claude-opus-4-8": {
           "inputTokens": 120,
@@ -1426,22 +1426,22 @@
       },
       "sources": {
         "hermes": {
-          "inputTokens": 4039269,
-          "outputTokens": 219279,
+          "inputTokens": 4081771,
+          "outputTokens": 224184,
           "cacheCreationTokens": 0,
-          "cacheReadTokens": 65203968,
-          "costUsd": 115.103799,
+          "cacheReadTokens": 65755264,
+          "costUsd": 116.30084,
           "costComplete": true,
-          "totalTokens": 69462516,
+          "totalTokens": 70061219,
           "models": {
             "gpt-5.6-sol": {
-              "inputTokens": 4039269,
-              "outputTokens": 219279,
+              "inputTokens": 4081771,
+              "outputTokens": 224184,
               "cacheCreationTokens": 0,
-              "cacheReadTokens": 65203968,
-              "costUsd": 115.103799,
+              "cacheReadTokens": 65755264,
+              "costUsd": 116.30084,
               "costComplete": true,
-              "totalTokens": 69462516
+              "totalTokens": 70061219
             }
           }
         }
@@ -4952,11 +4952,11 @@
       }
     },
     "2026-11-20": {
-      "inputTokens": 423711,
-      "outputTokens": 13493,
+      "inputTokens": 805360,
+      "outputTokens": 32937,
       "cacheCreationTokens": 100294,
-      "cacheReadTokens": 3758963,
-      "costUsd": 3.124563,
+      "cacheReadTokens": 16386931,
+      "costUsd": 7.527337500000002,
       "models": {
         "gpt-6.1-sol": {
           "inputTokens": 79007,
@@ -4972,6 +4972,14 @@
           "cacheCreationTokens": 0,
           "cacheReadTokens": 1352576,
           "costUsd": 1.1249639999999999,
+          "costComplete": true
+        },
+        "gpt-6.1-terra": {
+          "inputTokens": 381649,
+          "outputTokens": 19444,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 12627968,
+          "costUsd": 4.4027745,
           "costComplete": true
         },
         "claude-sonnet-5-5": {
