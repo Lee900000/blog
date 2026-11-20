@@ -21,8 +21,8 @@ test('token panel shows today and provides a selectable daily calendar', async (
   let nodes = flatten(root);
   assert.ok(nodes.some(n => n.textContent === '今日 Token'));
   assert.ok(nodes.some(n => n.textContent === '6 万'));
-  assert.ok(nodes.some(n => n.textContent.includes('原始 Token 用量的 3 倍')));
-  assert.ok(nodes.some(n => n.textContent === 'US$12'));
+  assert.ok(nodes.some(n => n.textContent.includes('原始数据的 3 倍')));
+  assert.ok(nodes.some(n => n.textContent === 'US$36'));
   assert.ok(nodes.some(n => n.textContent === '1月'));
   assert.ok(nodes.some(n => n.textContent === '12月'));
   const day = nodes.find(n => n['aria-label']?.includes('2026-11-05'));
