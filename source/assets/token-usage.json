@@ -1,25 +1,25 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-20T23:00:36.323Z",
+  "generatedAt": "2026-11-21T07:00:35.453Z",
   "timezone": "Asia/Tokyo",
-  "days": 103,
+  "days": 104,
   "totals": {
-    "inputTokens": 101015039,
-    "outputTokens": 25858010,
-    "cacheCreationTokens": 97449408,
-    "cacheReadTokens": 5644440370,
-    "costUsd": 4091.666513875003,
-    "totalTokens": 5868762827
+    "inputTokens": 101532708,
+    "outputTokens": 25874228,
+    "cacheCreationTokens": 97547847,
+    "cacheReadTokens": 5649413144,
+    "costUsd": 4095.4543785750034,
+    "totalTokens": 5874367927
   },
   "agents": [
     {
       "id": "claude-code",
       "name": "Claude Code",
-      "inputTokens": 99752,
-      "outputTokens": 19942295,
-      "cacheCreationTokens": 97449408,
-      "cacheReadTokens": 4095008066,
-      "costUsd": 2349.8858987750004,
+      "inputTokens": 99774,
+      "outputTokens": 19947659,
+      "cacheCreationTokens": 97547847,
+      "cacheReadTokens": 4096442920,
+      "costUsd": 2350.9875149750005,
       "models": [
         "claude-sonnet-5",
         "claude-opus-5",
@@ -30,16 +30,16 @@
         "claude-haiku-4-5-20251001",
         "claude-haiku-5-5"
       ],
-      "totalTokens": 4212499521
+      "totalTokens": 4214038200
     },
     {
       "id": "hermes",
       "name": "Hermes",
-      "inputTokens": 62877251,
-      "outputTokens": 3945459,
+      "inputTokens": 62971369,
+      "outputTokens": 3948831,
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 783785072,
-      "costUsd": 1395.74347,
+      "cacheReadTokens": 784122096,
+      "costUsd": 1396.4584419999999,
       "models": [
         "gpt-5.6-sol",
         "gpt-5.6-terra",
@@ -52,16 +52,16 @@
         "gpt-6.1-sol",
         "gpt-6-sol"
       ],
-      "totalTokens": 850607782
+      "totalTokens": 851042296
     },
     {
       "id": "codex",
       "name": "Codex",
-      "inputTokens": 34725972,
-      "outputTokens": 1372535,
+      "inputTokens": 35149501,
+      "outputTokens": 1380017,
       "cacheCreationTokens": 0,
-      "cacheReadTokens": 700661504,
-      "costUsd": 345.20447709999996,
+      "cacheReadTokens": 703862400,
+      "costUsd": 347.17575359999995,
       "models": [
         "gpt-5.6-sol",
         "gpt-6-astra",
@@ -72,7 +72,7 @@
         "gpt-6.1-terra",
         "codex-auto-review"
       ],
-      "totalTokens": 736760011
+      "totalTokens": 740391918
     },
     {
       "id": "deepseek",
@@ -5025,6 +5025,61 @@
               "costUsd": 0.45238,
               "costComplete": true,
               "totalTokens": 336646
+            }
+          }
+        }
+      }
+    },
+    "2026-11-21": {
+      "inputTokens": 517669,
+      "outputTokens": 16218,
+      "cacheCreationTokens": 98439,
+      "cacheReadTokens": 4972774,
+      "costUsd": 3.7878647,
+      "models": {
+        "gpt-6.1-sol": {
+          "inputTokens": 208734,
+          "outputTokens": 3901,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 2313856,
+          "costUsd": 1.158814,
+          "costComplete": true
+        },
+        "gpt-6-luna": {
+          "inputTokens": 214795,
+          "outputTokens": 3581,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 887040,
+          "costUsd": 0.8124625000000001,
+          "costComplete": true
+        },
+        "claude-sonnet-5-5": {
+          "inputTokens": 22,
+          "outputTokens": 5364,
+          "cacheCreationTokens": 98439,
+          "cacheReadTokens": 1434854,
+          "costUsd": 1.1016161999999998,
+          "costComplete": true
+        }
+      },
+      "sources": {
+        "hermes": {
+          "inputTokens": 94118,
+          "outputTokens": 3372,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 337024,
+          "costUsd": 0.714972,
+          "costComplete": true,
+          "totalTokens": 434514,
+          "models": {
+            "gpt-6-astra": {
+              "inputTokens": 94118,
+              "outputTokens": 3372,
+              "cacheCreationTokens": 0,
+              "cacheReadTokens": 337024,
+              "costUsd": 0.714972,
+              "costComplete": true,
+              "totalTokens": 434514
             }
           }
         }
