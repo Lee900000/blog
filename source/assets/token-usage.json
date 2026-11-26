@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-26T15:15:11.623Z",
+  "generatedAt": "2026-11-26T23:00:40.271Z",
   "timezone": "Asia/Tokyo",
   "days": 110,
   "totals": {
@@ -5337,6 +5337,14 @@
       "cacheReadTokens": 33425937,
       "costUsd": 20.116154200000015,
       "models": {
+        "gpt-6.2-astra": {
+          "inputTokens": 176419,
+          "outputTokens": 13299,
+          "cacheCreationTokens": 0,
+          "cacheReadTokens": 3326720,
+          "costUsd": 1.4722125000000004,
+          "costComplete": true
+        },
         "gpt-6-luna": {
           "inputTokens": 151876,
           "outputTokens": 1211,
@@ -5351,14 +5359,6 @@
           "cacheCreationTokens": 978294,
           "cacheReadTokens": 29195409,
           "costUsd": 17.331917700000005,
-          "costComplete": true
-        },
-        "gpt-6.2-astra": {
-          "inputTokens": 176419,
-          "outputTokens": 13299,
-          "cacheCreationTokens": 0,
-          "cacheReadTokens": 3326720,
-          "costUsd": 1.4722125000000004,
           "costComplete": true
         }
       },
