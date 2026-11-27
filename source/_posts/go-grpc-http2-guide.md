@@ -7,9 +7,10 @@ updated: 2025-10-14 10:00:00
 categories:
   - 协议
 tags:
+  - 协议
+  - HTTP
   - Go
   - gRPC
-  - HTTP2
   - Protobuf
 permalink: archives/3964c478.html
 ---

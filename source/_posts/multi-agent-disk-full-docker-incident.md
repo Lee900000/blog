@@ -10,6 +10,7 @@ categories:
   - - Ai
   - - 踩坑教训
 tags:
+  - mac
   - AI Agent
   - Docker
   - macOS

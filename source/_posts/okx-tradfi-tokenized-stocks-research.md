@@ -6,6 +6,7 @@ date: 2026-11-11 12:00:00
 categories:
   - - 币圈相关
 tags:
+  - 衍生品
   - OKX
   - 股票代币化
   - TradFi
