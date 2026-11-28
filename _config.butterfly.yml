@@ -148,4 +148,4 @@ inject:
     - <script defer src="/js/activity.js"></script>
     - <script defer src="/js/token-usage.js"></script>
     - <script defer src="/js/arbitrage.js"></script>
-    - <script defer src="/js/works.js"></script>
+    - <script defer src="/js/works.js?v=20261128-lee"></script>
