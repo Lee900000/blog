@@ -20,7 +20,7 @@ test('published site exposes the Tago brand and Lee author identity', () => {
   assert.ok(site.skip_render.includes('README.md'));
 
   const about = read('source/about/index.md');
-  assert.ok(about.includes('https://github.com/kary2999'));
+  assert.ok(about.includes('https://github.com/Lee900000'));
   assert.ok(about.includes('src="../assets/profile/leon-avatar-tago.png"'));
 
   const pages = YAML.parse(read('_config.leon-book-pages.yml'));
@@ -132,7 +132,7 @@ test('article comments use Giscus with an isolated GitHub Discussions repository
   assert.equal(theme().comments.count, false);
   assert.equal(theme().aside.card_newest_comments.enable, false);
   assert.equal(config().imported_post_comments, true);
-  assert.equal(theme().giscus.repo, 'kary2999/tago-comments');
+  assert.equal(theme().giscus.repo, 'Lee900000/tago-comments');
   assert.equal(theme().giscus.option['data-mapping'], 'pathname');
   assert.equal(theme().giscus.option['data-lang'], 'zh-CN');
   assert.equal(theme().CDN.option?.twikoo, undefined);

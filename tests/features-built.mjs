@@ -65,7 +65,7 @@ test('Giscus renders on every public article only and has no homepage comments f
   for (const [legacyId, route] of Object.entries(articleRoutes)) {
     const $ = page(route);
     assert.equal($('#giscus-wrap').length, 1, `article ${legacyId} comment container`);
-    assert.ok($('script:not([src])').text().includes("'data-repo': 'kary2999/tago-comments'"), `article ${legacyId} discussion repository`);
+    assert.ok($('script:not([src])').text().includes("'data-repo': 'Lee900000/tago-comments'"), `article ${legacyId} discussion repository`);
     assert.ok($('script:not([src])').text().includes('"data-mapping":"pathname"'), `article ${legacyId} fixed path mapping`);
   }
   const home = page('index.html');

@@ -12,7 +12,7 @@ export all_proxy="$ALL_PROXY"
 export NO_PROXY="127.0.0.1,localhost"
 
 branch="preview/ten-post-migration"
-remote_repository="https://github.com/kary2999/leon-blog-web.git"
+remote_repository="https://github.com/Lee900000/blog.git"
 server="root@47.245.29.197"
 server_key="/Users/karp/.ssh/hermes_control"
 server_root="/opt/webserver/tago"

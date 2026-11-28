@@ -11,10 +11,10 @@ test('AI practice uses a responsive three-column grid and retains original proje
   assert.ok(catalog['WebJudge'].links.some(link => link.url.includes('chromewebstore')));
   assert.ok(catalog['trade-backtest']);
   assert.ok(catalog['the-drawer']);
-  assert.ok(catalog['purr-swap'].links.some(link => link.url === 'https://kary2999.github.io/purr-swap/'));
+  assert.ok(catalog['purr-swap'].links.some(link => link.url === 'https://Lee900000.github.io/purr-swap/'));
   assert.ok(catalog['purr-swap'].images.length);
-  assert.ok(catalog['P2P-Ws'].links.some(link => link.url === 'https://kary2999.github.io/SChat/'));
-  assert.ok(catalog.SChat.links.some(link => link.url === 'https://github.com/kary2999/P2P-Ws'));
+  assert.ok(catalog['P2P-Ws'].links.some(link => link.url === 'https://Lee900000.github.io/SChat/'));
+  assert.ok(catalog.SChat.links.some(link => link.url === 'https://github.com/Lee900000/P2P-Ws'));
   assert.doesNotMatch(readFileSync('_config.butterfly.yml','utf8'), /AI实践: \/ai\//);
   const css = readFileSync('source/css/works.css','utf8');
   assert.match(css, /repeat\(3, minmax\(0, 1fr\)\)/);
@@ -46,6 +46,6 @@ test('works loads all public repository pages and rejects API failures', async (
 test('works page and profile are connected without changing publishing identity', () => {
   assert.match(readFileSync('source/works/index.md','utf8'), /id="works-grid"/);
   assert.match(readFileSync('_config.butterfly.yml','utf8'), /代表作品: \/works\//);
-  assert.match(readFileSync('source/about/index.md','utf8'), /GitHub：\[github.com\/kary2999\]/);
-  assert.match(readFileSync('tools/publish-kary-source.mjs','utf8'), /EXPECTED_ACCOUNT = 'kary2999'/);
+  assert.match(readFileSync('source/about/index.md','utf8'), /GitHub：\[github.com\/Lee900000\]/);
+  assert.match(readFileSync('tools/publish-kary-source.mjs','utf8'), /EXPECTED_ACCOUNT = 'Lee900000'/);
 });

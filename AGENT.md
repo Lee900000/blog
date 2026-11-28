@@ -6,7 +6,7 @@
 
 - 站点：`https://tago.top/`；`www.tago.top` 应跳转到主站。
 - 作者与品牌：Lee / Tago。
-- 唯一 GitHub 源码仓库：`kary2999/leon-blog-web`。
+- 唯一 GitHub 源码仓库：`Lee900000/blog`。
 - 唯一发布分支：`preview/ten-post-migration`。
 - 严禁推送至 `leon-book`、`leon-book/blog`、`kary2999/ikarp-blog-web` 或其他仓库。
 - 线上静态目录：`root@47.245.29.197:/opt/webserver/tago`。
@@ -46,7 +46,7 @@ cd /Volumes/AiCode/博客
 git status --short
 git add <已审阅文件>
 git commit -m "<准确说明改动>"
-npm run publish:kary -- --confirm kary2999/leon-blog-web
+npm run publish:kary -- --confirm Lee900000/blog
 ```
 
 发布脚本会校验 GitHub 登录账号、目标仓库、测试、Tago 构建、文章路由与敏感文章排除。它只推送源码到 GitHub，不会自动更新 `tago.top`。

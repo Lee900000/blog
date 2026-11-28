@@ -2,7 +2,7 @@
   "axon-contract-h5": {
     "description": "Axon 模拟交易 H5：面向移动端的合约模拟交易体验页面。",
     "images": [],
-    "links": [{"label": "在线体验", "url": "https://kary2999.github.io/axon-contract-h5/"}]
+    "links": [{"label": "在线体验", "url": "https://Lee900000.github.io/axon-contract-h5/"}]
   },
   "prd-forge": {
     "description": "将需求想法、原型或会议纪要整理为结构化 PRD 的 Claude Code Skill。先追问并确认需求缺口，再覆盖业务流程、字段规则、异常处理、权限与风险等 12 个模块；附通用提示词，可供其他大模型使用。",
@@ -12,13 +12,13 @@
   "purr-swap": {
     "description": "Purr Swap · 换金所，点击访问网站体验。",
     "images": [{"alt": "Purr Swap · 换金所", "src": "/assets/pages/purr-swap-cover.png"}],
-    "links": [{"label": "访问网站", "url": "https://kary2999.github.io/purr-swap/"}]
+    "links": [{"label": "访问网站", "url": "https://Lee900000.github.io/purr-swap/"}]
   },
   "P2P-Ws": {
     "images": [{"alt": "关联项目 SChat 界面", "src": "/assets/pages/95bacacdab919dff932e.png"}],
     "links": [
-      {"label": "关联作品：SChat 在线体验", "url": "https://kary2999.github.io/SChat/"},
-      {"label": "SChat 源码", "url": "https://github.com/kary2999/SChat"}
+      {"label": "关联作品：SChat 在线体验", "url": "https://Lee900000.github.io/SChat/"},
+      {"label": "SChat 源码", "url": "https://github.com/Lee900000/SChat"}
     ]
   },
   "monitor": {
@@ -32,7 +32,7 @@
     "links": [
       {
         "label": "在线体验",
-        "url": "https://kary2999.github.io/monitor/"
+        "url": "https://Lee900000.github.io/monitor/"
       }
     ]
   },
@@ -59,7 +59,7 @@
     "links": [
       {
         "label": "在线体验",
-        "url": "https://kary2999.github.io/quant-tool/"
+        "url": "https://Lee900000.github.io/quant-tool/"
       }
     ]
   },
@@ -74,7 +74,7 @@
     "links": [
       {
         "label": "在线体验",
-        "url": "https://kary2999.github.io/trade-backtest/"
+        "url": "https://Lee900000.github.io/trade-backtest/"
       }
     ]
   },
@@ -89,11 +89,11 @@
     "links": [
       {
         "label": "在线体验",
-        "url": "https://kary2999.github.io/SChat/"
+        "url": "https://Lee900000.github.io/SChat/"
       },
       {
         "label": "关联项目：P2P-Ws",
-        "url": "https://github.com/kary2999/P2P-Ws"
+        "url": "https://github.com/Lee900000/P2P-Ws"
       }
     ]
   },
@@ -108,7 +108,7 @@
     "links": [
       {
         "label": "在线体验",
-        "url": "https://kary2999.github.io/go-skill/"
+        "url": "https://Lee900000.github.io/go-skill/"
       }
     ]
   },
@@ -123,7 +123,7 @@
     "links": [
       {
         "label": "在线体验",
-        "url": "https://kary2999.github.io/markdownShow/"
+        "url": "https://Lee900000.github.io/markdownShow/"
       }
     ]
   },
@@ -142,7 +142,7 @@
     "links": [
       {
         "label": "在线体验",
-        "url": "https://kary2999.github.io/WebJudge/"
+        "url": "https://Lee900000.github.io/WebJudge/"
       },
       {
         "label": "Chrome 应用商店",
@@ -161,7 +161,7 @@
     "links": [
       {
         "label": "在线体验",
-        "url": "https://kary2999.github.io/atool/"
+        "url": "https://Lee900000.github.io/atool/"
       },
       {
         "label": "Chrome 应用商店",
@@ -188,7 +188,7 @@
     "links": [
       {
         "label": "下载安装",
-        "url": "https://github.com/kary2999/code-ferry/releases"
+        "url": "https://github.com/Lee900000/code-ferry/releases"
       }
     ]
   },
@@ -207,7 +207,7 @@
     "links": [
       {
         "label": "下载安装",
-        "url": "https://github.com/kary2999/mini-bar/releases"
+        "url": "https://github.com/Lee900000/mini-bar/releases"
       }
     ]
   },
@@ -226,7 +226,7 @@
     "links": [
       {
         "label": "下载安装",
-        "url": "https://github.com/kary2999/PerfMon/releases"
+        "url": "https://github.com/Lee900000/PerfMon/releases"
       }
     ]
   },
@@ -245,7 +245,7 @@
     "links": [
       {
         "label": "下载安装",
-        "url": "https://github.com/kary2999/LazyCat/releases"
+        "url": "https://github.com/Lee900000/LazyCat/releases"
       }
     ]
   },
@@ -260,7 +260,7 @@
     "links": [
       {
         "label": "在线体验",
-        "url": "https://kary2999.github.io/the-drawer/"
+        "url": "https://Lee900000.github.io/the-drawer/"
       }
     ]
   },
@@ -270,7 +270,7 @@
     "links": [
       {
         "label": "在线体验",
-        "url": "https://kary2999.github.io/tokyo-guide/"
+        "url": "https://Lee900000.github.io/tokyo-guide/"
       }
     ]
   }

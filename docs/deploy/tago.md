@@ -20,4 +20,4 @@ node tools/verify-article-routes.mjs
 
 `tago-http.conf` 仅用于首次 ACME 验证；正常运行使用 `tago.conf`。修改服务器配置前备份原配置，`nginx -t` 成功才重载。
 
-本地预览仍使用 `npm run server -- --port 4000`；GitHub 源码同步只允许 `npm run publish:kary -- --confirm kary2999/leon-blog-web`。它只推送源码，不会覆盖服务器产物。
+本地预览仍使用 `npm run server -- --port 4000`；GitHub 源码同步只允许 `npm run publish:kary -- --confirm Lee900000/blog`。它只推送源码，不会覆盖服务器产物。

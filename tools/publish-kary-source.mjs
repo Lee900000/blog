@@ -5,10 +5,10 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 import { spawnSync } from 'node:child_process'
 import { verifyArticleRoutes } from './verify-article-routes.mjs'
 
-export const EXPECTED_ACCOUNT = 'kary2999'
-export const PUBLISH_REPOSITORY = 'https://github.com/kary2999/leon-blog-web.git'
+export const EXPECTED_ACCOUNT = 'Lee900000'
+export const PUBLISH_REPOSITORY = 'https://github.com/Lee900000/blog.git'
 export const PUBLISH_BRANCH = 'preview/ten-post-migration'
-export const REQUIRED_CONFIRMATION = 'kary2999/leon-blog-web'
+export const REQUIRED_CONFIRMATION = 'Lee900000/blog'
 const BLOCKED_ARTICLE_IDS = ['237', '704']
 
 function run(command, args, options = {}) {

@@ -7,7 +7,7 @@
 - 只在本目录中编辑博客源码；不要回写 `/Users/karp/Code/ikarp-blog-web`。
 - 主站是 `https://tago.top/`，`www.tago.top` 跳转到主站；旧 `leon-book` 站点不再发布。
 - 用户于 2026-10-17 授权额外部署到 `root@47.245.29.197:/opt/webserver/tago`，服务器部署见 `docs/deploy/tago.md`。
-- GitHub 源码发布仓库只能是 `kary2999/leon-blog-web`，默认分支为 `preview/ten-post-migration`。
+- GitHub 源码发布仓库只能是 `Lee900000/blog`，默认分支为 `preview/ten-post-migration`。
 - 不得向 `leon-book`、`leon-book/blog`、`kary2999/ikarp-blog-web` 或其他仓库推送。
 - 文章 `237`、`704` 不得进入公开构建或发布产物。
 - 用户于 2026-10-13 授权移除文章路径中的 `index.php` 并停用数字地址。文章使用 `archives/<固定随机标识>.html`；不生成旧数字地址或跳转页。
@@ -23,7 +23,7 @@
 4. 本地预览使用 `npm run server -- --port 4000`。
 5. 发布前提交已审阅的源码修改，确保 `git status --porcelain` 为空。
 6. 只有用户明确要求发布时，运行：
-   `npm run publish:kary -- --confirm kary2999/leon-blog-web`
+   `npm run publish:kary -- --confirm Lee900000/blog`
 
 发布工具会再次检查 GitHub 登录账号、唯一目标仓库、测试、构建和敏感文章排除状态，并只推送源码；不要将 `public/` 提交到源码仓库。已授权的独立服务器部署按 `docs/deploy/tago.md` 执行。
 

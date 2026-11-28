@@ -19,7 +19,7 @@ permalink: archives/ddcae189.html
 
 因此尝试了一个方向：先给 pprof 的 Web 界面增加中文展示，再探索把函数调用统计也整理成容易查看的表格和链路。
 
-项目地址：[kary2999/pprof-zh](https://github.com/kary2999/pprof-zh)。本文结合实际截图介绍当前界面和正在探索的方案，不把采样数据当作完整的函数调用记录。
+项目地址：[Lee900000/pprof-zh](https://github.com/Lee900000/pprof-zh)。本文结合实际截图介绍当前界面和正在探索的方案，不把采样数据当作完整的函数调用记录。
 
 > 版本说明：截至本文整理时，仓库默认分支的中文文档介绍的是 pprof 界面汉化；本文末尾的“调用统计”来自新方案截图。默认分支暂未找到对应插桩代码，具体功能和使用方式以实际发布的版本为准。
 
@@ -77,7 +77,7 @@ permalink: archives/ddcae189.html
 
 ## 五、当前公开版本怎么打开
 
-以下内容根据项目的 [README-zh.md](https://github.com/kary2999/pprof-zh/blob/main/README-zh.md) 整理，针对仓库当前公开的中文界面版本。
+以下内容根据项目的 [README-zh.md](https://github.com/Lee900000/pprof-zh/blob/main/README-zh.md) 整理，针对仓库当前公开的中文界面版本。
 
 ### 1. 环境准备
 
@@ -90,12 +90,12 @@ brew install graphviz
 ### 2. 获取并编译
 
 ```bash
-git clone https://github.com/kary2999/pprof-zh.git
+git clone https://github.com/Lee900000/pprof-zh.git
 cd pprof-zh
 go build -o pprof-zh ./cmd/pprof-zh
 ```
 
-仓库的 Go 模块路径仍然是 `github.com/google/pprof`，README 建议克隆后编译，不要使用 `go install github.com/kary2999/pprof-zh/...@latest`。
+仓库的 Go 模块路径仍然是 `github.com/google/pprof`，README 建议克隆后编译，不要使用 `go install github.com/Lee900000/pprof-zh/...@latest`。
 
 ### 3. 查看本地 profile
 
@@ -148,7 +148,7 @@ go run ./cmd/pprof-zh -http=127.0.0.1:8080 -no_browser cmd/pprof-zh/sample/cpu.p
 
 函数名、调用图节点、源码和 `<pre>` 文本不会被翻译；翻译表没有收录的界面文案则保持英文。
 
-需要补充翻译时，可以修改仓库中的 [`cmd/pprof-zh/zh.js`](https://github.com/kary2999/pprof-zh/blob/main/cmd/pprof-zh/zh.js)：`EXACT` 用于整句匹配，`RULES` 用于含动态数值的文案。修改后需要重新编译，脚本通过 `go:embed` 打包进程序。
+需要补充翻译时，可以修改仓库中的 [`cmd/pprof-zh/zh.js`](https://github.com/Lee900000/pprof-zh/blob/main/cmd/pprof-zh/zh.js)：`EXACT` 用于整句匹配，`RULES` 用于含动态数值的文案。修改后需要重新编译，脚本通过 `go:embed` 打包进程序。
 
 README 同时列出了几个限制：部分悬停提示尚未翻译；Peek 和 Source 中的 `<pre>` 内容不翻译；保存、删除配置的动态提示尚未逐一验证；上游文案变化后需要维护翻译表。项目沿用上游 Apache-2.0 许可证。
 
@@ -163,7 +163,7 @@ README 同时列出了几个限制：部分悬停提示尚未翻译；Peek 和 S
 
 ## 参考资料
 
-- [pprof-zh 项目及中文使用说明](https://github.com/kary2999/pprof-zh/blob/main/README-zh.md)
+- [pprof-zh 项目及中文使用说明](https://github.com/Lee900000/pprof-zh/blob/main/README-zh.md)
 - [google/pprof：性能数据分析工具](https://github.com/google/pprof)
 - [Go 官方：Diagnostics](https://go.dev/doc/diagnostics)
 - [Go 官方：net/http/pprof](https://pkg.go.dev/net/http/pprof)

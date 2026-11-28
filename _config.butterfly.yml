@@ -113,7 +113,7 @@ comments:
 
 giscus:
   # Comments live in a dedicated repository, separate from blog source code.
-  repo: kary2999/tago-comments
+  repo: Lee900000/tago-comments
   repo_id: R_kgDOVaGC8w
   category_id: DIC_kwDOVaGC884DJzII
   light_theme: light

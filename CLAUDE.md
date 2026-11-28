@@ -5,7 +5,7 @@
 本工作区的 GitHub 源码发布命令只有：
 
 ```sh
-npm run publish:kary -- --confirm kary2999/leon-blog-web
+npm run publish:kary -- --confirm Lee900000/blog
 ```
 
 没有用户明确的“发布”指令时，只能编辑、测试、构建和本地预览，不能推送 GitHub 或修改 GitHub Pages 设置。
